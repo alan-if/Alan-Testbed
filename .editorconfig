@@ -1,0 +1,102 @@
+#############################################
+#  The Alan IF Testbed                      #
+#  https://github.com/alan-if/Alan-Testbed  #
+#############################################
+
+root = true
+
+## Repository Configurations
+############################
+[.{git*,editorconfig,*.yml}]
+end_of_line = lf
+indent_style = space
+indent_size = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[.gitmodules]
+indent_style = tab
+
+
+## ALAN IF
+##########
+
+# Common settings for all Alan files
+[*.{alan,i,a3s,a3t}]
+indent_style = space
+indent_size = 2
+charset = unset
+
+# Additional settings for non-generated Alan files
+[*.{alan,i,a3s}]
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Shell Scripts
+################
+[*.sh]
+end_of_line = lf
+indent_style = tab
+indent_size = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Batch Scripts
+################
+[*.{bat,cmd}]
+indent_style = tab
+indent_size = unset
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## AsciiDoc
+###########
+[*.{ad,adoc,asciidoc}]
+indent_size = 2
+indent_style = space
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Markdown GFM
+###############
+[*.md]
+indent_style = space
+indent_size = unset
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Ruby
+#######
+[*.{rb,gemspec}]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Sass/SCSS
+############
+[*.{sass,scss}]
+indent_size = 2
+indent_style = space
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+; EOF ;
