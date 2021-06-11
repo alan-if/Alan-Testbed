@@ -14,6 +14,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 - [Challenges](#challenges)
 - [Info](#info)
     - [Custom Lexers with Rougify via CLI](#custom-lexers-with-rougify-via-cli)
+    - [Custom Lexers via Rouge API](#custom-lexers-via-rouge-api)
     - [Custom Lexers with Asciidoctor](#custom-lexers-with-asciidoctor)
 - [Links](#links)
     - [Rouge](#rouge)
@@ -64,14 +65,39 @@ To highlight an Alan source file using a custom Rouge lexer from the command lin
 $ rougify sample.alan --require ./alan3.rb
 ```
 
+From rougify help:
+
+```
+$ rougify help highlight
+usage: rougify highlight <filename> [options...]
+       rougify highlight [options...]
+
+[...]
+
+--require|-r <filename>     require a filename or library before
+                            highlighting
+```
+
+
+## Custom Lexers via Rouge API
+
+I'm still not entirely sure how to instruct the Rouge API to require a custom lexer, but here's how the command line parameter `--require` is being handled by [`lib/rouge/cli.rb`][cli.rb] (L235):
+
+```ruby
+          when '-r', '--require'
+            opts[:requires] << argv.shift
+```
+
 ## Custom Lexers with Asciidoctor
 
 As for Asciidoctor, there doesn't seem to be a way to enforce the `--require` option on Rouge.
-My best guess right now is we might need to write a custom Rouge extension and override Asciidoctor's native API for Rouge:
+My best guess right now is that we might need to either:
 
-- [`lib/asciidoctor/syntax_highlighter/rouge.rb`][rouge.rb]
+1. Write a [custom syntax highlighter adapter] for Rouge, and override Asciidoctor's native API for Rouge:
 
-Or invoke Asciidoctor via Ruby, passing extra setting to the Rouge library.
+    - [`lib/asciidoctor/syntax_highlighter/rouge.rb`][rouge.rb]
+
+2. Invoke Asciidoctor via Ruby, passing extra setting to the Rouge library (not quite sure this would override the default behaviour).
 
 -------------------------------------------------------------------------------
 
@@ -82,6 +108,7 @@ Or invoke Asciidoctor via Ruby, passing extra setting to the Rouge library.
 - [Rouge website][Rouge]
 - [Rouge repository]
 - [Rouge documentation]
+- [Redcarpet]
 
 ## Asciidoctor
 
@@ -102,6 +129,8 @@ Or invoke Asciidoctor via Ruby, passing extra setting to the Rouge library.
 [Rouge repository]: https://github.com/rouge-ruby/rouge "Rouge repository on GitHub"
 [Rouge documentation]: https://rouge-ruby.github.io/docs/ "Rouge online documentation"
 
+[cli.rb]: https://github.com/rouge-ruby/rouge/blob/master/lib/rouge/cli.rb#L235 "View source file at Rouge repository"
+
 <!-- Asciidoctor -->
 
 [Asciidoctor]: https://asciidoctor.org "Asciidoctor website"
@@ -119,6 +148,7 @@ Or invoke Asciidoctor via Ruby, passing extra setting to the Rouge library.
 [asciidoctor-fopub]: https://github.com/asciidoctor/asciidoctor-fopub
 [asciidoctor-pdf]: https://github.com/asciidoctor/asciidoctor-pdf
 [Highlight]: http://www.andre-simon.de "Highlight website"
+[Redcarpet]: https://github.com/vmg/redcarpet "Redcarpet repository on GitHub"
 
 <!-- project files and folders -->
 
