@@ -15,13 +15,15 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 - [Info](#info)
     - [Custom Lexers with Rougify via CLI](#custom-lexers-with-rougify-via-cli)
     - [Custom Lexers with Asciidoctor](#custom-lexers-with-asciidoctor)
+- [Links](#links)
+    - [Rouge](#rouge)
+    - [Asciidoctor](#asciidoctor)
 
 <!-- /MarkdownTOC -->
 
 -----
 
 # Directory Contents
-
 
 - [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed elsewhere)
 - [`sample.alan`][sample.alan] — sample Alan source (UTF-8 + BOM).
@@ -71,18 +73,46 @@ My best guess right now is we might need to write a custom Rouge extension and o
 
 Or invoke Asciidoctor via Ruby, passing extra setting to the Rouge library.
 
+-------------------------------------------------------------------------------
+
+# Links
+
+## Rouge
+
+- [Rouge website][Rouge]
+- [Rouge repository]
+- [Rouge documentation]
+
+## Asciidoctor
+
+- [Asciidoctor website][Asciidoctor]
+- [Asciidoctor repository]:
+    + [`rouge.rb`][rouge.rb] — Asciidoctor's native API for Rouge.
+- [Asciidoctor Documentation]:
+    + [Syntax Highlighting][AsciiDr Syntax Highlighting]:
+        * [Rouge][AsciiDr Rouge]
+        * [Custom Syntax Highlighter Adapter]
+
+
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [Rouge]: http://rouge.jneen.net "Rouge website"
 [Rouge repository]: https://github.com/rouge-ruby/rouge "Rouge repository on GitHub"
+[Rouge documentation]: https://rouge-ruby.github.io/docs/ "Rouge online documentation"
 
 <!-- Asciidoctor -->
 
 [Asciidoctor]: https://asciidoctor.org "Asciidoctor website"
 
+[Asciidoctor repository]: https://github.com/asciidoctor/asciidoctor "Asciidoctor repository on GitHub"
 [rouge.rb]: https://github.com/asciidoctor/asciidoctor/blob/master/lib/asciidoctor/syntax_highlighter/rouge.rb
+
+[Asciidoctor Documentation]: https://docs.asciidoctor.org/asciidoctor/latest/
+[AsciiDr Syntax Highlighting]: https://docs.asciidoctor.org/asciidoctor/latest/syntax-highlighting/
+[AsciiDr Rouge]: https://docs.asciidoctor.org/asciidoctor/latest/syntax-highlighting/rouge/
+[Custom Syntax Highlighter Adapter]: https://docs.asciidoctor.org/asciidoctor/latest/syntax-highlighting/custom/
 
 <!-- 3rd Party tools -->
 
