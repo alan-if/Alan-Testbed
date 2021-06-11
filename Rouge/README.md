@@ -24,7 +24,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 
 
 - [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed elsewhere)
-- [`sample.alan`][sample.alan] — sample Alan source
+- [`sample.alan`][sample.alan] — sample Alan source (UTF-8 + BOM).
 - [`rougify-term.sh`][rougify-term.sh] — highlights `sample.alan` in the terminal, via CLI.
 
 
