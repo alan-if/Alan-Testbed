@@ -1,0 +1,105 @@
+--==============================================================================
+-- "Test Alan Syntax for Highlight" by Tristano Ajmone
+--==============================================================================
+
+THE start_loc IsA LOCATION
+
+END THE start_loc.
+
+--==============================================================================
+-- Special Chars in IDs
+--==============================================================================
+
+THE città IsA LOCATION.
+
+END THE.
+
+--==============================================================================
+-- OPERATORS
+--==============================================================================
+
+SYNTAX put_in = 'put' (o) 'in' (c)
+  WHERE c IsA CONTAINER
+    ELSE "You can't put anything in the" SAY c.
+
+VERB put_in
+  CHECK o <> c
+    ELSE "That would be a good trick if you could do it!!"
+  DOES -- etc.
+--==============================================================================
+-- NUMBERS
+--==============================================================================
+SET eyes OF first_die TO RANDOM 1 TO 6.
+DECREASE temp OF room BY RANDOM 0 TO temp OF Room.
+--==============================================================================
+-- The '=>' Keyword (shorhand for 'THEN')
+--==============================================================================
+WHEN hero AT cave
+  AND (monster IS hungry OR monster IS angry)
+  AND sword NOT IN hero
+=>
+  USE SCRIPT eat_hero FOR monster.
+END WHEN.
+--==============================================================================
+-- SPECIAL STR CHARS
+--==============================================================================
+SAY "paramters: $1 (1st); $2 (2nd); $3 (3rd); etc
+     $+1 (definite form of 1st); $01 (indefiniteform of 1st);
+     $-1 (negative form of 1st); $!1 (pronoun of 1st)
+     current object: $o (1st param)
+     $+1$+2$01$o"
+
+START AT tv_room.
+  "$p$t$t$t$t$t$t$t$t$t*** TV TIME! *** $p~$n~$i~$t~$$~$a~$l~$v~$$
+  $n$t$t$t$t$t$tAn ALAN 3 Interactive Fiction Tutorial Game
+  $n$t$t$t$t$t$t$tBy Michael Arnaud (c) 2006
+  $p(Type ""help"" if you have not played this kind of game before.)
+  $pJoy of joys, you have just purchased a brand new big screen plasma TV that was delivered earlier today!"
+--==============================================================================
+-- PARAMETER INDICATORS
+--==============================================================================
+SYNTAX
+  take = 'take' (obj)*. --> parameter can reference multiple instances.
+  drop = 'drop' (obj).
+
+SYNTAX --> With '!' the parameter need not be present at the current location.
+  talk_about = 'talk' 'to' (act) 'about' (subj)!.
+  find = 'find' (obj)!.
+--==============================================================================
+-- MESSAGES
+--==============================================================================
+MESSAGE
+  NOWAY: "There is no exit in that direction."
+
+--==============================================================================
+-- ATTRIBUTES REFERENCES
+--==============================================================================
+SAY detective:suspect:weapon.
+-- Same as:
+SAY weapon OF suspect OF detective.
+
+--==============================================================================
+-- STRINGS WITH DQS
+--==============================================================================
+-- Test Escaping Quotes
+"DQ string"
+"DQ string with ""DQ quoted"" inside"
+"DQ string with  'SQ quoted'  inside"
+"DQ string with ''SQ quoted'' inside"
+--==============================================================================
+-- MULTIMEDIA STAMENTS
+--==============================================================================
+-- Images supported: PNG and JPEG formats only.
+SHOW 'picture.jpg'.
+SHOW 'PICTURE.JPG'.
+
+SHOW 'picture.jpeg' --> missing '.'!!!
+
+SHOW 'PICTURE.Jpeg'.
+SHOW 'picture.png'.
+-- Audio files supported: MOD and AIFF formats only.
+PLAY 'sound.aiff'.
+
+--------------------------------------------------------------------------------
+
+START AT start_loc.

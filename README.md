@@ -13,6 +13,7 @@ Created by [Tristano Ajmone], June 6, 2021; released under [Apache License 2.0].
 
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3,4" -->
 
+- [Project Contents](#project-contents)
 - [ALAN Files Extensions](#alan-files-extensions)
 - [License](#license)
 - [Useful Links](#useful-links)
@@ -21,21 +22,26 @@ Created by [Tristano Ajmone], June 6, 2021; released under [Apache License 2.0].
 
 -----
 
+# Project Contents
+
+- [`/Rouge/`](./Rouge/) — Rouge syntax highlighter tests.
+
+
 # ALAN Files Extensions
 
 This project contains the following Alan-specific files extensions:
 
-|   ext   |                     description                      |  type  |
-|---------|------------------------------------------------------|--------|
-| `.a3c`  | Alan compiled adventures.                            | binary |
-| `.a3r`  | Alan compiled adventures' resources (images/sounds). | binary |
-| `.a3s`  | Alan commands script (aka solution files).           | text   |
-| `.a3t`  | Alan game transcripts.                               | text   |
-| `.alan` | Alan source files.                                   | text   |
-| `.i`    | Alan source modules.                                 | text   |
-| `.ifid` | Source adventure IFID file.                          | text   |
-| `.log`  | Compiler/ARun log files.                             | text   |
-| `.sav`  | Saved games (used for testing).                      | binary |
+|   ext   |               description                |  type  |  status |
+|---------|------------------------------------------|--------|---------|
+| `.a3c`  | Compiled game.                           | binary | ignored |
+| `.a3r`  | Compiled game resources (images/sounds). | binary | ignored |
+| `.a3s`  | Commands script (solution file).         | text   | tracked |
+| `.a3t`  | Game transcript.                         | text   | tracked |
+| `.alan` | Alan source file.                        | text   | tracked |
+| `.i`    | Alan source module.                      | text   | tracked |
+| `.ifid` | Source adventure IFID file.              | text   | tracked |
+| `.log`  | Compiler/ARun log file.                  | text   | ignored |
+| `.sav`  | Saved game (used for testing).           | binary | ignored |
 
 
 # License

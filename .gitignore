@@ -18,8 +18,8 @@
 #################
 
 # Temporary/backup or removed files and folders:
-___*
-___*.*
+**___*
+**___*.*
 
 # Links and URLs:
 *.lnk

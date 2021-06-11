@@ -25,7 +25,7 @@ indent_style = tab
 # Common settings for all Alan files
 [*.{alan,i,a3s,a3t}]
 indent_style = space
-indent_size = 2
+indent_size = unset
 charset = unset
 
 # Additional settings for non-generated Alan files
@@ -83,7 +83,7 @@ insert_final_newline = true
 [*.{rb,gemspec}]
 indent_size = 2
 indent_style = space
-end_of_line = lf
+end_of_line = unset
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true

@@ -40,6 +40,11 @@
 *.sed   text eol=lf
 
 
+## Ruby
+#######
+*.rb   text
+
+
 ## Documentation
 ################
 *.adoc       text
