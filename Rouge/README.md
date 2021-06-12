@@ -16,6 +16,8 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
     - [Custom Lexers with Rougify via CLI](#custom-lexers-with-rougify-via-cli)
     - [Custom Lexers via Rouge API](#custom-lexers-via-rouge-api)
     - [Custom Lexers with Asciidoctor](#custom-lexers-with-asciidoctor)
+- [Credits](#credits)
+    - [Rouge Assets](#rouge-assets)
 - [Links](#links)
     - [Rouge](#rouge)
     - [Asciidoctor](#asciidoctor)
@@ -26,13 +28,24 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 
 # Directory Contents
 
-- [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed elsewhere)
 - [`sample.alan`][sample.alan] — sample Alan source (UTF-8 + BOM).
+
+Custom Ruby scripts, lexers and libraries:
+
+- [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed elsewhere)
+- [`custom-rouge-adapter.rb`][custom-rouge-adapter.rb] — tweaks the Rouge adapter for Asciidoctor that loads (requires) our `alan3.rb` lexer.
+
+Tests:
+
 - [`rougify-term.sh`][rougify-term.sh] — highlights `sample.alan` in the terminal, via CLI.
 - [`asciidoctor-example.asciidoc`][asciidoctor-example.asciidoc] — Asciidoctor test document.
-- [`asciidoctor-example.html`][asciidoctor-example.html]
+- [`asciidoctor-example.html`][asciidoctor-example.html] — converted HTML doc ([Live HTML Preview][ADoc Ex Live])
 - [`asciidoctor-example.sh`][asciidoctor-example.sh] — converts `asciidoctor-example.asciidoc` to HTML using our `alan3.rb` lexer.
-- [`custom-rouge-adapter.rb`][custom-rouge-adapter.rb] — tweaks the Rouge adapter for Asciidoctor that loads (requires) our `alan3.rb` lexer.
+
+Reference documents:
+
+- [`Rouge-Tokens.adoc`][Rouge-Tokens.adoc]
+- [`Rouge-Tokens.html`][Rouge-Tokens.html] ([Live HTML Preview][Tokens Live])
 
 
 # Objectives
@@ -126,6 +139,43 @@ end
 
 They both produce equal results for our scope.
 
+# Credits
+
+## Rouge Assets
+
+The following documents were adapted from [Rouge Wiki] » [List of tokens]:
+
+- [`Rouge-Tokens.adoc`][Rouge-Tokens.adoc]
+- [`Rouge-Tokens.html`][Rouge-Tokens.html]
+
+which is Copyright © 2012 by Jeanine Adkisson, released under the terms of the MIT License:
+
+- https://github.com/rouge-ruby/rouge/blob/master/LICENSE
+
+```
+MIT License
+
+Copyright (c) 2012 Jeanine Adkisson.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
 -------------------------------------------------------------------------------
 
 # Links
@@ -134,6 +184,7 @@ They both produce equal results for our scope.
 
 - [Rouge website][Rouge]
 - [Rouge repository]
+- [Rouge Wiki]
 - [Rouge documentation]
 - [Redcarpet]
 
@@ -156,6 +207,9 @@ They both produce equal results for our scope.
 [Rouge]: http://rouge.jneen.net "Rouge website"
 [Rouge repository]: https://github.com/rouge-ruby/rouge "Rouge repository on GitHub"
 [Rouge documentation]: https://rouge-ruby.github.io/docs/ "Rouge online documentation"
+[Rouge Wiki]: https://github.com/rouge-ruby/rouge/wiki "Rouge Wiki on GitHub"
+
+[List of tokens]: https://github.com/rouge-ruby/rouge/wiki/List-of-tokens "Rouge Wiki » List of tokens"
 
 [cli.rb]: https://github.com/rouge-ruby/rouge/blob/master/lib/rouge/cli.rb#L235 "View source file at Rouge repository"
 
@@ -181,12 +235,20 @@ They both produce equal results for our scope.
 <!-- project files and folders -->
 
 [alan3.rb]: ./alan3.rb "View source file"
+
 [asciidoctor-example.asciidoc]: ./asciidoctor-example.asciidoc
 [asciidoctor-example.html]: ./asciidoctor-example.html
 [asciidoctor-example.sh]: ./asciidoctor-example.sh
+[ADoc Ex Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/Rouge/asciidoctor-example.html "Live HTML Preview of 'asciidoctor-example.htm'"
+
 [custom-rouge-adapter.rb]: ./custom-rouge-adapter.rb
 [rougify-term.sh]: ./rougify-term.sh "View source file"
 [sample.alan]: ./sample.alan "View source file"
+
+[Rouge-Tokens.adoc]: ./Rouge-Tokens.adoc
+[Rouge-Tokens.html]: ./Rouge-Tokens.html
+[Tokens Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/Rouge/Rouge-Tokens.html "Live HTML Preview of 'Rouge-Tokens.htm'"
+
 
 <!-- Issues -->
 
