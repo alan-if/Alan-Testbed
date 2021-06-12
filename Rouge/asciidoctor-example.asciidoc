@@ -1,0 +1,13 @@
+= Custom Rouge Syntaxes
+:source-highlighter: rouge
+:rouge-style: monokai
+
+== Alan
+
+[source,alan3]
+----------------------
+include::sample.alan[]
+----------------------
+
+
+// EOF //

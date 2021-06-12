@@ -29,6 +29,10 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 - [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed elsewhere)
 - [`sample.alan`][sample.alan] — sample Alan source (UTF-8 + BOM).
 - [`rougify-term.sh`][rougify-term.sh] — highlights `sample.alan` in the terminal, via CLI.
+- [`asciidoctor-example.asciidoc`][asciidoctor-example.asciidoc] — Asciidoctor test document.
+- [`asciidoctor-example.html`][asciidoctor-example.html]
+- [`asciidoctor-example.sh`][asciidoctor-example.sh] — converts `asciidoctor-example.asciidoc` to HTML using our `alan3.rb` lexer.
+- [`custom-rouge-adapter.rb`][custom-rouge-adapter.rb] — tweaks the Rouge adapter for Asciidoctor that loads (requires) our `alan3.rb` lexer.
 
 
 # Objectives
@@ -90,14 +94,37 @@ I'm still not entirely sure how to instruct the Rouge API to require a custom le
 
 ## Custom Lexers with Asciidoctor
 
-As for Asciidoctor, there doesn't seem to be a way to enforce the `--require` option on Rouge.
-My best guess right now is that we might need to either:
+- [asciidoctor#4080]
+- [Asciidoctor Documentation] » [Custom Syntax Highlighter Adapter]
 
-1. Write a [custom syntax highlighter adapter] for Rouge, and override Asciidoctor's native API for Rouge:
+Thanks to [Dan Allen]  (@mojavelinux) for helping us out with the solution on how to make Rouge require a custom lexer.
 
-    - [`lib/asciidoctor/syntax_highlighter/rouge.rb`][rouge.rb]
+- Create the file `custom-rouge-adapter.rb`:
+    ```ruby
+    require 'rouge'
+    require './alan3.rb'
 
-2. Invoke Asciidoctor via Ruby, passing extra setting to the Rouge library (not quite sure this would override the default behaviour).
+    class CustomRougeAdapter < (Asciidoctor::SyntaxHighlighter.for 'rouge')
+      register_for 'rouge'
+    end
+    ```
+- Invoke Asciidoctor with `-r ./custom-rouge-adapter.rb`.
+
+An alternative code for `custom-rouge-adapter.rb`, defers loading Rouge until the `load_library` method is called:
+
+```ruby
+class CustomRougeAdapter < (Asciidoctor::SyntaxHighlighter.for 'rouge')
+  register_for 'rouge'
+
+  def load_library
+    require 'rouge'
+    require './alan3.rb'
+    :loaded
+  end
+end
+```
+
+They both produce equal results for our scope.
 
 -------------------------------------------------------------------------------
 
@@ -115,6 +142,7 @@ My best guess right now is that we might need to either:
 - [Asciidoctor website][Asciidoctor]
 - [Asciidoctor repository]:
     + [`rouge.rb`][rouge.rb] — Asciidoctor's native API for Rouge.
+    + [asciidoctor#4080] — Rouge Highlighter: Add 'rouge-require' Option for Custom Lexers and Themes
 - [Asciidoctor Documentation]:
     + [Syntax Highlighting][AsciiDr Syntax Highlighting]:
         * [Rouge][AsciiDr Rouge]
@@ -153,6 +181,10 @@ My best guess right now is that we might need to either:
 <!-- project files and folders -->
 
 [alan3.rb]: ./alan3.rb "View source file"
+[asciidoctor-example.asciidoc]: ./asciidoctor-example.asciidoc
+[asciidoctor-example.html]: ./asciidoctor-example.html
+[asciidoctor-example.sh]: ./asciidoctor-example.sh
+[custom-rouge-adapter.rb]: ./custom-rouge-adapter.rb
 [rougify-term.sh]: ./rougify-term.sh "View source file"
 [sample.alan]: ./sample.alan "View source file"
 
@@ -160,5 +192,10 @@ My best guess right now is that we might need to either:
 
 [alan-docs#107]: https://github.com/alan-if/alan-docs/issues/107
 [alan-docs#36]: https://github.com/alan-if/alan-docs/issues/36
+[asciidoctor#4080]: https://github.com/asciidoctor/asciidoctor/issues/4080 "Rouge Highlighter: Add 'rouge-require' Option for Custom Lexers and Themes"
+
+<!-- people -->
+
+[Dan Allen]: https://github.com/mojavelinux "View Dan Allen's GitHub profile"
 
 <!-- EOF -->
