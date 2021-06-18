@@ -10,6 +10,7 @@ ALAN 3.0beta8 will introduce support for UTF-8 encoded source files and scriptin
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [About UTF-8 Support](#about-utf-8-support)
+    - [New SDK Switches](#new-sdk-switches)
 - [Links](#links)
 
 <!-- /MarkdownTOC -->
@@ -41,12 +42,32 @@ This is a huge improvements when it comes to handling source files in editors, I
 From ALAN Beta9 onward, new users will no longer have to deal with all the quirks and complexities of ISO encodings.
 
 
+## New SDK Switches
+
+The new UTF-8 support feature introduces some new command line switches to the ALAN compiler and interpreter, to explicitly set the encoding of source files, game scripts and transcripts.
+It also deprecates the old `mac` and `dos` legacy encodings, which are no longer supported.
+
+As for the compiler (see [§A.2. _Compiler Switches_]), we now have the `-encoding <set>` option along with its alias `-charset`:
+
+    -encoding <set>   -- which character encoding to assume when reading source files (iso|utf8) (default: iso)
+    -charset <set>    -- backwards compatible synonym for 'encoding' option (iso|utf8) (default: iso)
+
+
+For the interpreter (see [§A.5. _Interpreter Switches_]) we have `-u` and `-i`:
+
+    -u        use UTF-8 encoding for input and output
+    -i        use ISO8859-1 encoding for input and output
+
+
 # Links
 
+- [alan-if/alan#2] — Adopt '.a3log' and '.a3sol' Extensions for Transcripts and Commands Scripts
 - [alan-if/alan#12] — Add Support for UTF-8 Sources and I/O Stream
 - [Alan IF discussions] » [UTF-8 support announcement]
 - [_The ALAN Manual_ (Alpha Ed.)]:
     + [§A.2. _Compiler Switches_]
+    + [§A.3. _Encodings and character sets_]
+    + [§A.5. _Interpreter Switches_]
 - [ALAN website] » [development snapshots] » [3.0beta8 build 2207]
 
 
@@ -56,6 +77,7 @@ From ALAN Beta9 onward, new users will no longer have to deal with all the quirk
 
 [ALAN website]: https://www.alanif.se "Visit ALAN website"
 
+[alan-if/alan#2]: https://github.com/alan-if/alan/issues/2 "Issue #2 — Adopt '.a3log' and '.a3sol' Extensions for Transcripts and Commands Scripts"
 [alan-if/alan#12]: https://github.com/alan-if/alan/issues/12 "Issue #12 — Add Support for UTF-8 Sources and I/O Stream"
 [Alan IF discussions]: https://groups.google.com/g/alan-if  "Alan IF discussions at Google Groups"
 [UTF-8 support announcement]: https://groups.google.com/g/alan-if/c/frQugooK6jQ "Alan IF discussions: Development snapshots available again, with UTF-8 support"
@@ -64,6 +86,8 @@ From ALAN Beta9 onward, new users will no longer have to deal with all the quirk
 
 [_The ALAN Manual_ (Alpha Ed.)]: https://alan-if.github.io/alan-docs/manual-alpha/manual.html
 [§A.2. _Compiler Switches_]: https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_compiler_switches
+[§A.3. _Encodings and character sets_]: https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_encodings_and_character_sets
+[§A.5. _Interpreter Switches_]: https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_interpreter_switches
 
 [alpha-level documentation]: https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_how_to_use_the_system "The ALAN Manual (Alpha Ed.) » Appendix A: How to Use the System"
 
