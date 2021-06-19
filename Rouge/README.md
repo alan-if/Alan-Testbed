@@ -28,6 +28,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 
 # Directory Contents
 
+- [`/themes/`][/themes/] — themes references and work.
 - [`sample.alan`][sample.alan] — sample Alan source (UTF-8 + BOM).
 
 Custom Ruby scripts, lexers and libraries:
@@ -41,11 +42,6 @@ Tests:
 - [`asciidoctor-example.asciidoc`][asciidoctor-example.asciidoc] — Asciidoctor test document.
 - [`asciidoctor-example.html`][asciidoctor-example.html] — converted HTML doc ([Live HTML Preview][ADoc Ex Live])
 - [`asciidoctor-example.sh`][asciidoctor-example.sh] — converts `asciidoctor-example.asciidoc` to HTML using our `alan3.rb` lexer.
-
-Reference documents:
-
-- [`Rouge-Tokens.adoc`][Rouge-Tokens.adoc]
-- [`Rouge-Tokens.html`][Rouge-Tokens.html] ([Live HTML Preview][Tokens Live])
 
 
 # Objectives
@@ -234,6 +230,9 @@ THE SOFTWARE.
 
 <!-- project files and folders -->
 
+[/themes/]: ./themes/ "Navigate to folder"
+
+
 [alan3.rb]: ./alan3.rb "View source file"
 
 [asciidoctor-example.asciidoc]: ./asciidoctor-example.asciidoc
@@ -244,11 +243,6 @@ THE SOFTWARE.
 [custom-rouge-adapter.rb]: ./custom-rouge-adapter.rb
 [rougify-term.sh]: ./rougify-term.sh "View source file"
 [sample.alan]: ./sample.alan "View source file"
-
-[Rouge-Tokens.adoc]: ./Rouge-Tokens.adoc
-[Rouge-Tokens.html]: ./Rouge-Tokens.html
-[Tokens Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/Rouge/Rouge-Tokens.html "Live HTML Preview of 'Rouge-Tokens.htm'"
-
 
 <!-- Issues -->
 
