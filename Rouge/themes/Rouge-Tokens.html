@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
+<meta name="author" content="Tristano Ajmone">
 <title>Rouge Tokens List</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -436,13 +437,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>Rouge Tokens List</h1>
+<div class="details">
+<span id="author" class="author">Tristano Ajmone</span><br>
+<span id="email" class="email"><a href="mailto:tajmone@gmail.com">tajmone@gmail.com</a></span><br>
+<span id="revnumber">version 2,</span>
+<span id="revdate">2021-06-19</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#about">About</a></li>
+<li><a href="#tokens_list">Tokens List</a></li>
+<li><a href="#css_classes_lookup">CSS Classes Lookup</a></li>
+<li><a href="#mit_license">MIT License</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Quick references for Rouge lexers and themes authors, with emphasis on token names and their corresponding classes in HTML documents, in order to control code styles via custom CSS.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -457,14 +476,6 @@ released under <a href="#mit_license">MIT License</a>.
 </tr>
 </table>
 </div>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#about">About</a></li>
-<li><a href="#tokens_list">Tokens List</a></li>
-<li><a href="#mit_license">MIT License</a></li>
-</ul>
 </div>
 </div>
 <div class="sect1">
@@ -496,6 +507,9 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <div class="sect1">
 <h2 id="tokens_list"><a class="anchor" href="#tokens_list"></a>Tokens List</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The &#8220;Token name&#8221; column shows the tokens identifiers used in the Ruby sources of lexers and themes, whereas the &#8220;Short&#8221; columns shows their CSS class names.</p>
+</div>
 <table class="tableblock frame-all grid-all stripes-even fit-content">
 <colgroup>
 <col>
@@ -516,7 +530,7 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any type of text data</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Text.Whitespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Text::Whitespace</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>w</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specially highlighted whitespace</p></td>
 </tr>
@@ -536,27 +550,27 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any keyword</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword.Constant</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Constant</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>kc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keywords that are constants</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword.Declaration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Declaration</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>kd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keywords used for variable declaration (e.g. <code>var</code> in JavaScript)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword.Namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Namespace</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>kn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keywords used for namespace declarations</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword.Pseudo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Pseudo</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>kp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keywords that aren&#8217;t really keywords</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword.Reserved</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Reserved</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>kr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keywords which are reserved (such as <code>end</code> in Ruby)</p></td>
 </tr>
@@ -571,92 +585,92 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variable/function names</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Attribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Attribute</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>na</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attributes (in HTML for instance)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Builtin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Builtin</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Built-in names which are available in the global namespace</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Builtin.Pseudo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Builtin::Pseudo</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Built-in names that are implicit (such as <code>self</code> in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Class</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For class declaration</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Constant</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Constant</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>no</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For constants</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Decorator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Decorator</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For decorators in languages such as Python or Java</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Entity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Entity</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ni</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token for entities such as <code>&nbsp;</code> in HTML</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Exception</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ne</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exceptions and errors (e.g. <code>ArgumentError</code> in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Function</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Function</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nf</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Function names</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Property</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Property</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>py</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token for properties</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Label</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Label</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nl</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For label names</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Namespace</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token for namespaces</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Other</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Other</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nx</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For other names</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Tag</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Tag</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nt</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag mainly for markup such as XML or HTML</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Variable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token for variables</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Variable.Class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable::Class</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>vc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token for class variables (e.g. <code>@@var</code> in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Variable.Global</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable::Global</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>vg</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For global variables (such as <code>$LOAD_PATH</code> in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name.Variable.Instance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable::Instance</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>vi</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token for instance variables (such as <code>@var</code> in Ruby)</p></td>
 </tr>
@@ -666,107 +680,107 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any literal (if not further defined)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Date</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ld</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>s</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Backtick</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Backtick</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String enclosed in backticks</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Char</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Char</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token type for single characters</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Doc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Doc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Documentation strings (such as in Python)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Double</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Double</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>s2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Double quoted strings</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Escape</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Escape</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>se</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Escaped sequences in strings</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Heredoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Heredoc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sh</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For &#8220;heredoc&#8221; strings (e.g. in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Interpol</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Interpol</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>si</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For interpolated parts in strings (e.g. in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Other</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Other</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sx</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Token type for any other strings (for example <code>%q{foo}</code> string constructs in Ruby)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For any other strings (e.g. <code>%q{foo}</code> string constructs in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Regex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Regex</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Regular expressions literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Single</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Single</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>s1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Single quoted strings</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.String.Symbol</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String.Symbol</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ss</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Symbols (such as <code>:foo</code> in Ruby)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>m</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any number literal (if not further defined)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Float</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Float</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mf</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Float numbers</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Hex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Hex</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mh</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hexadecimal numbers</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Integer</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mi</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Integer.Long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Integer.Long</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>il</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Long integer literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Oct</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Oct</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mo</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Octal literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Hex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Hex</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mx</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hexadecimal literals</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal.Number.Bin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Bin</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Binary literals</p></td>
 </tr>
@@ -776,7 +790,7 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Operators (commonly <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Operator.Word</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Operator::Word</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ow</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Word operators (e.g. <code>and</code>)</p></td>
 </tr>
@@ -791,22 +805,22 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Single line comments</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment.Multiline</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Multiline</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cm</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiline comments</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment.Preproc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Preproc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preprocessor comments such as <code>&lt;% %&gt;</code> in ERb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preprocessor comments such as <code>&lt;% %&gt;</code> in ERB</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment.Single</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Single</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>c1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comments that end at the end of the line</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment.Special</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Special</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cs</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Special data in comments such as <code>@license</code> in Javadoc</p></td>
 </tr>
@@ -816,59 +830,444 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unstyled token</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Deleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Deleted</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token value as deleted</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Emph</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Emph</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ge</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token value as emphasized</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Error</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token value as an error message</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Heading</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Heading</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gh</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token value as a headline</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Inserted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Inserted</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gi</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token value as inserted</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Output</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Output</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>go</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Marked as a program output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Prompt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Prompt</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Marked as a command prompt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Strong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Strong</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gs</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mark the token value as bold (for rst lexer)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Subheading</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Subheading</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gu</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Marked as a subheadline</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Traceback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Traceback</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gt</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mark the token as a part of an error traceback</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic.Lineno</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Lineno</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gl</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Line numbers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="css_classes_lookup"><a class="anchor" href="#css_classes_lookup"></a>CSS Classes Lookup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This table is a quick reference to lookup an HTML/CSS token class and find its matching Ruby token name.
+CSS tokens are sorted asciibetically for quick lookup.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">css</th>
+<th class="tableblock halign-left valign-top">Token name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Text</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any type of text data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Builtin::Pseudo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Built-in names that are implicit (such as <code>self</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single line comments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Single</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments that end at the end of the line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Multiline</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiline comments</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Preproc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preprocessor comments such as <code>&lt;% %&gt;</code> in ERB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Comment::Special</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Special data in comments such as <code>@license</code> in Javadoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>err</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lexer errors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>g</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unstyled token</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Deleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token value as deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Emph</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token value as emphasized</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gh</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Heading</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token value as a headline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Inserted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token value as inserted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Lineno</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line numbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>go</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Output</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marked as a program output</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Prompt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marked as a command prompt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token value as an error message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Strong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark the token value as bold (for rst lexer)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Traceback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark the token as a part of an error traceback</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generic::Subheading</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marked as a subheadline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>il</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Integer.Long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Long integer literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>k</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any keyword</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Constant</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keywords that are constants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Declaration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keywords used for variable declaration (e.g. <code>var</code> in JavaScript)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keywords used for namespace declarations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Pseudo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keywords that aren&#8217;t really keywords</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword::Reserved</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keywords which are reserved (such as <code>end</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Keyword.Type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keywords wich refer to a type id (such as <code>int</code> in C)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>l</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any literal (if not further defined)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ld</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any number literal (if not further defined)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Bin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Binary literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mf</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Float</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Float numbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mh</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Hex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hexadecimal numbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Oct</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Octal literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mx</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::Number::Hex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hexadecimal literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variable/function names</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>na</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Attribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attributes (in HTML for instance)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Builtin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Built-in names which are available in the global namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For class declaration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Decorator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For decorators in languages such as Python or Java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ne</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exceptions and errors (e.g. <code>ArgumentError</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nf</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Function</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Function names</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ni</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Entity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for entities such as <code>&nbsp;</code> in HTML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Label</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For label names</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for namespaces</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>no</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Constant</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For constants</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Tag</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag mainly for markup such as XML or HTML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for variables</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nx</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Other</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For other names</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Operator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operators (commonly <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ow</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Operator::Word</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Word operators (e.g. <code>and</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Punctuation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punctuation which is not an operator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Property</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Single</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single quoted strings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Double</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Double quoted strings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Backtick</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String enclosed in backticks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Char</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token type for single characters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Doc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documentation strings (such as in Python)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>se</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Escape</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Escaped sequences in strings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sh</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Heredoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For &#8220;heredoc&#8221; strings (e.g. in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>si</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Interpol</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For interpolated parts in strings (e.g. in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Regex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular expressions literals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ss</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String.Symbol</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbols (such as <code>:foo</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sx</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Literal::String::Other</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For any other strings (e.g. <code>%q{foo}</code> string constructs in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>vc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable::Class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for class variables (e.g. <code>@@var</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>vg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable::Global</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For global variables (such as <code>$LOAD_PATH</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>vi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name::Variable::Instance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for instance variables (such as <code>@var</code> in Ruby)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>w</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Text::Whitespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specially highlighted whitespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Other</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token for data not matched by a parser (e.g. HTML markup in PHP code)</p></td>
 </tr>
 </tbody>
 </table>
@@ -888,6 +1287,7 @@ Within lexers, you&#8217;ll access these tokens as constants, as in <code>Keywor
 <div class="content">
 <pre>MIT License
 
+Copyright (c) 2021 Tristano Ajmone.
 Copyright (c) 2012 Jeanine Adkisson.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -914,6 +1314,7 @@ THE SOFTWARE.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
+Version 2<br>
 </div>
 </div>
 </body>

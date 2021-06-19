@@ -1,5 +1,7 @@
 = Rouge Tokens List
-:toc: preamble
+Tristano Ajmone <tajmone@gmail.com>
+v2, 2021-06-19
+:toc: left
 :idprefix:
 :experimental: true
 :icons: font
@@ -7,6 +9,7 @@
 :reproducible: true
 :sectanchors:
 
+Quick references for Rouge lexers and themes authors, with emphasis on token names and their corresponding classes in HTML documents, in order to control code styles via custom CSS.
 
 NOTE: Adapted from
 https://github.com/rouge-ruby/rouge/wiki/List-of-tokens[Rouge's Wiki » List of tokens^],
@@ -29,83 +32,171 @@ TIP: Within lexers, you'll access these tokens as constants, as in `Keyword::Con
 == Tokens List
 
 
+The "`Token name`" column shows the tokens identifiers used in the Ruby sources of lexers and themes, whereas the "`Short`" columns shows their CSS class names.
+
 [cols="2*<m,<d",options="header,autowidth",stripes=even]
 |===============================================================================
-| Token name                | Short | Description
+| Token name                  | Short | Description
 
-| Text                        |     | Any type of text data
-| Text.Whitespace             | w   | Specially highlighted whitespace
-| Error                       | err | Lexer errors
-| Other                       | x   | Token for data not matched by a parser (e.g. HTML markup in PHP code)
-| Keyword                     | k   | Any keyword
-| Keyword.Constant            | kc  | Keywords that are constants
-| Keyword.Declaration         | kd  | Keywords used for variable declaration (e.g. `var` in JavaScript)
-| Keyword.Namespace           | kn  | Keywords used for namespace declarations
-| Keyword.Pseudo              | kp  | Keywords that aren't really keywords
-| Keyword.Reserved            | kr  | Keywords which are reserved (such as `end` in Ruby)
-| Keyword.Type                | kt  | Keywords wich refer to a type id (such as `int` in C)
-| Name                        | n   | Variable/function names
-| Name.Attribute              | na  | Attributes (in HTML for instance)
-| Name.Builtin                | nb  | Built-in names which are available in the global namespace
-| Name.Builtin.Pseudo         | bp  | Built-in names that are implicit (such as `self` in Ruby)
-| Name.Class                  | nc  | For class declaration
-| Name.Constant               | no  | For constants
-| Name.Decorator              | nd  | For decorators in languages such as Python or Java
-| Name.Entity                 | ni  | Token for entities such as `&nbsp;` in HTML
-| Name.Exception              | ne  | Exceptions and errors (e.g. `ArgumentError` in Ruby)
-| Name.Function               | nf  | Function names
-| Name.Property               | py  | Token for properties
-| Name.Label                  | nl  | For label names
-| Name.Namespace              | nn  | Token for namespaces
-| Name.Other                  | nx  | For other names
-| Name.Tag                    | nt  | Tag mainly for markup such as XML or HTML
-| Name.Variable               | nv  | Token for variables
-| Name.Variable.Class         | vc  | Token for class variables (e.g. `@@var` in Ruby)
-| Name.Variable.Global        | vg  | For global variables (such as `$LOAD_PATH` in Ruby)
-| Name.Variable.Instance      | vi  | Token for instance variables (such as `@var` in Ruby)
-| Literal                     | l   | Any literal (if not further defined)
-| Literal.Date                | ld  | Date literals
-| Literal.String              | s   | String literals
-| Literal.String.Backtick     | sb  | String enclosed in backticks
-| Literal.String.Char         | sc  | Token type for single characters
-| Literal.String.Doc          | sd  | Documentation strings (such as in Python)
-| Literal.String.Double       | s2  | Double quoted strings
-| Literal.String.Escape       | se  | Escaped sequences in strings
-| Literal.String.Heredoc      | sh  | For "`heredoc`" strings (e.g. in Ruby)
-| Literal.String.Interpol     | si  | For interpolated parts in strings (e.g. in Ruby)
-| Literal.String.Other        | sx  | Token type for any other strings (for example `%q{foo}` string constructs in Ruby)
-| Literal.String.Regex        | sr  | Regular expressions literals
-| Literal.String.Single       | s1  | Single quoted strings
-| Literal.String.Symbol       | ss  | Symbols (such as `:foo` in Ruby)
-| Literal.Number              | m   | Any number literal (if not further defined)
-| Literal.Number.Float        | mf  | Float numbers
-| Literal.Number.Hex          | mh  | Hexadecimal numbers
-| Literal.Number.Integer      | mi  | Integer literals
-| Literal.Number.Integer.Long | il  | Long integer literals
-| Literal.Number.Oct          | mo  | Octal literals
-| Literal.Number.Hex          | mx  | Hexadecimal literals
-| Literal.Number.Bin          | mb  | Binary literals
-| Operator                    | o   | Operators (commonly `+`, `-`, `/`, `*`)
-| Operator.Word               | ow  | Word operators (e.g. `and`)
-| Punctuation                 | p   | Punctuation which is not an operator
-| Comment                     | c   | Single line comments
-| Comment.Multiline           | cm  | Multiline comments
-| Comment.Preproc             | cp  | Preprocessor comments such as `<% %>` in ERb
-| Comment.Single              | c1  | Comments that end at the end of the line
-| Comment.Special             | cs  | Special data in comments such as `@license` in Javadoc
-| Generic                     | g   | Unstyled token
-| Generic.Deleted             | gd  | Token value as deleted
-| Generic.Emph                | ge  | Token value as emphasized
-| Generic.Error               | gr  | Token value as an error message
-| Generic.Heading             | gh  | Token value as a headline
-| Generic.Inserted            | gi  | Token value as inserted
-| Generic.Output              | go  | Marked as a program output
-| Generic.Prompt              | gp  | Marked as a command prompt
-| Generic.Strong              | gs  | Mark the token value as bold (for rst lexer)
-| Generic.Subheading          | gu  | Marked as a subheadline
-| Generic.Traceback           | gt  | Mark the token as a part of an error traceback
-| Generic.Lineno              | gl  | Line numbers
+| Text                          |     | Any type of text data
+| Text::Whitespace              | w   | Specially highlighted whitespace
+| Error                         | err | Lexer errors
+| Other                         | x   | Token for data not matched by a parser (e.g. HTML markup in PHP code)
+| Keyword                       | k   | Any keyword
+| Keyword::Constant             | kc  | Keywords that are constants
+| Keyword::Declaration          | kd  | Keywords used for variable declaration (e.g. `var` in JavaScript)
+| Keyword::Namespace            | kn  | Keywords used for namespace declarations
+| Keyword::Pseudo               | kp  | Keywords that aren't really keywords
+| Keyword::Reserved             | kr  | Keywords which are reserved (such as `end` in Ruby)
+| Keyword.Type                  | kt  | Keywords wich refer to a type id (such as `int` in C)
+| Name                          | n   | Variable/function names
+| Name::Attribute               | na  | Attributes (in HTML for instance)
+| Name::Builtin                 | nb  | Built-in names which are available in the global namespace
+| Name::Builtin::Pseudo         | bp  | Built-in names that are implicit (such as `self` in Ruby)
+| Name::Class                   | nc  | For class declaration
+| Name::Constant                | no  | For constants
+| Name::Decorator               | nd  | For decorators in languages such as Python or Java
+| Name::Entity                  | ni  | Token for entities such as `&nbsp;` in HTML
+| Name::Exception               | ne  | Exceptions and errors (e.g. `ArgumentError` in Ruby)
+| Name::Function                | nf  | Function names
+| Name::Property                | py  | Token for properties
+| Name::Label                   | nl  | For label names
+| Name::Namespace               | nn  | Token for namespaces
+| Name::Other                   | nx  | For other names
+| Name::Tag                     | nt  | Tag mainly for markup such as XML or HTML
+| Name::Variable                | nv  | Token for variables
+| Name::Variable::Class         | vc  | Token for class variables (e.g. `@@var` in Ruby)
+| Name::Variable::Global        | vg  | For global variables (such as `$LOAD_PATH` in Ruby)
+| Name::Variable::Instance      | vi  | Token for instance variables (such as `@var` in Ruby)
+| Literal                       | l   | Any literal (if not further defined)
+| Literal::Date                 | ld  | Date literals
+| Literal::String               | s   | String literals
+| Literal::String::Backtick     | sb  | String enclosed in backticks
+| Literal::String::Char         | sc  | Token type for single characters
+| Literal::String::Doc          | sd  | Documentation strings (such as in Python)
+| Literal::String::Double       | s2  | Double quoted strings
+| Literal::String::Escape       | se  | Escaped sequences in strings
+| Literal::String::Heredoc      | sh  | For "`heredoc`" strings (e.g. in Ruby)
+| Literal::String::Interpol     | si  | For interpolated parts in strings (e.g. in Ruby)
+| Literal::String::Other        | sx  | For any other strings (e.g. `%q{foo}` string constructs in Ruby)
+| Literal::String::Regex        | sr  | Regular expressions literals
+| Literal::String::Single       | s1  | Single quoted strings
+| Literal::String.Symbol        | ss  | Symbols (such as `:foo` in Ruby)
+| Literal::Number               | m   | Any number literal (if not further defined)
+| Literal::Number::Float        | mf  | Float numbers
+| Literal::Number::Hex          | mh  | Hexadecimal numbers
+| Literal::Number::Integer      | mi  | Integer literals
+| Literal::Number::Integer.Long | il  | Long integer literals
+| Literal::Number::Oct          | mo  | Octal literals
+| Literal::Number::Hex          | mx  | Hexadecimal literals
+| Literal::Number::Bin          | mb  | Binary literals
+| Operator                      | o   | Operators (commonly `+`, `-`, `/`, `*`)
+| Operator::Word                | ow  | Word operators (e.g. `and`)
+| Punctuation                   | p   | Punctuation which is not an operator
+| Comment                       | c   | Single line comments
+| Comment::Multiline            | cm  | Multiline comments
+| Comment::Preproc              | cp  | Preprocessor comments such as `<% %>` in ERB
+| Comment::Single               | c1  | Comments that end at the end of the line
+| Comment::Special              | cs  | Special data in comments such as `@license` in Javadoc
+| Generic                       | g   | Unstyled token
+| Generic::Deleted              | gd  | Token value as deleted
+| Generic::Emph                 | ge  | Token value as emphasized
+| Generic::Error                | gr  | Token value as an error message
+| Generic::Heading              | gh  | Token value as a headline
+| Generic::Inserted             | gi  | Token value as inserted
+| Generic::Output               | go  | Marked as a program output
+| Generic::Prompt               | gp  | Marked as a command prompt
+| Generic::Strong               | gs  | Mark the token value as bold (for rst lexer)
+| Generic::Subheading           | gu  | Marked as a subheadline
+| Generic::Traceback            | gt  | Mark the token as a part of an error traceback
+| Generic::Lineno               | gl  | Line numbers
 |===============================================================================
+
+
+== CSS Classes Lookup
+
+This table is a quick reference to lookup an HTML/CSS token class and find its matching Ruby token name.
+CSS tokens are sorted asciibetically for quick lookup.
+
+[cols="2*<m,<d",options="header,autowidth",stripes=even]
+|===============================================================================
+| css | Token name                    | Description
+
+|     | Text                          | Any type of text data
+| bp  | Name::Builtin::Pseudo         | Built-in names that are implicit (such as `self` in Ruby)
+| c   | Comment                       | Single line comments
+| c1  | Comment::Single               | Comments that end at the end of the line
+| cm  | Comment::Multiline            | Multiline comments
+| cp  | Comment::Preproc              | Preprocessor comments such as `<% %>` in ERB
+| cs  | Comment::Special              | Special data in comments such as `@license` in Javadoc
+| err | Error                         | Lexer errors
+| g   | Generic                       | Unstyled token
+| gd  | Generic::Deleted              | Token value as deleted
+| ge  | Generic::Emph                 | Token value as emphasized
+| gh  | Generic::Heading              | Token value as a headline
+| gi  | Generic::Inserted             | Token value as inserted
+| gl  | Generic::Lineno               | Line numbers
+| go  | Generic::Output               | Marked as a program output
+| gp  | Generic::Prompt               | Marked as a command prompt
+| gr  | Generic::Error                | Token value as an error message
+| gs  | Generic::Strong               | Mark the token value as bold (for rst lexer)
+| gt  | Generic::Traceback            | Mark the token as a part of an error traceback
+| gu  | Generic::Subheading           | Marked as a subheadline
+| il  | Literal::Number::Integer.Long | Long integer literals
+| k   | Keyword                       | Any keyword
+| kc  | Keyword::Constant             | Keywords that are constants
+| kd  | Keyword::Declaration          | Keywords used for variable declaration (e.g. `var` in JavaScript)
+| kn  | Keyword::Namespace            | Keywords used for namespace declarations
+| kp  | Keyword::Pseudo               | Keywords that aren't really keywords
+| kr  | Keyword::Reserved             | Keywords which are reserved (such as `end` in Ruby)
+| kt  | Keyword.Type                  | Keywords wich refer to a type id (such as `int` in C)
+| l   | Literal                       | Any literal (if not further defined)
+| ld  | Literal::Date                 | Date literals
+| m   | Literal::Number               | Any number literal (if not further defined)
+| mb  | Literal::Number::Bin          | Binary literals
+| mf  | Literal::Number::Float        | Float numbers
+| mh  | Literal::Number::Hex          | Hexadecimal numbers
+| mi  | Literal::Number::Integer      | Integer literals
+| mo  | Literal::Number::Oct          | Octal literals
+| mx  | Literal::Number::Hex          | Hexadecimal literals
+| n   | Name                          | Variable/function names
+| na  | Name::Attribute               | Attributes (in HTML for instance)
+| nb  | Name::Builtin                 | Built-in names which are available in the global namespace
+| nc  | Name::Class                   | For class declaration
+| nd  | Name::Decorator               | For decorators in languages such as Python or Java
+| ne  | Name::Exception               | Exceptions and errors (e.g. `ArgumentError` in Ruby)
+| nf  | Name::Function                | Function names
+| ni  | Name::Entity                  | Token for entities such as `&nbsp;` in HTML
+| nl  | Name::Label                   | For label names
+| nn  | Name::Namespace               | Token for namespaces
+| no  | Name::Constant                | For constants
+| nt  | Name::Tag                     | Tag mainly for markup such as XML or HTML
+| nv  | Name::Variable                | Token for variables
+| nx  | Name::Other                   | For other names
+| o   | Operator                      | Operators (commonly `+`, `-`, `/`, `*`)
+| ow  | Operator::Word                | Word operators (e.g. `and`)
+| p   | Punctuation                   | Punctuation which is not an operator
+| py  | Name::Property                | Token for properties
+| s   | Literal::String               | String literals
+| s1  | Literal::String::Single       | Single quoted strings
+| s2  | Literal::String::Double       | Double quoted strings
+| sb  | Literal::String::Backtick     | String enclosed in backticks
+| sc  | Literal::String::Char         | Token type for single characters
+| sd  | Literal::String::Doc          | Documentation strings (such as in Python)
+| se  | Literal::String::Escape       | Escaped sequences in strings
+| sh  | Literal::String::Heredoc      | For "`heredoc`" strings (e.g. in Ruby)
+| si  | Literal::String::Interpol     | For interpolated parts in strings (e.g. in Ruby)
+| sr  | Literal::String::Regex        | Regular expressions literals
+| ss  | Literal::String.Symbol        | Symbols (such as `:foo` in Ruby)
+| sx  | Literal::String::Other        | For any other strings (e.g. `%q{foo}` string constructs in Ruby)
+| vc  | Name::Variable::Class         | Token for class variables (e.g. `@@var` in Ruby)
+| vg  | Name::Variable::Global        | For global variables (such as `$LOAD_PATH` in Ruby)
+| vi  | Name::Variable::Instance      | Token for instance variables (such as `@var` in Ruby)
+| w   | Text::Whitespace              | Specially highlighted whitespace
+| x   | Other                         | Token for data not matched by a parser (e.g. HTML markup in PHP code)
+|===============================================================================
+
+
 
 
 == MIT License
@@ -115,6 +206,7 @@ TIP: Within lexers, you'll access these tokens as constants, as in `Keyword::Con
 .................
 MIT License
 
+Copyright (c) 2021 Tristano Ajmone.
 Copyright (c) 2012 Jeanine Adkisson.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
