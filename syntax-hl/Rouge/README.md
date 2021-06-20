@@ -12,6 +12,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 - [Directory Contents](#directory-contents)
 - [Objectives](#objectives)
 - [Overview](#overview)
+    - [The ALAN Lexer](#the-alan-lexer)
 - [Tech Info](#tech-info)
     - [Custom Lexers with Rougify via CLI](#custom-lexers-with-rougify-via-cli)
     - [Custom Lexers via Rouge API](#custom-lexers-via-rouge-api)
@@ -32,7 +33,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 
 Custom Ruby scripts, lexers and libraries:
 
-- [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed elsewhere)
+- [`alan3.rb`][alan3.rb] — custom Rouge lexer for Alan (WIP, developed here)
 - [`custom-rouge-adapter.rb`][custom-rouge-adapter.rb] — tweaks the Rouge adapter for Asciidoctor that loads (requires) our `alan3.rb` lexer.
 
 Tests:
@@ -71,6 +72,23 @@ We'd also like to be able to use our own Rouge lexers (i.e. syntax definitions),
 E.g. we might need some in-house custom lexers for BNF, ALAN transcripts, etc., none of which is likely to qualify for integration in the official Rouge gem.
 
 Furthermore, we'd like to bypass Asciidoctor's inclusion of Rouge themes in the generated HTML, and use our custom CSS stylesheets for colouring code blocks, in order to provide different themes for each language, as well as alternative themes for Alan, based on the block's `role`.
+
+
+## The ALAN Lexer
+
+Initially I started to work on the ALAN lexer ([`alan3.rb`][alan3.rb]) elsewhere, in my own fork of the [Rouge repository].
+I've now started to develop the syntax here, because the current test toolchain found in this folder is simpler to use, and I can check the result using a custom theme ([`themes/alan-b16-eighties.rb`][alan-b16-eighties.rb]), which also simplifies tests since it colours some token classes not covered by Rouge's default themes, but required for ALAN.
+
+The lexer filename (`alan3.rb`) and its associated syntax name (`alan3`) and aliases (`alan-if` and `alan`) are all temporary and might change in the final version.
+If we're going to submit the lexer to the Rouge gem repository, we'll have to drop the `alan` alias and adopt `alan-if` as the syntax name instead, to avoid clashes with the [Alan programming language] developed by [Alan Technologies, Inc]  (see [alantech/alan#548]).
+
+The problem is that currently all the documents in the __[ALAN Docs]__ and __[ALAN StdLib]__ projects (and others) are using `alan` as the source syntax name, so we'd have to change all its occurrences in the Asciidoctor sources, and also change the syntax name in the other highlighters too (e.g. the one used for the __[asciidoctor-fopub]__ PDF backend, which we'll be still using even after switching to Rouge, at least until we drop it in favour of the __[asciidoctor-pdf]__ backend).
+
+We can always keep `alan3` as an alias, in case in the future we implement a lexer for ALAN 2.
+
+As for the lexer features, I'm planning to use the full power of Rouge and Ruby to create a semantically detailed lexer, which will match tokens as accurately as possible.
+
+For our use in the ALAN Docs project, we'll probably end up hiding all these semantic details by assigning the same colour to related tokens, in order to keep the syntax appearance simpler for the reader.
 
 
 # Tech Info
@@ -182,6 +200,11 @@ We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] fo
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
+[ALAN Docs]: https://github.com/alan-if/alan-docs "Visit the ALAN Docs repository on GitHub"
+[ALAN StdLib]: https://github.com/AnssiR66/AlanStdLib "Visit the ALAN Standard Library repository on GitHub"
+
+<!-- Rouge -->
+
 [Rouge]: http://rouge.jneen.net "Rouge website"
 [Rouge repository]: https://github.com/rouge-ruby/rouge "Rouge repository on GitHub"
 [Rouge documentation]: https://rouge-ruby.github.io/docs/ "Rouge online documentation"
@@ -210,10 +233,16 @@ We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] fo
 [Highlight]: http://www.andre-simon.de "Highlight website"
 [Redcarpet]: https://github.com/vmg/redcarpet "Redcarpet repository on GitHub"
 
+<!-- Alan Tech Inc. -->
+
+[Alan programming language]: https://alan-lang.org "Alan programming language website"
+[alantech/alan#548]: https://github.com/alantech/alan/issues/548 "Issue #548 — Name Clashes with ALAN IF Language"
+[Alan Technologies, Inc]: https://github.com/alantech "View Alan Technologies, Inc's GitHub profile"
+
 <!-- project files and folders -->
 
 [/themes/]: ./themes/ "Navigate to folder"
-
+[alan-b16-eighties.rb]: ./themes/alan-b16-eighties.rb
 
 [alan3.rb]: ./alan3.rb "View source file"
 
