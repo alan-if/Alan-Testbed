@@ -24,8 +24,9 @@ Created by [Tristano Ajmone], June 6, 2021; released under [Apache License 2.0].
 
 # Project Contents
 
-- [`/Highlight/`](./Highlight/) — Highlight syntax highlighter tests.
-- [`/Rouge/`](./Rouge/) — Rouge syntax highlighter tests.
+- [`/syntax-hl/`][/syntax-hl/] — syntax highlighters tests:
+    + [`/Highlight/`][/Highlight/]
+    + [`/Rouge/`][/Rouge/]
 - [`/utf8/`](./utf8/) — ALAN Beta8 UTF-8 support tests.
 
 
@@ -136,6 +137,10 @@ limitations under the License.
 [Travis CI]: https://travis-ci.com/ "Visit Travis CI website"
 
 <!-- project files and folders -->
+
+[/syntax-hl/]: ./syntax-hl/
+[/Highlight/]: ./syntax-hl/Highlight/
+[/Rouge/]: ./syntax-hl/Rouge/
 
 [LICENSE]: ./LICENSE "View full text of the Apache License 2.0"
 

@@ -220,7 +220,7 @@ We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] fo
 [asciidoctor-example.asciidoc]: ./asciidoctor-example.asciidoc
 [asciidoctor-example.html]: ./asciidoctor-example.html
 [asciidoctor-example.sh]: ./asciidoctor-example.sh
-[ADoc Ex Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/Rouge/asciidoctor-example.html "Live HTML Preview of 'asciidoctor-example.htm'"
+[ADoc Ex Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/asciidoctor-example.html "Live HTML Preview of 'asciidoctor-example.htm'"
 
 [custom-rouge-adapter.rb]: ./custom-rouge-adapter.rb
 [rougify-term.sh]: ./rougify-term.sh "View source file"

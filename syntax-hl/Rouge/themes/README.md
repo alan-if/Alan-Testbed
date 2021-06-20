@@ -104,6 +104,6 @@ THE SOFTWARE.
 
 [Rouge-Tokens.adoc]: ./Rouge-Tokens.adoc
 [Rouge-Tokens.html]: ./Rouge-Tokens.html
-[Tokens Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/Rouge/themes/Rouge-Tokens.html "Live HTML Preview of 'Rouge-Tokens.htm'"
+[Tokens Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/themes/Rouge-Tokens.html "Live HTML Preview of 'Rouge-Tokens.htm'"
 
 <!-- EOF -->
