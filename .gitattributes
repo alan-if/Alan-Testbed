@@ -44,6 +44,9 @@
 #######
 *.rb   text
 
+## Misc
+#######
+*.css   text eol=lf    linguist-generated=true
 
 ## Documentation
 ################

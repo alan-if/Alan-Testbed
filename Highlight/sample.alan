@@ -1,0 +1,25 @@
+﻿-- This is a single line comment.
+
+The Kitchen is a location.
+Description "A minimalist kitchen, with the bare essential."
+End The.
+
+////
+commet block
+/////
+
+Every door is a object.
+End Every.
+
+//// Alan Beta8 :: Syntax Highlighter Sample UTF-8 BOM /////////////////
+This is a block comment!
+Starts by a line beginning with 4 forward slashes, followed by anything.
+Ends with line containing 4 or more slashes, and nothing else.
+////////////////////////////////////////////////////////////////////////
+
+The Kitchen is a location.
+Description "A minimalist kitchen, with the bare essential."
+End The.
+
+
+Start at Kitchen.

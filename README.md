@@ -24,6 +24,7 @@ Created by [Tristano Ajmone], June 6, 2021; released under [Apache License 2.0].
 
 # Project Contents
 
+- [`/Highlight/`](./Highlight/) — Highlight syntax highlighter tests.
 - [`/Rouge/`](./Rouge/) — Rouge syntax highlighter tests.
 - [`/utf8/`](./utf8/) — ALAN Beta8 UTF-8 support tests.
 

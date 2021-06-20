@@ -1,0 +1,27 @@
+= Hihglight for ALAN Sample
+Tristano Ajmone <tajmone@gmail.com>
+v1, 2021-06-18
+
+== ALAN Code
+
+
+The following code blocks are in UTF-8 with BOM, highlighted using Highlight.
+
+[source,alan]
+----------------------
+include::sample.alan[]
+----------------------
+
+
+[source,alan,role="lib"]
+----------------------
+include::sample.alan[]
+----------------------
+
+[source,alan,role="tutorial"]
+----------------------
+include::sample.alan[]
+----------------------
+
+
+// EOF //
