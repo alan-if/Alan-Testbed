@@ -1,6 +1,21 @@
 # -*- coding: utf-8 -*- #
 # frozen_string_literal: true
 
+=begin
+================================================================================
+ALAN IF Syntax Definition for Rouge  | 2021/06/20 | Alan 3.0beta8 | Rouge 3.26.0
+--------------------------------------------------------------------------------
+Created by Tristano Ajmone; (c) Copyright by The ALAN IF Development team,
+released under the MIT License:
+
+  https://github.com/alan-if
+  https://www.alanif.se
+--------------------------------------------------------------------------------
+Custom lexer, still WIP. The lexer filename "alan3.rb", as well as the syntax
+tag and its aliases are temporary and might change in the final version.
+================================================================================
+=end
+
 module Rouge
   module Lexers
     class Alan3 < RegexLexer
@@ -56,6 +71,8 @@ module Rouge
         mixin :whitespace
         # Comment single line
         rule %r(--[^\n]*), Comment::Single
+        # Comment block
+        rule %r(^\/{4}.*$), Comment::Single, :block_comment
 
         # Strings
         rule %r/"/, Str::Double::Delimiter, :string
@@ -102,10 +119,15 @@ module Rouge
 
       end # :root
 
+      state :block_comment do
+        rule %r/^\/{4,}$/, Comment::Multiline, :pop!
+        rule %r/.+/, Comment::Multiline
+      end
+
       state :filename do
         mixin :whitespace
         rule %r/'/, Str::Delimiter, :file_id
-        rule %r//, Punctuation, :pop! # Force pop back to parent context!!
+        rule(//) { pop! } # Force pop back to parent context!!
       end
 
       state :file_id do

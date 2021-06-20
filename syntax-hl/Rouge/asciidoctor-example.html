@@ -497,11 +497,10 @@ pre.rouge .si {
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="c1">-- "Test Alan Syntax for Highlight" by Tristano Ajmone</span><span class="w">
+</span><span class="c1">-- Alan IF syntax test file for the Rouge highlighter; by Tristano Ajmone.</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
 
 </span><span class="kr">THE</span><span class="w"> </span><span class="n">start_loc</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">LOCATION</span><span class="w">
-
 </span><span class="kr">END</span><span class="w"> </span><span class="kr">THE</span><span class="w"> </span><span class="n">start_loc</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">--==============================================================================</span><span class="w">
@@ -509,8 +508,35 @@ pre.rouge .si {
 </span><span class="c1">--==============================================================================</span><span class="w">
 
 </span><span class="kr">THE</span><span class="w"> </span><span class="n">città</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">LOCATION</span><span class="p">.</span><span class="w">
-
 </span><span class="kr">END</span><span class="w"> </span><span class="kr">THE</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- COMMENTS</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+
+</span><span class="c1">-- Single line comment.</span><span class="w">
+
+</span><span class="kr">Every</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Is</span><span class="w"> </span><span class="n">edible</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">Every</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">////</span><span class="err">
+</span><span class="cm">A block comment.</span><span class="err">
+</span><span class="cm">It's delimited by 4 forward slashes (/).</span><span class="err">
+</span><span class="cm">////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">apple</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">//// Anything can follow the opening delimiter! ////////////////////////////////</span><span class="err">
+</span><span class="cm">But the closing delimiter can only be followed by more forward slashes...</span><span class="err">
+</span><span class="cm">//// therefore this is not a closing delimiter!</span><span class="err">
+</span><span class="cm">But the next line is:</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">pear</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span><span class="w">
+
 
 </span><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="c1">-- OPERATORS</span><span class="w">
@@ -530,7 +556,7 @@ pre.rouge .si {
 </span><span class="kr">SET</span><span class="w"> </span><span class="n">eyes</span><span class="w"> </span><span class="kr">OF</span><span class="w"> </span><span class="n">first_die</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="kr">RANDOM</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="m">6</span><span class="p">.</span><span class="w">
 </span><span class="kr">DECREASE</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="kr">OF</span><span class="w"> </span><span class="n">room</span><span class="w"> </span><span class="kr">BY</span><span class="w"> </span><span class="kr">RANDOM</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="kr">OF</span><span class="w"> </span><span class="n">Room</span><span class="p">.</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="c1">-- The '=&gt;' Keyword (shorhand for 'THEN')</span><span class="w">
+</span><span class="c1">-- The '=&gt;' Keyword (shorthand for 'THEN')</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="kr">WHEN</span><span class="w"> </span><span class="n">hero</span><span class="w"> </span><span class="kr">AT</span><span class="w"> </span><span class="n">cave</span><span class="w">
   </span><span class="kr">AND</span><span class="w"> </span><span class="o">(</span><span class="n">monster</span><span class="w"> </span><span class="kr">IS</span><span class="w"> </span><span class="n">hungry</span><span class="w"> </span><span class="kr">OR</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="kr">IS</span><span class="w"> </span><span class="n">angry</span><span class="o">)</span><span class="w">

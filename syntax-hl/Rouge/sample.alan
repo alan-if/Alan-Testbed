@@ -1,9 +1,8 @@
 ﻿--==============================================================================
--- "Test Alan Syntax for Highlight" by Tristano Ajmone
+-- Alan IF syntax test file for the Rouge highlighter; by Tristano Ajmone.
 --==============================================================================
 
 THE start_loc IsA LOCATION
-
 END THE start_loc.
 
 --==============================================================================
@@ -11,8 +10,35 @@ END THE start_loc.
 --==============================================================================
 
 THE città IsA LOCATION.
-
 END THE.
+
+--==============================================================================
+-- COMMENTS
+--==============================================================================
+
+-- Single line comment.
+
+Every fruit IsA object.
+  Is edible.
+End Every.
+
+////
+A block comment.
+It's delimited by 4 forward slashes (/).
+////
+
+The apple IsA fruit.
+End the pear.
+
+//// Anything can follow the opening delimiter! ////////////////////////////////
+But the closing delimiter can only be followed by more forward slashes...
+//// therefore this is not a closing delimiter!
+But the next line is:
+////////////////////////////////////////////////////////////////////////////////
+
+The pear IsA fruit.
+End the pear.
+
 
 --==============================================================================
 -- OPERATORS
@@ -32,7 +58,7 @@ VERB put_in
 SET eyes OF first_die TO RANDOM 1 TO 6.
 DECREASE temp OF room BY RANDOM 0 TO temp OF Room.
 --==============================================================================
--- The '=>' Keyword (shorhand for 'THEN')
+-- The '=>' Keyword (shorthand for 'THEN')
 --==============================================================================
 WHEN hero AT cave
   AND (monster IS hungry OR monster IS angry)
