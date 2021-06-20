@@ -62,4 +62,10 @@ COPYING      text
 LICENSE      text
 UNLICENSE    text
 
+## Third Party Tools
+####################
+
+# ColorImpact 4 palettes collection:
+*.cifc   binary
+
 # EOF #

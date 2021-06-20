@@ -27,6 +27,7 @@ Created by [Tristano Ajmone], June 6, 2021; released under [Apache License 2.0].
 - [`/syntax-hl/`][/syntax-hl/] — syntax highlighters tests:
     + [`/Highlight/`][/Highlight/]
     + [`/Rouge/`][/Rouge/]
+    + [`/schemes/`][/schemes/]
 - [`/utf8/`](./utf8/) — ALAN Beta8 UTF-8 support tests.
 
 
@@ -138,9 +139,10 @@ limitations under the License.
 
 <!-- project files and folders -->
 
-[/syntax-hl/]: ./syntax-hl/
-[/Highlight/]: ./syntax-hl/Highlight/
-[/Rouge/]: ./syntax-hl/Rouge/
+[/syntax-hl/]: ./syntax-hl/ "Syntax highlighters tests and work folder"
+[/Highlight/]: ./syntax-hl/Highlight/ "Highlight syntax highlighter"
+[/Rouge/]: ./syntax-hl/Rouge/ "Rouge (Ruby) syntax highlighter"
+[/schemes/]: ./syntax-hl/schemes/ "Syntax highlighters themes"
 
 [LICENSE]: ./LICENSE "View full text of the Apache License 2.0"
 
