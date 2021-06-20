@@ -11,11 +11,12 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 
 - [Directory Contents](#directory-contents)
 - [Objectives](#objectives)
-- [Challenges](#challenges)
-- [Info](#info)
+- [Overview](#overview)
+- [Tech Info](#tech-info)
     - [Custom Lexers with Rougify via CLI](#custom-lexers-with-rougify-via-cli)
     - [Custom Lexers via Rouge API](#custom-lexers-via-rouge-api)
     - [Custom Lexers with Asciidoctor](#custom-lexers-with-asciidoctor)
+- [Credits](#credits)
 - [Links](#links)
     - [Rouge](#rouge)
     - [Asciidoctor](#asciidoctor)
@@ -44,29 +45,42 @@ Tests:
 
 # Objectives
 
+In order to integrate the Rouge highlighter with our ALAN Docs toolchain, we'll need to enforce our custom Rouge lexers on Asciidoctor, and provide custom themes for each language:
+
+- [x] Bypass the native Asciidoctor Rouge API with a custom adapter, which instructs Rouge on where to find and load the custom lexer definitions.
+- [ ] Define custom themes on a per language basis:
+    + [ ] HTML Backend
+        * [ ] Sass/CSS — for the HTML backend.
+        * [ ] Bypass Rouge default theme — i.e. tell Asciidoctor to not include any auto-generated Rouge theme, and rely entirely on our custom CSS, if possible.
+    + [ ] PDF Backend
+        * [ ] Asciidoctor-pdf? when we'll switch from the DocBook/[asciidoctor-fopub] toolchain to [asciidoctor-pdf] we'll need to find a way to customize syntax themes.
+- [ ] Invoke Asciidoctor via its Ruby API, which offers a higher degree of control in terms of options when interacting with the Rouge library, replacing Bash scripts with a Rake build system in our toolchain.
+
+In this directory we'll be testing various approaches and solutions, to see which one works better for us, and so that we may weigh the pros and cons of each.
+
+
+# Overview
+
 Rouge is a Ruby syntax highlighter which is natively supported by Asciidoctor in various backends.
 Our goal would be to employ Rouge for the HTML backend, instead of [Highlight], due to lack of callouts support with the latter (see [alan-docs#107] and [alan-docs#36]).
 
-We're also planning to migrate from [asciidoctor-fopub] to [asciidoctor-pdf] for the PDF backend, once the latter is more mature for our needs.
+We're also planning to migrate from [asciidoctor-fopub] to [asciidoctor-pdf] for the PDF backend, once the latter is more mature for our needs (v2.0).
 When this will happen, Rouge could be used for syntax highlighting PDF documents too, which lessens our dependencies and maintenance work considerably, beside ensuring stylistic consistency across the various documents formats.
 
 We'd also like to be able to use our own Rouge lexers (i.e. syntax definitions), tailored to our needs, instead of having to submit them to the upstream [Rouge repository] in order for Asciidoctor to be able to use them via the Rouge gem.
+E.g. we might need some in-house custom lexers for BNF, ALAN transcripts, etc., none of which is likely to qualify for integration in the official Rouge gem.
 
 Furthermore, we'd like to bypass Asciidoctor's inclusion of Rouge themes in the generated HTML, and use our custom CSS stylesheets for colouring code blocks, in order to provide different themes for each language, as well as alternative themes for Alan, based on the block's `role`.
 
-# Challenges
 
-In order to use custom Rouge lexers with Asciidoctor we'll need to either:
+# Tech Info
 
-1. Bypass Asciidoctor's native Rouge module with a custom extension, which could then instruct Rouge on where to find the custom lexer definitions.
-2. Invoke Asciidoctor via its Ruby API, which offers a higher degree of control in terms of options when interacting with the Rouge library.
+Some info on the nitty gritty technicalities surrounding Rouge, the Asciidoctor API and their usage.
 
-In this directory we'll be testing both approaches, to see which one works better for us, and so that we may weigh the pros and cons of both.
-
-
-# Info
 
 ## Custom Lexers with Rougify via CLI
+
+- [`rougify-term.sh`][rougify-term.sh] — highlights `sample.alan` in the terminal, via CLI, using our custom lexer.
 
 Assuming our lexer is called `alan3.rb`, to highlight the `sample.alan` file from the command line we only need to use the `--require`/`-r` option:
 
@@ -133,6 +147,13 @@ end
 
 They both produce equal results for our scope.
 
+
+# Credits
+
+We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] for his having helped us out with the solution on how to make Rouge require a custom lexer:
+
+- [asciidoctor#4080]
+
 -------------------------------------------------------------------------------
 
 # Links
@@ -184,8 +205,8 @@ They both produce equal results for our scope.
 
 <!-- 3rd Party tools -->
 
-[asciidoctor-fopub]: https://github.com/asciidoctor/asciidoctor-fopub
-[asciidoctor-pdf]: https://github.com/asciidoctor/asciidoctor-pdf
+[asciidoctor-fopub]: https://github.com/asciidoctor/asciidoctor-fopub "asciidoctor-fopub repository on GitHub"
+[asciidoctor-pdf]: https://github.com/asciidoctor/asciidoctor-pdf "asciidoctor-pdf repository on GitHub"
 [Highlight]: http://www.andre-simon.de "Highlight website"
 [Redcarpet]: https://github.com/vmg/redcarpet "Redcarpet repository on GitHub"
 
@@ -211,8 +232,10 @@ They both produce equal results for our scope.
 [alan-docs#36]: https://github.com/alan-if/alan-docs/issues/36
 [asciidoctor#4080]: https://github.com/asciidoctor/asciidoctor/issues/4080 "Rouge Highlighter: Add 'rouge-require' Option for Custom Lexers and Themes"
 
-<!-- people -->
+<!-- people and orgs -->
 
 [Dan Allen]: https://github.com/mojavelinux "View Dan Allen's GitHub profile"
+
+[Asciidoctor Project]: https://github.com/asciidoctor "View the Asciidoctor Project organization profile on GitHub"
 
 <!-- EOF -->
