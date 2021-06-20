@@ -1,10 +1,10 @@
 = Custom Rouge Syntaxes
 :source-highlighter: rouge
-:rouge-style: monokai
+:rouge-style: eighties
 
 == Alan
 
-[source,alan3]
+[source,alan]
 ----------------------
 include::sample.alan[]
 ----------------------

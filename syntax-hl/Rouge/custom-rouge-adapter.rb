@@ -1,12 +1,3 @@
-=begin
-require 'rouge'
-require './alan3.rb'
-
-class CustomRougeAdapter < (Asciidoctor::SyntaxHighlighter.for 'rouge')
-  register_for 'rouge'
-end
-=end
-
 class CustomRougeAdapter < (Asciidoctor::SyntaxHighlighter.for 'rouge')
   register_for 'rouge'
 
@@ -14,6 +5,7 @@ class CustomRougeAdapter < (Asciidoctor::SyntaxHighlighter.for 'rouge')
   def load_library
     require 'rouge'
     require './alan3.rb'
+    require './themes/alan-b16-eighties.rb'
     :loaded
   end
 end
