@@ -56,7 +56,7 @@ The "`Token name`" column shows the tokens identifiers used in the Ruby sources 
 | Name::Class                   | nc  | For class declaration
 | Name::Constant                | no  | For constants
 | Name::Decorator               | nd  | For decorators in languages such as Python or Java
-| Name::Entity                  | ni  | Token for entities such as `&nbsp;` in HTML
+| Name::Entity                  | ni  | Token for entities such as `\&nbsp;` in HTML
 | Name::Exception               | ne  | Exceptions and errors (e.g. `ArgumentError` in Ruby)
 | Name::Function                | nf  | Function names
 | Name::Property                | py  | Token for properties
@@ -166,7 +166,7 @@ CSS tokens are sorted asciibetically for quick lookup.
 | nd  | Name::Decorator               | For decorators in languages such as Python or Java
 | ne  | Name::Exception               | Exceptions and errors (e.g. `ArgumentError` in Ruby)
 | nf  | Name::Function                | Function names
-| ni  | Name::Entity                  | Token for entities such as `&nbsp;` in HTML
+| ni  | Name::Entity                  | Token for entities such as `\&nbsp;` in HTML
 | nl  | Name::Label                   | For label names
 | nn  | Name::Namespace               | Token for namespaces
 | no  | Name::Constant                | For constants
