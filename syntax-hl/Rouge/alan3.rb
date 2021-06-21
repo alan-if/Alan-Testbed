@@ -109,17 +109,20 @@ module Rouge
         rule id do |m|
           name = m[0].downcase
           if self.class.keywords_file.include? name
-            # Keywords which are followed by a filename:
+            # Keywords which are followed by a filename
             token Keyword::Reserved
             push :filename
           elsif self.class.keywords_generic.include? name
-            # all other keywords...
+            # all other keywords
             token Keyword::Reserved
           elsif self.class.predef_classes.include? name
-            # Predefined Alan classes...
+            # Predefined Alan classes
             token Name::Builtin
+          elsif name == "hero"
+            # Hardcoded Hero instance
+            token Name::Other
           else
-            # Just an identifier...
+            # Just an identifier
             token Name
           end
         end

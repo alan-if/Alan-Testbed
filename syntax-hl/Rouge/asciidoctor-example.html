@@ -457,11 +457,14 @@ pre.rouge .c1 {
   color: #a09f93;
   font-style: italic;
 }
-pre.rouge .n, pre.rouge .na, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.rouge .ni, pre.rouge .ne, pre.rouge .nf, pre.rouge .fm, pre.rouge .py, pre.rouge .nl, pre.rouge .nn, pre.rouge .nx, pre.rouge .nt, pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+pre.rouge .n, pre.rouge .na, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.rouge .ni, pre.rouge .ne, pre.rouge .nf, pre.rouge .fm, pre.rouge .py, pre.rouge .nl, pre.rouge .nn, pre.rouge .nt, pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
   color: #f2f0ec;
 }
 pre.rouge .nb, pre.rouge .bp {
   color: #ffcc66;
+}
+pre.rouge .nx {
+  color: #6699cc;
 }
 pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
   color: #f99157;
@@ -561,9 +564,9 @@ pre.rouge .si {
 </span><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="c1">-- The '=&gt;' Keyword (shorthand for 'THEN')</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="kr">WHEN</span><span class="w"> </span><span class="n">hero</span><span class="w"> </span><span class="kr">AT</span><span class="w"> </span><span class="n">cave</span><span class="w">
+</span><span class="kr">WHEN</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="kr">AT</span><span class="w"> </span><span class="n">cave</span><span class="w">
   </span><span class="kr">AND</span><span class="w"> </span><span class="o">(</span><span class="n">monster</span><span class="w"> </span><span class="kr">IS</span><span class="w"> </span><span class="n">hungry</span><span class="w"> </span><span class="kr">OR</span><span class="w"> </span><span class="n">monster</span><span class="w"> </span><span class="kr">IS</span><span class="w"> </span><span class="n">angry</span><span class="o">)</span><span class="w">
-  </span><span class="kr">AND</span><span class="w"> </span><span class="n">sword</span><span class="w"> </span><span class="kr">NOT</span><span class="w"> </span><span class="kr">IN</span><span class="w"> </span><span class="n">hero</span><span class="w">
+  </span><span class="kr">AND</span><span class="w"> </span><span class="n">sword</span><span class="w"> </span><span class="kr">NOT</span><span class="w"> </span><span class="kr">IN</span><span class="w"> </span><span class="nx">hero</span><span class="w">
 </span><span class="kr">=&gt;</span><span class="w">
   </span><span class="kr">USE</span><span class="w"> </span><span class="kr">SCRIPT</span><span class="w"> </span><span class="n">eat_hero</span><span class="w"> </span><span class="kr">FOR</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="w">
 </span><span class="kr">END</span><span class="w"> </span><span class="kr">WHEN</span><span class="p">.</span><span class="w">

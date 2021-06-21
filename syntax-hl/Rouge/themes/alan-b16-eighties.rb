@@ -40,6 +40,7 @@ module Rouge
             Comment::Single,          :fg => :base04, :italic => true
       style Name,                     :fg => :base07
       style Name::Builtin,            :fg => :base0A
+      style Name::Other,              :fg => :base0D
       style Literal::Number,          :fg => :base09
       style Keyword::Reserved,
             Punctuation,              :fg => :base08
