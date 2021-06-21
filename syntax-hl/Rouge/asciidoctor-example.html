@@ -457,8 +457,11 @@ pre.rouge .c1 {
   color: #a09f93;
   font-style: italic;
 }
-pre.rouge .n, pre.rouge .na, pre.rouge .nb, pre.rouge .bp, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.rouge .ni, pre.rouge .ne, pre.rouge .nf, pre.rouge .fm, pre.rouge .py, pre.rouge .nl, pre.rouge .nn, pre.rouge .nx, pre.rouge .nt, pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+pre.rouge .n, pre.rouge .na, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.rouge .ni, pre.rouge .ne, pre.rouge .nf, pre.rouge .fm, pre.rouge .py, pre.rouge .nl, pre.rouge .nn, pre.rouge .nx, pre.rouge .nt, pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
   color: #f2f0ec;
+}
+pre.rouge .nb, pre.rouge .bp {
+  color: #ffcc66;
 }
 pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
   color: #f99157;
@@ -476,13 +479,13 @@ pre.rouge .s1 {
   color: #99cc99;
 }
 pre.rouge .dl {
-  color: #f99157;
+  color: #ffcc66;
 }
 pre.rouge .se {
   color: #cc99cc;
 }
 pre.rouge .si {
-  color: #ffcc66;
+  color: #66cccc;
 }
 </style>
 </head>
@@ -500,14 +503,14 @@ pre.rouge .si {
 </span><span class="c1">-- Alan IF syntax test file for the Rouge highlighter; by Tristano Ajmone.</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
 
-</span><span class="kr">THE</span><span class="w"> </span><span class="n">start_loc</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">LOCATION</span><span class="w">
+</span><span class="kr">THE</span><span class="w"> </span><span class="n">start_loc</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">LOCATION</span><span class="w">
 </span><span class="kr">END</span><span class="w"> </span><span class="kr">THE</span><span class="w"> </span><span class="n">start_loc</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="c1">-- Special Chars in IDs</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
 
-</span><span class="kr">THE</span><span class="w"> </span><span class="n">città</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">LOCATION</span><span class="p">.</span><span class="w">
+</span><span class="kr">THE</span><span class="w"> </span><span class="n">città</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">LOCATION</span><span class="p">.</span><span class="w">
 </span><span class="kr">END</span><span class="w"> </span><span class="kr">THE</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">--==============================================================================</span><span class="w">
@@ -516,7 +519,7 @@ pre.rouge .si {
 
 </span><span class="c1">-- Single line comment.</span><span class="w">
 
-</span><span class="kr">Every</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="w">
+</span><span class="kr">Every</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="p">.</span><span class="w">
   </span><span class="kr">Is</span><span class="w"> </span><span class="n">edible</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">Every</span><span class="p">.</span><span class="w">
 

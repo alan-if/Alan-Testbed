@@ -39,14 +39,15 @@ module Rouge
             Comment::Multiline,
             Comment::Single,          :fg => :base04, :italic => true
       style Name,                     :fg => :base07
+      style Name::Builtin,            :fg => :base0A
       style Literal::Number,          :fg => :base09
       style Keyword::Reserved,
             Punctuation,              :fg => :base08
       style Str::Double,
             Str::Single,              :fg => :base0B
-      style Str::Double::Delimiter,   :fg => :base09
+      style Str::Double::Delimiter,   :fg => :base0A
       style Str::Escape,              :fg => :base0E
-      style Str::Interpol,            :fg => :base0A
+      style Str::Interpol,            :fg => :base0C
 
     end
   end

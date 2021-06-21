@@ -55,6 +55,13 @@ module Rouge
         )
       end
 
+      # Predefined Alan classes
+      def self.predef_classes
+        @predef_classes ||= Set.new %w(
+          actor entity integer literal location object string thing
+        )
+      end
+
       # LETTER: 'a-zA-Zà-þ&&[^÷]' # <= [a-zA-Z\x{00E0}-\x{00FE}&&[^\x{00F7}]]
       # ID: '(\b[{{LETTER}}][0-9_{{LETTER}}]*\b)'
 
@@ -108,6 +115,9 @@ module Rouge
           elsif self.class.keywords_generic.include? name
             # all other keywords...
             token Keyword::Reserved
+          elsif self.class.predef_classes.include? name
+            # Predefined Alan classes...
+            token Name::Builtin
           else
             # Just an identifier...
             token Name
