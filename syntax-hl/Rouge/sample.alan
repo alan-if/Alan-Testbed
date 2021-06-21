@@ -1,4 +1,8 @@
-﻿--==============================================================================
+﻿//// Alan IF Beta8 syntax test file for the Rouge highlighter //////////////////
+by Tristano Ajmone.
+////////////////////////////////////////////////////////////////////////////////
+
+--==============================================================================
 -- Alan IF syntax test file for the Rouge highlighter; by Tristano Ajmone.
 --==============================================================================
 
@@ -125,6 +129,173 @@ SHOW 'PICTURE.Jpeg'.
 SHOW 'picture.png'.
 -- Audio files supported: MOD and AIFF formats only.
 PLAY 'sound.aiff'.
+
+-- *****************************************************************************
+-- *                                                                           *
+-- *                    PREFDEFINED CLASSES AND INSTANCES                      *
+-- *                                                                           *
+-- *****************************************************************************
+--| There are eight predefined classes in Alan:
+--|   * entity
+--|   * thing
+--|   * object
+--|   * actor
+--|   * location
+--|   * literal
+--|   * string
+--|   * integer
+
+The basement IsA location.
+  Description "What a dark ang gloomy place!"
+End The.
+
+The vampire IsA actor At basement.
+End The.
+
+The coffin IsA object At basement.
+  Container taking thing.
+End The.
+
+ADD TO EVERY thing
+  VERB examine
+    Does
+      "You examine $+1, but find nothing unusual."
+  END VERB.
+END ADD TO.
+
+ADD TO EVERY string
+  VERB 'say'
+    Does
+      "You say ""$$" Say This. "$$""!"
+  END VERB.
+END ADD TO.
+
+ADD TO EVERY integer
+  VERB shout
+    Does
+      "You shout ""$$" Say This. "$$"" out loud!"
+  END VERB.
+END ADD TO.
+
+ADD TO EVERY literal
+  VERB whisper
+    Does
+      "You whisper ""$$" Say This. "$$""!"
+  END VERB.
+END ADD TO.
+
+--| And the hard-coded HERO instance:
+Synonyms me = hero.
+Synonyms me = HERO.
+Synonyms me = Hero.
+
+-- *****************************************************************************
+-- *                                                                           *
+-- *                                Edge Cases                                 *
+-- *                                                                           *
+-- *****************************************************************************
+
+--==============================================================================
+-- PSEUDO KEYWORDS
+--==============================================================================
+
+EVERY MALE_ACTOR IsA ACTOR
+
+THE ACTOR1 IsA ACTOR
+THE ACTOR_TEST IsA ACTOR
+THE ACTORS IsA ACTOR
+
+_THE_
+NOT_THE
+
+X_THE
+THE_X
+
+--==============================================================================
+-- QUOTED IDs
+--==============================================================================
+
+-- Quoted IDs containing Keywords:
+
+'WITH'  'IMPORT'
+'WITH IN NAME WITH IMPORT'
+
+'THIS quoted ID contains Alan Keywords'
+
+'.AND.''.AND."xxx".AND.'
+
+SYNTAX burn_with = burn (obj) 'with' (instr)
+
+--==============================================================================
+-- FILE NAMES (QUOTED IDs)
+--==============================================================================
+
+-- library modules
+import 'lib_classes.i'.
+IMPORT 'filename.i'.
+
+-- using *.alan extension:
+IMPORT 'filename.alan'.
+
+-- Empty quoted identifier
+IMPORT ''.
+
+
+-- Images supported: PNG and JPEG formats only.
+SHOW 'picture.jpg'
+SHOW 'PICTURE.JPG'
+SHOW 'picture.jpeg'
+SHOW 'PICTURE.JPEG'
+SHOW 'picture.png'
+
+-- Audio files supported: MOD and AIFF formats only.
+PLAY 'sound.aiff'
+
+--==============================================================================
+-- SPECIAL STR CHARS
+--==============================================================================
+DESCRIPTION "paramters: $1 (1st); $2 (2nd); $3 (3rd); etc
+     $+1 (definite form of 1st); $01 (indefiniteform of 1st);
+     $-1 (negative form of 1st); $!1 (pronoun of 1st)
+     current object: $o (1st param)
+     $+1$+2$01$o"
+
+DESCRIPTION
+  "$p$t$t$t$t$t$t$t$t$t*** TV TIME! *** $p~$n~$i~$t~$$~$a~$l~$v~$$
+  $n$t$t$t$t$t$tAn ALAN 3 Interactive Fiction Tutorial Game
+  $n$t$t$t$t$t$t$tBy Michael Arnaud (c) 2006
+  $p(Type ""help"" if you have not played this kind of game before.)
+  $pJoy of joys, you have just purchased a brand new big screen plasma TV that
+  was delivered earlier today!"
+
+-- Test alternating Escapes and Interpolation:
+
+"xyz$p$1$pxyz" -- ESC + INT + ESC
+"xyz$1$p$1xyz" -- INT + ESC + INT
+
+-- Test multiple Escapes and Interpolation:
+
+"xyz$p$t$pxyz"  -- ESC x3
+"xyz$1$01$1xyz" -- INT x3
+
+--==============================================================================
+-- ESCAPING QUOTES
+--==============================================================================
+
+-- Double Quotes Escaping:
+
+"DQ string"
+"DQ string with ""DQ quoted"" inside"
+"DQ string with  'SQ quoted'  inside"
+"DQ string with ''SQ quoted'' inside"
+
+-- Single Quotes Escaping:
+
+'SQ string'
+'SQ string with ''SQ quoted'' inside'
+'SQ string with ""DQ quoted"" inside'
+'SQ string with  "DQ quoted"  inside'
+
 
 --------------------------------------------------------------------------------
 

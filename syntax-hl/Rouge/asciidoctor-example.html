@@ -502,7 +502,11 @@ pre.rouge .si {
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
+<pre class="rouge highlight"><code data-lang="alan"><span class="c1">//// Alan IF Beta8 syntax test file for the Rouge highlighter //////////////////</span><span class="err">
+</span><span class="cm">by Tristano Ajmone.</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="c1">-- Alan IF syntax test file for the Rouge highlighter; by Tristano Ajmone.</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
 
@@ -629,6 +633,173 @@ pre.rouge .si {
 </span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">picture.png</span><span class="dl">'</span><span class="p">.</span><span class="w">
 </span><span class="c1">-- Audio files supported: MOD and AIFF formats only.</span><span class="w">
 </span><span class="kr">PLAY</span><span class="w"> </span><span class="dl">'</span><span class="s1">sound.aiff</span><span class="dl">'</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">-- *****************************************************************************</span><span class="w">
+</span><span class="c1">-- *                                                                           *</span><span class="w">
+</span><span class="c1">-- *                    PREFDEFINED CLASSES AND INSTANCES                      *</span><span class="w">
+</span><span class="c1">-- *                                                                           *</span><span class="w">
+</span><span class="c1">-- *****************************************************************************</span><span class="w">
+</span><span class="c1">--| There are eight predefined classes in Alan:</span><span class="w">
+</span><span class="c1">--|   * entity</span><span class="w">
+</span><span class="c1">--|   * thing</span><span class="w">
+</span><span class="c1">--|   * object</span><span class="w">
+</span><span class="c1">--|   * actor</span><span class="w">
+</span><span class="c1">--|   * location</span><span class="w">
+</span><span class="c1">--|   * literal</span><span class="w">
+</span><span class="c1">--|   * string</span><span class="w">
+</span><span class="c1">--|   * integer</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">basement</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Description</span><span class="w"> </span><span class="dl">"</span><span class="s2">What a dark ang gloomy place!</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">The</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">vampire</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">actor</span><span class="w"> </span><span class="kr">At</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">The</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">coffin</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">At</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Container</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="nb">thing</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">The</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="kr">EVERY</span><span class="w"> </span><span class="nb">thing</span><span class="w">
+  </span><span class="kr">VERB</span><span class="w"> </span><span class="n">examine</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You examine </span><span class="si">$+1</span><span class="s2">, but find nothing unusual.</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">END</span><span class="w"> </span><span class="kr">VERB</span><span class="p">.</span><span class="w">
+</span><span class="kr">END</span><span class="w"> </span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="kr">EVERY</span><span class="w"> </span><span class="nb">string</span><span class="w">
+  </span><span class="kr">VERB</span><span class="w"> </span><span class="n">'say'</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You say </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2">!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">END</span><span class="w"> </span><span class="kr">VERB</span><span class="p">.</span><span class="w">
+</span><span class="kr">END</span><span class="w"> </span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="kr">EVERY</span><span class="w"> </span><span class="nb">integer</span><span class="w">
+  </span><span class="kr">VERB</span><span class="w"> </span><span class="n">shout</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You shout </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2"> out loud!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">END</span><span class="w"> </span><span class="kr">VERB</span><span class="p">.</span><span class="w">
+</span><span class="kr">END</span><span class="w"> </span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="kr">EVERY</span><span class="w"> </span><span class="nb">literal</span><span class="w">
+  </span><span class="kr">VERB</span><span class="w"> </span><span class="n">whisper</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You whisper </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2">!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">END</span><span class="w"> </span><span class="kr">VERB</span><span class="p">.</span><span class="w">
+</span><span class="kr">END</span><span class="w"> </span><span class="kr">ADD</span><span class="w"> </span><span class="kr">TO</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">--| And the hard-coded HERO instance:</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">HERO</span><span class="p">.</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Hero</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">-- *****************************************************************************</span><span class="w">
+</span><span class="c1">-- *                                                                           *</span><span class="w">
+</span><span class="c1">-- *                                Edge Cases                                 *</span><span class="w">
+</span><span class="c1">-- *                                                                           *</span><span class="w">
+</span><span class="c1">-- *****************************************************************************</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- PSEUDO KEYWORDS</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+
+</span><span class="kr">EVERY</span><span class="w"> </span><span class="n">MALE_ACTOR</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">ACTOR</span><span class="w">
+
+</span><span class="kr">THE</span><span class="w"> </span><span class="n">ACTOR1</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">ACTOR</span><span class="w">
+</span><span class="kr">THE</span><span class="w"> </span><span class="n">ACTOR_TEST</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">ACTOR</span><span class="w">
+</span><span class="kr">THE</span><span class="w"> </span><span class="n">ACTORS</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">ACTOR</span><span class="w">
+
+</span><span class="err">_</span><span class="n">THE_</span><span class="w">
+</span><span class="n">NOT_THE</span><span class="w">
+
+</span><span class="n">X_THE</span><span class="w">
+</span><span class="n">THE_X</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- QUOTED IDs</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+
+</span><span class="c1">-- Quoted IDs containing Keywords:</span><span class="w">
+
+</span><span class="n">'WITH'</span><span class="w">  </span><span class="n">'IMPORT'</span><span class="w">
+</span><span class="n">'WITH IN NAME WITH IMPORT'</span><span class="w">
+
+</span><span class="n">'THIS quoted ID contains Alan Keywords'</span><span class="w">
+
+</span><span class="n">'.AND.</span><span class="se">''</span><span class="n">.AND."xxx".AND.'</span><span class="w">
+
+</span><span class="kr">SYNTAX</span><span class="w"> </span><span class="n">burn_with</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">burn</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)</span><span class="w"> </span><span class="n">'with'</span><span class="w"> </span><span class="o">(</span><span class="n">instr</span><span class="o">)</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- FILE NAMES (QUOTED IDs)</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+
+</span><span class="c1">-- library modules</span><span class="w">
+</span><span class="kr">import</span><span class="w"> </span><span class="dl">'</span><span class="s1">lib_classes.i</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">'</span><span class="s1">filename.i</span><span class="dl">'</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">-- using *.alan extension:</span><span class="w">
+</span><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">'</span><span class="s1">filename.alan</span><span class="dl">'</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">-- Empty quoted identifier</span><span class="w">
+</span><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">''</span><span class="p">.</span><span class="w">
+
+
+</span><span class="c1">-- Images supported: PNG and JPEG formats only.</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">picture.jpg</span><span class="dl">'</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">PICTURE.JPG</span><span class="dl">'</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">picture.jpeg</span><span class="dl">'</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">PICTURE.JPEG</span><span class="dl">'</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">picture.png</span><span class="dl">'</span><span class="w">
+
+</span><span class="c1">-- Audio files supported: MOD and AIFF formats only.</span><span class="w">
+</span><span class="kr">PLAY</span><span class="w"> </span><span class="dl">'</span><span class="s1">sound.aiff</span><span class="dl">'</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- SPECIAL STR CHARS</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="kr">DESCRIPTION</span><span class="w"> </span><span class="dl">"</span><span class="s2">paramters: </span><span class="si">$1</span><span class="s2"> (1st); </span><span class="si">$2</span><span class="s2"> (2nd); </span><span class="si">$3</span><span class="s2"> (3rd); etc
+     </span><span class="si">$+1</span><span class="s2"> (definite form of 1st); </span><span class="si">$01</span><span class="s2"> (indefiniteform of 1st);
+     </span><span class="si">$-1</span><span class="s2"> (negative form of 1st); </span><span class="si">$!1</span><span class="s2"> (pronoun of 1st)
+     current object: </span><span class="si">$o</span><span class="s2"> (1st param)
+     </span><span class="si">$+1$+2$01$o</span><span class="dl">"</span><span class="w">
+
+</span><span class="kr">DESCRIPTION</span><span class="w">
+  </span><span class="dl">"</span><span class="se">$p$t$t$t$t$t$t$t$t$t</span><span class="s2">*** TV TIME! *** </span><span class="se">$p</span><span class="s2">~</span><span class="se">$n</span><span class="s2">~</span><span class="se">$i</span><span class="s2">~</span><span class="se">$t</span><span class="s2">~</span><span class="se">$$</span><span class="s2">~</span><span class="si">$a</span><span class="s2">~</span><span class="si">$l</span><span class="s2">~</span><span class="si">$v</span><span class="s2">~</span><span class="se">$$</span><span class="s2">
+  </span><span class="se">$n$t$t$t$t$t$t</span><span class="s2">An ALAN 3 Interactive Fiction Tutorial Game
+  </span><span class="se">$n$t$t$t$t$t$t$t</span><span class="s2">By Michael Arnaud (c) 2006
+  </span><span class="se">$p</span><span class="s2">(Type </span><span class="se">""</span><span class="s2">help</span><span class="se">""</span><span class="s2"> if you have not played this kind of game before.)
+  </span><span class="se">$p</span><span class="s2">Joy of joys, you have just purchased a brand new big screen plasma TV that
+  was delivered earlier today!</span><span class="dl">"</span><span class="w">
+
+</span><span class="c1">-- Test alternating Escapes and Interpolation:</span><span class="w">
+
+</span><span class="dl">"</span><span class="s2">xyz</span><span class="se">$p</span><span class="si">$1</span><span class="se">$p</span><span class="s2">xyz</span><span class="dl">"</span><span class="w"> </span><span class="c1">-- ESC + INT + ESC</span><span class="w">
+</span><span class="dl">"</span><span class="s2">xyz</span><span class="si">$1</span><span class="se">$p</span><span class="si">$1</span><span class="s2">xyz</span><span class="dl">"</span><span class="w"> </span><span class="c1">-- INT + ESC + INT</span><span class="w">
+
+</span><span class="c1">-- Test multiple Escapes and Interpolation:</span><span class="w">
+
+</span><span class="dl">"</span><span class="s2">xyz</span><span class="se">$p$t$p</span><span class="s2">xyz</span><span class="dl">"</span><span class="w">  </span><span class="c1">-- ESC x3</span><span class="w">
+</span><span class="dl">"</span><span class="s2">xyz</span><span class="si">$1$01$1</span><span class="s2">xyz</span><span class="dl">"</span><span class="w"> </span><span class="c1">-- INT x3</span><span class="w">
+
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- ESCAPING QUOTES</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+
+</span><span class="c1">-- Double Quotes Escaping:</span><span class="w">
+
+</span><span class="dl">"</span><span class="s2">DQ string</span><span class="dl">"</span><span class="w">
+</span><span class="dl">"</span><span class="s2">DQ string with </span><span class="se">""</span><span class="s2">DQ quoted</span><span class="se">""</span><span class="s2"> inside</span><span class="dl">"</span><span class="w">
+</span><span class="dl">"</span><span class="s2">DQ string with  'SQ quoted'  inside</span><span class="dl">"</span><span class="w">
+</span><span class="dl">"</span><span class="s2">DQ string with ''SQ quoted'' inside</span><span class="dl">"</span><span class="w">
+
+</span><span class="c1">-- Single Quotes Escaping:</span><span class="w">
+
+</span><span class="n">'SQ string'</span><span class="w">
+</span><span class="n">'SQ string with </span><span class="se">''</span><span class="n">SQ quoted</span><span class="se">''</span><span class="n"> inside'</span><span class="w">
+</span><span class="n">'SQ string with ""DQ quoted"" inside'</span><span class="w">
+</span><span class="n">'SQ string with  "DQ quoted"  inside'</span><span class="w">
+
 
 </span><span class="c1">--------------------------------------------------------------------------------</span><span class="w">
 
