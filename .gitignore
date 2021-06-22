@@ -46,6 +46,7 @@ debug.log
 #########################
 # Reserved for patterns that might be useful to end users of the project.
 
+/syntax-hl/Rouge/sample.ifid
 
 # ==============================================================================
 #                             COMMON IGNORE PATTERNS

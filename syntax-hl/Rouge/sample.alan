@@ -1,302 +1,61 @@
-﻿//// Alan IF Beta8 syntax test file for the Rouge highlighter //////////////////
-by Tristano Ajmone.
-////////////////////////////////////////////////////////////////////////////////
-
+﻿--==============================================================================
+-- "Barracks Example" by Tristano Ajmone | Alan Beta8
 --==============================================================================
--- Alan IF syntax test file for the Rouge highlighter; by Tristano Ajmone.
---==============================================================================
+The canteen IsA location
+  Name 'The Barrack''s Mess Hall'.
+End the canteen.
 
-THE start_loc IsA LOCATION
-END THE start_loc.
+Syntax examine = examine (obj)
+  Where obj IsA thing
+    Else "You can only examine actors and objects."
 
---==============================================================================
--- Special Chars in IDs
---==============================================================================
+Synonyms x = examine.
+        me = hero.
+    myself = hero.
 
-THE città IsA LOCATION.
-END THE.
-
---==============================================================================
--- COMMENTS
---==============================================================================
-
--- Single line comment.
-
-Every fruit IsA object.
-  Is edible.
-End Every.
-
-////
-A block comment.
-It's delimited by 4 forward slashes (/).
-////
-
-The apple IsA fruit.
-End the pear.
-
-//// Anything can follow the opening delimiter! ////////////////////////////////
-But the closing delimiter can only be followed by more forward slashes...
-//// therefore this is not a closing delimiter!
-But the next line is:
-////////////////////////////////////////////////////////////////////////////////
-
-The pear IsA fruit.
-End the pear.
-
-
---==============================================================================
--- OPERATORS
---==============================================================================
-
-SYNTAX put_in = 'put' (o) 'in' (c)
-  WHERE c IsA CONTAINER
-    ELSE "You can't put anything in the" SAY c.
-
-VERB put_in
-  CHECK o <> c
-    ELSE "That would be a good trick if you could do it!!"
-  DOES -- etc.
---==============================================================================
--- NUMBERS
---==============================================================================
-SET eyes OF first_die TO RANDOM 1 TO 6.
-DECREASE temp OF room BY RANDOM 0 TO temp OF Room.
---==============================================================================
--- The '=>' Keyword (shorthand for 'THEN')
---==============================================================================
-WHEN hero AT cave
-  AND (monster IS hungry OR monster IS angry)
-  AND sword NOT IN hero
-=>
-  USE SCRIPT eat_hero FOR monster.
-END WHEN.
---==============================================================================
--- SPECIAL STR CHARS
---==============================================================================
-SAY "paramters: $1 (1st); $2 (2nd); $3 (3rd); etc
-     $+1 (definite form of 1st); $01 (indefiniteform of 1st);
-     $-1 (negative form of 1st); $!1 (pronoun of 1st)
-     current object: $o (1st param)
-     $+1$+2$01$o"
-
-START AT tv_room.
-  "$p$t$t$t$t$t$t$t$t$t*** TV TIME! *** $p~$n~$i~$t~$$~$a~$l~$v~$$
-  $n$t$t$t$t$t$tAn ALAN 3 Interactive Fiction Tutorial Game
-  $n$t$t$t$t$t$t$tBy Michael Arnaud (c) 2006
-  $p(Type ""help"" if you have not played this kind of game before.)
-  $pJoy of joys, you have just purchased a brand new big screen plasma TV that was delivered earlier today!"
---==============================================================================
--- PARAMETER INDICATORS
---==============================================================================
-SYNTAX
-  take = 'take' (obj)*. --> parameter can reference multiple instances.
-  drop = 'drop' (obj).
-
-SYNTAX --> With '!' the parameter need not be present at the current location.
-  talk_about = 'talk' 'to' (act) 'about' (subj)!.
-  find = 'find' (obj)!.
---==============================================================================
--- MESSAGES
---==============================================================================
-MESSAGE
-  NOWAY: "There is no exit in that direction."
-
---==============================================================================
--- ATTRIBUTES REFERENCES
---==============================================================================
-SAY detective:suspect:weapon.
--- Same as:
-SAY weapon OF suspect OF detective.
-
---==============================================================================
--- STRINGS WITH DQS
---==============================================================================
--- Test Escaping Quotes
-"DQ string"
-"DQ string with ""DQ quoted"" inside"
-"DQ string with  'SQ quoted'  inside"
-"DQ string with ''SQ quoted'' inside"
---==============================================================================
--- MULTIMEDIA STAMENTS
---==============================================================================
--- Images supported: PNG and JPEG formats only.
-SHOW 'picture.jpg'.
-SHOW 'PICTURE.JPG'.
-
-SHOW 'picture.jpeg' --> missing '.'!!!
-
-SHOW 'PICTURE.Jpeg'.
-SHOW 'picture.png'.
--- Audio files supported: MOD and AIFF formats only.
-PLAY 'sound.aiff'.
-
--- *****************************************************************************
--- *                                                                           *
--- *                    PREFDEFINED CLASSES AND INSTANCES                      *
--- *                                                                           *
--- *****************************************************************************
---| There are eight predefined classes in Alan:
---|   * entity
---|   * thing
---|   * object
---|   * actor
---|   * location
---|   * literal
---|   * string
---|   * integer
-
-The basement IsA location.
-  Description "What a dark ang gloomy place!"
-End The.
-
-The vampire IsA actor At basement.
-End The.
-
-The coffin IsA object At basement.
-  Container taking thing.
-End The.
-
-ADD TO EVERY thing
-  VERB examine
+Add to every thing
+  Has desc "".
+  Verb examine
     Does
-      "You examine $+1, but find nothing unusual."
-  END VERB.
-END ADD TO.
+      If desc of this = ""
+        Then "You notice nothing unusual about $1."
+        Else say obj:desc.
+      End if.
+  End verb examine.
+End add to.
 
-ADD TO EVERY string
-  VERB 'say'
-    Does
-      "You say ""$$" Say This. "$$""!"
-  END VERB.
-END ADD TO.
+The chair IsA object at canteen
+  Has desc "An old and battered chair.".
+End the chair.
 
-ADD TO EVERY integer
-  VERB shout
-    Does
-      "You shout ""$$" Say This. "$$"" out loud!"
-  END VERB.
-END ADD TO.
+The trolley IsA object at canteen
+  Container taking object.
+    Limits
+      Count 5 else "The trolley is full!"
+    Has not been_examined.
+  Verb examine
+    Does only
+      If this has not been_examined
+        Then "This old trolley has surely seen better days.$nIt seems barely
+              capable of carrying its own weight without collapsing, let alone
+              endure its daily use!"
+          make this been_examined.
+        Else "It's just an old trolley."
+      End if.
+  End verb examine.
+End the trolley.
 
-ADD TO EVERY literal
-  VERB whisper
-    Does
-      "You whisper ""$$" Say This. "$$""!"
-  END VERB.
-END ADD TO.
+The hero
+  Mentioned "yourself"
+End the
 
---| And the hard-coded HERO instance:
-Synonyms me = hero.
-Synonyms me = HERO.
-Synonyms me = Hero.
+-- A 'quit' verb to leave the game...
+Syntax 'quit' = 'quit'.
 
--- *****************************************************************************
--- *                                                                           *
--- *                                Edge Cases                                 *
--- *                                                                           *
--- *****************************************************************************
+Meta verb 'quit'
+  Does
+    "$pAlready giving up on this adventure?"
+    quit.
+End verb.
 
---==============================================================================
--- PSEUDO KEYWORDS
---==============================================================================
-
-EVERY MALE_ACTOR IsA ACTOR
-
-THE ACTOR1 IsA ACTOR
-THE ACTOR_TEST IsA ACTOR
-THE ACTORS IsA ACTOR
-
-_THE_
-NOT_THE
-
-X_THE
-THE_X
-
---==============================================================================
--- QUOTED IDs
---==============================================================================
-
--- Quoted IDs containing Keywords:
-
-'WITH'  'IMPORT'
-'WITH IN NAME WITH IMPORT'
-
-'THIS quoted ID contains Alan Keywords'
-
-'.AND.''.AND."xxx".AND.'
-
-SYNTAX burn_with = burn (obj) 'with' (instr)
-
---==============================================================================
--- FILE NAMES (QUOTED IDs)
---==============================================================================
-
--- library modules
-import 'lib_classes.i'.
-IMPORT 'filename.i'.
-
--- using *.alan extension:
-IMPORT 'filename.alan'.
-
--- Empty quoted identifier
-IMPORT ''.
-
-
--- Images supported: PNG and JPEG formats only.
-SHOW 'picture.jpg'
-SHOW 'PICTURE.JPG'
-SHOW 'picture.jpeg'
-SHOW 'PICTURE.JPEG'
-SHOW 'picture.png'
-
--- Audio files supported: MOD and AIFF formats only.
-PLAY 'sound.aiff'
-
---==============================================================================
--- SPECIAL STR CHARS
---==============================================================================
-DESCRIPTION "paramters: $1 (1st); $2 (2nd); $3 (3rd); etc
-     $+1 (definite form of 1st); $01 (indefiniteform of 1st);
-     $-1 (negative form of 1st); $!1 (pronoun of 1st)
-     current object: $o (1st param)
-     $+1$+2$01$o"
-
-DESCRIPTION
-  "$p$t$t$t$t$t$t$t$t$t*** TV TIME! *** $p~$n~$i~$t~$$~$a~$l~$v~$$
-  $n$t$t$t$t$t$tAn ALAN 3 Interactive Fiction Tutorial Game
-  $n$t$t$t$t$t$t$tBy Michael Arnaud (c) 2006
-  $p(Type ""help"" if you have not played this kind of game before.)
-  $pJoy of joys, you have just purchased a brand new big screen plasma TV that
-  was delivered earlier today!"
-
--- Test alternating Escapes and Interpolation:
-
-"xyz$p$1$pxyz" -- ESC + INT + ESC
-"xyz$1$p$1xyz" -- INT + ESC + INT
-
--- Test multiple Escapes and Interpolation:
-
-"xyz$p$t$pxyz"  -- ESC x3
-"xyz$1$01$1xyz" -- INT x3
-
---==============================================================================
--- ESCAPING QUOTES
---==============================================================================
-
--- Double Quotes Escaping:
-
-"DQ string"
-"DQ string with ""DQ quoted"" inside"
-"DQ string with  'SQ quoted'  inside"
-"DQ string with ''SQ quoted'' inside"
-
--- Single Quotes Escaping:
-
-'SQ string'
-'SQ string with ''SQ quoted'' inside'
-'SQ string with ""DQ quoted"" inside'
-'SQ string with  "DQ quoted"  inside'
-
-
---------------------------------------------------------------------------------
-
-START AT start_loc.
+Start at canteen.

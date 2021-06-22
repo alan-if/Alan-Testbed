@@ -11,155 +11,20 @@ Tristano Ajmone <tajmone@gmail.com>
 :reproducible: true
 :sectanchors:
 
-Previews and testing of the Rouge lexers and themes for the ALAN Docs project, and other ALAN-related documentation.
+Previews of our custom Rouge lexers and themes for the ALAN Docs project, and other ALAN-related documentation.
 
+
+[WARNING]
+========================
+Currently we only have the ALAN lexer, and a single theme.
+In the future this document we'll also cover the other required lexers (BNF) and ALAN themes ("tutorial" and "lib").
+========================
 
 == ALAN
 
 [source,alan]
 ----------------------
 include::sample.alan[]
-----------------------
-
-
-== ALAN Syntax Details
-
-
-In this section we'll focus on specific elements of the ALAN syntax, one at the time, in order to check that they are rendered properly by the lexer and theme.
-For each element, we'll also mention it's Rouge token name and its corresponding HTML/CSS class.
-
-=== Comments
-
-Single line comments:
-
-[source,alan]
----------------------------------------
--- just a comment.
-
-Every fruit IsA object.
-  Is edible. -- so that it passes the checks of 'eat'!
-End Every.
----------------------------------------
-
-Block comments were introduced in ALAN Beta8:
-
-[source,alan]
----------------------------------------
-////
-A block comment.
-It's delimited by 4 forward slashes (/).
-////
-
-The apple IsA fruit.
-End the pear.
-
-//// Anything can follow the opening delimiter! ////////////////////////////////
-But the closing delimiter can only be followed by more forward slashes...
-//// therefore this is not a closing delimiter!
-But the next line is:
-////////////////////////////////////////////////////////////////////////////////
-
-The pear IsA fruit.
-End the pear.
----------------------------------------
-
-
-=== Numbers
-
-Numbers (integers) are captured as `Literal::Number` (CSS: `m`).
-
-[source,alan]
-----------------------------------
-If minute Of clock = 59 Then
-  Set minute Of clock To 0.
-  Increase hour Of clock.
-Else
-  Increase minute OF clock.
-End If.
-If level Of bottle = 0 Then
-  "You have no water."
-Elsif level Of bottle < 5 Then
-  "You have almost no water left."
-Else
-  "You have plenty of water."
-End If.
-----------------------------------
-
-
-
-=== Parameter Indicators
-
-I haven't yet decided how to capture the _multiple_ (``*``) and _omnipotent_ (``!``)
-https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators[parameter indicators^,title="Learn more in The ALAN Manual"],
-so for the time being they're caputred as `Operator` tokens.
-
-[source,alan]
-----------------------
-Syntax
-  take     = take (obj)*.      -- multiple indicator (*)
-  remember = remember (obj)!.  -- omnipotent indicator (!)
-----------------------
-
-
-=== Predefined Classes
-
-There are eight predefined classes in Alan: `entity`, `thing`, `object`, `actor`, `location`, `literal`, `string` and `integer`, all of which receive a dedicated colouring in the syntax.
-
-[source,alan]
----------------------------------------
-The worn IsA entity.
-End the.
-
-The basement IsA location.
-  Description "What a dark ang gloomy place!"
-End the.
-
-The vampire IsA actor at basement.
-End the.
-
-The coffin IsA object at basement.
-  Container taking thing.
-End the.
-
-Add to every thing
-  Verb examine
-    Does
-      "You examine $+1, but find nothing unusual."
-  End verb.
-End add to.
-
-Add to every string
-  Verb 'say'
-    Does
-      "You say ""$$" Say This. "$$""!"
-  End verb.
-End add to.
-
-Add to every integer
-  Verb shout
-    Does
-      "You shout ""$$" Say This. "$$"" out loud!"
-  End verb.
-End add to.
-
-Add to every literal
-  Verb whisper
-    Does
-      "You whisper ""$$" Say This. "$$""!"
-  End verb.
-End add to.
----------------------------------------
-
-
-=== Predefined Hero Instance
-
-The `hero` is a predefined actor (the player) which is hardcoded into every adventure.
-
-[source,alan]
-----------------------
-Synonyms me = hero.
-Synonyms me = HERO.
-Synonyms me = Hero.
 ----------------------
 
 

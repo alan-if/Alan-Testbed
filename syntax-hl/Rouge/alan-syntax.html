@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <meta name="author" content="Tristano Ajmone">
-<title>ALAN Docs Rouge Lexers</title>
+<title>ALAN IF Rouge Lexer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -499,7 +499,7 @@ pre.rouge .si {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>ALAN Docs Rouge Lexers</h1>
+<h1>ALAN IF Rouge Lexer</h1>
 <div class="details">
 <span id="author" class="author">Tristano Ajmone</span><br>
 <span id="email" class="email"><a href="mailto:tajmone@gmail.com">tajmone@gmail.com</a></span><br>
@@ -507,7 +507,11 @@ pre.rouge .si {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#alan">ALAN</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#parameter_indicators">Parameter Indicators</a></li>
+<li><a href="#predefined_classes">Predefined Classes</a></li>
+<li><a href="#predefined_hero_instance">Predefined Hero Instance</a></li>
 </ul>
 </div>
 </div>
@@ -515,91 +519,157 @@ pre.rouge .si {
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Previews of our custom Rouge lexers and themes for the ALAN Docs project, and other ALAN-related documentation.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Currently we only have the ALAN lexer, and a single theme.
-In the future this document we&#8217;ll also cover the other required lexers (BNF) and ALAN themes ("tutorial" and "lib").</p>
-</div>
-</td>
-</tr>
-</table>
+<p>In this document we&#8217;ll focus on specific elements of the ALAN syntax, one element per section, in order to check that they are rendered properly by the lexer and theme.
+For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its corresponding HTML/CSS class.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="alan"><a class="anchor" href="#alan"></a>ALAN</h2>
+<h2 id="comments"><a class="anchor" href="#comments"></a>Comments</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Single line comments:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
-</span><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
-  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
+<pre class="rouge highlight"><code data-lang="alan"><span class="c1">-- just a comment.</span><span class="w">
 
-</span><span class="kr">Syntax</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)</span><span class="w">
-  </span><span class="kr">Where</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">thing</span><span class="w">
-    </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">You can only examine actors and objects.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">Every</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Is</span><span class="w"> </span><span class="n">edible</span><span class="p">.</span><span class="w"> </span><span class="c1">-- so that it passes the checks of 'eat'!</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">Every</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Block comments were introduced in ALAN Beta8:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="c1">////</span><span class="err">
+</span><span class="cm">A block comment.</span><span class="err">
+</span><span class="cm">It's delimited by 4 forward slashes (/).</span><span class="err">
+</span><span class="cm">////</span><span class="w">
 
-</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
-        </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
-    </span><span class="n">myself</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+</span><span class="kr">The</span><span class="w"> </span><span class="n">apple</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">//// Anything can follow the opening delimiter! ////////////////////////////////</span><span class="err">
+</span><span class="cm">But the closing delimiter can only be followed by more forward slashes...</span><span class="err">
+</span><span class="cm">//// therefore this is not a closing delimiter!</span><span class="err">
+</span><span class="cm">But the next line is:</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">pear</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="numbers"><a class="anchor" href="#numbers"></a>Numbers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Numbers (integers) are captured as <code>Literal::Number</code> (CSS: <code>m</code>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">If</span><span class="w"> </span><span class="n">minute</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">clock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">59</span><span class="w"> </span><span class="kr">Then</span><span class="w">
+  </span><span class="kr">Set</span><span class="w"> </span><span class="n">minute</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">clock</span><span class="w"> </span><span class="kr">To</span><span class="w"> </span><span class="m">0</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Increase</span><span class="w"> </span><span class="n">hour</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">clock</span><span class="p">.</span><span class="w">
+</span><span class="kr">Else</span><span class="w">
+  </span><span class="kr">Increase</span><span class="w"> </span><span class="n">minute</span><span class="w"> </span><span class="kr">OF</span><span class="w"> </span><span class="n">clock</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">If</span><span class="p">.</span><span class="w">
+</span><span class="kr">If</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">bottle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kr">Then</span><span class="w">
+  </span><span class="dl">"</span><span class="s2">You have no water.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">Elsif</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">bottle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="kr">Then</span><span class="w">
+  </span><span class="dl">"</span><span class="s2">You have almost no water left.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">Else</span><span class="w">
+  </span><span class="dl">"</span><span class="s2">You have plenty of water.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">If</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="parameter_indicators"><a class="anchor" href="#parameter_indicators"></a>Parameter Indicators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I haven&#8217;t yet decided how to capture the <em>multiple</em> (<code>*</code>) and <em>omnipotent</em> (<code>!</code>)
+<a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">parameter indicators</a>,
+so for the time being they&#8217;re caputred as <code>Operator</code> tokens.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">Syntax</span><span class="w">
+  </span><span class="n">take</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)*</span><span class="p">.</span><span class="w">      </span><span class="c1">-- multiple indicator (*)</span><span class="w">
+  </span><span class="n">remember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)!</span><span class="p">.</span><span class="w">  </span><span class="c1">-- omnipotent indicator (!)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="predefined_classes"><a class="anchor" href="#predefined_classes"></a>Predefined Classes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are eight predefined classes in Alan: <code>entity</code>, <code>thing</code>, <code>object</code>, <code>actor</code>, <code>location</code>, <code>literal</code>, <code>string</code> and <code>integer</code>, all of which receive a dedicated colouring in the syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">The</span><span class="w"> </span><span class="n">worn</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">entity</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">basement</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Description</span><span class="w"> </span><span class="dl">"</span><span class="s2">What a dark ang gloomy place!</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">vampire</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">actor</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">coffin</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Container</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="nb">thing</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
-  </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">""</span><span class="p">.</span><span class="w">
   </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
     </span><span class="kr">Does</span><span class="w">
-      </span><span class="kr">If</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="dl">""</span><span class="w">
-        </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">You notice nothing unusual about </span><span class="si">$1</span><span class="s2">.</span><span class="dl">"</span><span class="w">
-        </span><span class="kr">Else</span><span class="w"> </span><span class="kr">say</span><span class="w"> </span><span class="n">obj</span><span class="p">:</span><span class="n">desc</span><span class="p">.</span><span class="w">
-      </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
-  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You examine </span><span class="si">$+1</span><span class="s2">, but find nothing unusual.</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
 
-</span><span class="kr">The</span><span class="w"> </span><span class="n">chair</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="w">
-  </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">"</span><span class="s2">An old and battered chair.</span><span class="dl">"</span><span class="p">.</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">chair</span><span class="p">.</span><span class="w">
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">string</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">'say'</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You say </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2">!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
 
-</span><span class="kr">The</span><span class="w"> </span><span class="n">trolley</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="w">
-  </span><span class="kr">Container</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="nb">object</span><span class="p">.</span><span class="w">
-    </span><span class="kr">Limits</span><span class="w">
-      </span><span class="kr">Count</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="dl">"</span><span class="s2">The trolley is full!</span><span class="dl">"</span><span class="w">
-    </span><span class="kr">Has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
-  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
-    </span><span class="kr">Does</span><span class="w"> </span><span class="kr">only</span><span class="w">
-      </span><span class="kr">If</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="w">
-        </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">This old trolley has surely seen better days.</span><span class="se">$n</span><span class="s2">It seems barely
-              capable of carrying its own weight without collapsing, let alone
-              endure its daily use!</span><span class="dl">"</span><span class="w">
-          </span><span class="kr">make</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
-        </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">It's just an old trolley.</span><span class="dl">"</span><span class="w">
-      </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
-  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">trolley</span><span class="p">.</span><span class="w">
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">integer</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">shout</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You shout </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2"> out loud!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
 
-</span><span class="kr">The</span><span class="w"> </span><span class="nx">hero</span><span class="w">
-  </span><span class="kr">Mentioned</span><span class="w"> </span><span class="dl">"</span><span class="s2">yourself</span><span class="dl">"</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w">
-
-</span><span class="c1">-- A 'quit' verb to leave the game...</span><span class="w">
-</span><span class="kr">Syntax</span><span class="w"> </span><span class="n">'quit'</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">'quit'</span><span class="p">.</span><span class="w">
-
-</span><span class="kr">Meta</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">'quit'</span><span class="w">
-  </span><span class="kr">Does</span><span class="w">
-    </span><span class="dl">"</span><span class="se">$p</span><span class="s2">Already giving up on this adventure?</span><span class="dl">"</span><span class="w">
-    </span><span class="kr">quit</span><span class="p">.</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
-
-</span><span class="kr">Start</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span></code></pre>
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">literal</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">whisper</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You whisper </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2">!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="predefined_hero_instance"><a class="anchor" href="#predefined_hero_instance"></a>Predefined Hero Instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>hero</code> is a predefined actor (the player) which is hardcoded into every adventure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">HERO</span><span class="p">.</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Hero</span><span class="p">.</span></code></pre>
 </div>
 </div>
 </div>

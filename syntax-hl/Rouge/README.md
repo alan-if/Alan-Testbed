@@ -39,9 +39,14 @@ Custom Ruby scripts, lexers and libraries:
 Tests:
 
 - [`rougify-term.sh`][rougify-term.sh] — highlights `sample.alan` in the terminal, via CLI.
-- [`asciidoctor-example.asciidoc`][asciidoctor-example.asciidoc] — Asciidoctor test document.
+
+Sample documents:
+
+- [`asciidoctor-example.asciidoc`][asciidoctor-example.asciidoc] — Asciidoctor example document.
 - [`asciidoctor-example.html`][asciidoctor-example.html] — converted HTML doc ([Live HTML Preview][ADoc Ex Live])
-- [`asciidoctor-example.sh`][asciidoctor-example.sh] — converts `asciidoctor-example.asciidoc` to HTML using our `alan3.rb` lexer.
+- [`alan-syntax.asciidoc`][alan-syntax.asciidoc] — Asciidoctor test document for the ALAN lexer.
+- [`alan-syntax.html`][alan-syntax.html] — converted HTML doc ([Live HTML Preview][ADoc Synt Live])
+- [`build.sh`][build.sh] — converts all documents to HTML using our custom `alan3.rb` lexer and assets.
 
 
 # Objectives
@@ -246,10 +251,15 @@ We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] fo
 
 [alan3.rb]: ./alan3.rb "View source file"
 
+[build.sh]: ./build.sh
+
 [asciidoctor-example.asciidoc]: ./asciidoctor-example.asciidoc
 [asciidoctor-example.html]: ./asciidoctor-example.html
-[asciidoctor-example.sh]: ./asciidoctor-example.sh
 [ADoc Ex Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/asciidoctor-example.html "Live HTML Preview of 'asciidoctor-example.htm'"
+
+[alan-syntax.asciidoc]: ./alan-syntax.asciidoc
+[alan-syntax.html]: ./alan-syntax.html
+[ADoc Synt Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/alan-syntax.html "Live HTML Preview of 'alan-syntax.htm'"
 
 [custom-rouge-adapter.rb]: ./custom-rouge-adapter.rb
 [rougify-term.sh]: ./rougify-term.sh "View source file"
