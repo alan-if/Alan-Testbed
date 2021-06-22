@@ -73,90 +73,90 @@ $ref_role:  null;
 
 // Language name shown when hovering:
 .listingblock#{$ref_role} code[data-lang=alan]::before{
-    color: $HL-AlanHover;
+  color: $HL-AlanHover;
 }
 // Highlight Theme:
 .listingblock#{$ref_role} > div.content > pre[class~=rouge][lang=alan] {
-    background-color: $HL-Canvas;
-    border-radius: $HL-Border-radius;
-    border: $HL-Border-width solid $HL-Border-color;
-    &>code {
-        color: $HL-Default;
-        font-family: $HL-Font-family;
-        font-size: $HL-Font-size;
-      &>span {
-          color: $HL-Default;
+  background-color: $HL-Canvas;
+  border-radius: $HL-Border-radius;
+  border: $HL-Border-width solid $HL-Border-color;
+  &>code {
+    color: $HL-Default;
+    font-family: $HL-Font-family;
+    font-size: $HL-Font-size;
+    &>span {
+      color: $HL-Default;
 
-          &.n { // WIP! -> Literal::Number -> n
-              // Numbers
-              color: $HL-Number;
-          }
-          &.se { // WIP! -> Str::Escape -> se
-              // Escape sequences
-              // ----------------
-              // In Alan these are: $p, $n, $i, $t, $a, $l, $v and $$.
-              color: $HL-Escape;
-          }
-          &.si { // WIP! -> Str::Interpol -> si
-              // Interpolation sequences
-              // -----------------------
-              // In Alan these are: $<n>, $+<n>, $0<n>, $-<n>, $!<n> and $o.
-              color: $HL-Interpolation;
-          }
-          &.s2 { // WIP! -> Str::Double -> s2
-              // Strings
-              color: $HL-String;
-          }
-          &.c1 { // WIP! -> Comment::Single -> c1
-              // Single-line comments
-              color: $HL-Comment;
-          }
-          &.lin { // TBD!
-              // Line numbers
-              color: $HL-LineNum;
-          }
-          &.o { // WIP! -> Operator -> o
-              // Operators
-              color: $HL-Operator;
-          }
-          // ---------------------
-          //    Keywords Groups
-          // ---------------------
-          &.kr { // WIP! -> Keyword::Reserved -> kr
-              // Alan Keywords
-              color: $HL-Keywords1; // @TODO: RENAME VAR
-          }
-          &.nb { // WIP! -> Name::Builtin -> nb
-              // Predefined Alan Classes
-              color: $HL-Keywords2; // @TODO: RENAME VAR
-          }
-          &.nx { // WIP! -> Name::Other -> nx
-              // Predefined Instances (i.e. the 'hero')
-              color: $HL-Keywords3; // @TODO: RENAME VAR
-          }
+      &.n { // WIP! -> Literal::Number -> n
+        // Numbers
+        color: $HL-Number;
       }
-      // =========================================================================
-      //                            Highlight Markers
-      // =========================================================================
-      // Highlighter marker effects to mark code lines or segments.
-      // Mainly used in "ALAN Beginner's Guide" to mark added code in the sources.
-      //
-      // Two colors are passed to the mixins to create a gradient. If both colors
-      // are identical a plain background will be defined instead.
-
-      // -------------------------------------------------------------------------
-      // Yellow Marker: <mark>
-      // -------------------------------------------------------------------------
-      // Let's add to the <mark> tag a smeared fluorescent marker effect.
-
-      @include MarkerMark($HL-MarkerYellow1, $HL-MarkerYellow2);
-
-      // -------------------------------------------------------------------------
-      // Green Marker: <span class="green">
-      // -------------------------------------------------------------------------
-      // Let's add to the <mark> tag a smeared fluorescent marker effect.
-      @include MarkerSpan('green', $HL-MarkerGreen1, $HL-MarkerGreen2);
+      &.se { // WIP! -> Str::Escape -> se
+        // Escape sequences
+        // ----------------
+        // In Alan these are: $p, $n, $i, $t, $a, $l, $v and $$.
+        color: $HL-Escape;
+      }
+      &.si { // WIP! -> Str::Interpol -> si
+        // Interpolation sequences
+        // -----------------------
+        // In Alan these are: $<n>, $+<n>, $0<n>, $-<n>, $!<n> and $o.
+        color: $HL-Interpolation;
+      }
+      &.s2 { // WIP! -> Str::Double -> s2
+        // Strings
+        color: $HL-String;
+      }
+      &.c1 { // WIP! -> Comment::Single -> c1
+        // Single-line comments
+        color: $HL-Comment;
+      }
+      &.lin { // TBD!
+        // Line numbers
+        color: $HL-LineNum;
+      }
+      &.o { // WIP! -> Operator -> o
+        // Operators
+        color: $HL-Operator;
+      }
+      // ---------------------
+      //    Keywords Groups
+      // ---------------------
+      &.kr { // WIP! -> Keyword::Reserved -> kr
+        // Alan Keywords
+        color: $HL-Keywords1; // @TODO: RENAME VAR
+      }
+      &.nb { // WIP! -> Name::Builtin -> nb
+        // Predefined Alan Classes
+        color: $HL-Keywords2; // @TODO: RENAME VAR
+      }
+      &.nx { // WIP! -> Name::Other -> nx
+        // Predefined Instances (i.e. the 'hero')
+        color: $HL-Keywords3; // @TODO: RENAME VAR
+      }
     }
+    // =========================================================================
+    //                            Highlight Markers
+    // =========================================================================
+    // Highlighter marker effects to mark code lines or segments.
+    // Mainly used in "ALAN Beginner's Guide" to mark added code in the sources.
+    //
+    // Two colors are passed to the mixins to create a gradient. If both colors
+    // are identical a plain background will be defined instead.
+
+    // -------------------------------------------------------------------------
+    // Yellow Marker: <mark>
+    // -------------------------------------------------------------------------
+    // Let's add to the <mark> tag a smeared fluorescent marker effect.
+
+    @include MarkerMark($HL-MarkerYellow1, $HL-MarkerYellow2);
+
+    // -------------------------------------------------------------------------
+    // Green Marker: <span class="green">
+    // -------------------------------------------------------------------------
+    // Let's add to the <mark> tag a smeared fluorescent marker effect.
+    @include MarkerSpan('green', $HL-MarkerGreen1, $HL-MarkerGreen2);
+  }
 }
 
 // EOF //
