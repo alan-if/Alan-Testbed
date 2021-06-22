@@ -64,6 +64,9 @@ span.green {
 .listingblock > div.content > pre[class~=rouge][lang=alan] > code > span.c1 {
   color: #998;
 }
+.listingblock > div.content > pre[class~=rouge][lang=alan] > code > span.cm {
+  color: #998;
+}
 .listingblock > div.content > pre[class~=rouge][lang=alan] > code > span.lin {
   color: #998;
 }
@@ -121,6 +124,9 @@ span.green {
 .listingblock.lib > div.content > pre[class~=rouge][lang=alan] > code > span.c1 {
   color: #a09f93;
 }
+.listingblock.lib > div.content > pre[class~=rouge][lang=alan] > code > span.cm {
+  color: #a09f93;
+}
 .listingblock.lib > div.content > pre[class~=rouge][lang=alan] > code > span.lin {
   color: #747369;
 }
@@ -176,6 +182,9 @@ span.green {
   color: #198844;
 }
 .listingblock.tutorial > div.content > pre[class~=rouge][lang=alan] > code > span.c1 {
+  color: #969896;
+}
+.listingblock.tutorial > div.content > pre[class~=rouge][lang=alan] > code > span.cm {
   color: #969896;
 }
 .listingblock.tutorial > div.content > pre[class~=rouge][lang=alan] > code > span.lin {

@@ -82,7 +82,7 @@ module Rouge
         # Single line comment
         rule %r(--[^\n]*), Comment::Single
         # Block comment
-        rule %r(^\/{4}.*$), Comment::Single, :block_comment
+        rule %r(^\/{4}.*$), Comment::Multiline, :block_comment
 
         # Strings
         ##########

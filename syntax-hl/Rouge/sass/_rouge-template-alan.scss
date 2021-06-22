@@ -111,6 +111,10 @@ $ref_role:  null;
         // Single-line comments
         color: $HL-Comment;
       }
+      &.cm { // WIP! -> Comment::Multiline -> cm
+        // Block comments
+        color: $HL-Comment;
+      }
       &.lin { // TBD!
         // Line numbers
         color: $HL-LineNum;
