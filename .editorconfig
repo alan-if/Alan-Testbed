@@ -34,8 +34,12 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 # Exceptions overrides
-[Rouge/*.alan]
+[syntax-hl/Rouge/*.alan]
 charset = utf-8-bom
+; Temporary workaround for a bug in ALAN 3.0beta8 build 2207:
+; https://github.com/alan-if/alan/issues/30
+end_of_line = lf
+
 
 ## Shell Scripts
 ################

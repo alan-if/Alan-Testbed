@@ -1,6 +1,8 @@
-﻿--==============================================================================
--- "Barracks Example" by Tristano Ajmone | Alan Beta8
---==============================================================================
+﻿
+//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////
+A sample ALAN adventure, by Tristano Ajmone,
+////////////////////////////////////////////////////////////////////////////////
+
 The canteen IsA location
   Name 'The Barrack''s Mess Hall'.
 End the canteen.
@@ -15,7 +17,7 @@ Synonyms x = examine.
 
 Add to every thing
   Has desc "".
-  Verb examine
+  Verb examine -- Generic 'examine' verb
     Does
       If desc of this = ""
         Then "You notice nothing unusual about $1."
@@ -36,10 +38,12 @@ The trolley IsA object at canteen
   Verb examine
     Does only
       If this has not been_examined
+        -- Only shown when examining for the 1st time:
         Then "This old trolley has surely seen better days.$nIt seems barely
               capable of carrying its own weight without collapsing, let alone
               endure its daily use!"
           make this been_examined.
+        -- Shown on successive examination:
         Else "It's just an old trolley."
       End if.
   End verb examine.

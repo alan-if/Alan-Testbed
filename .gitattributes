@@ -28,6 +28,10 @@
 *.log    text
 *.sav    binary
 
+# Temporary workaround for a bug in ALAN 3.0beta8 build 2207:
+# https://github.com/alan-if/alan/issues/30
+/syntax-hl/Rouge/*.alan   text eol=lf
+
 # Alan IDE Files
 .project   text     linguist-language=XML     linguist-generated=true
 

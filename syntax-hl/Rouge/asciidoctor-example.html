@@ -897,9 +897,11 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <h3 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
-</span><span class="c1">--==============================================================================</span><span class="w">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="w">
+</span><span class="c1">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span><span class="err">
+</span><span class="cm">A sample ALAN adventure, by Tristano Ajmone,</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
   </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
@@ -914,7 +916,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 
 </span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
   </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">""</span><span class="p">.</span><span class="w">
-  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="c1">-- Generic 'examine' verb</span><span class="w">
     </span><span class="kr">Does</span><span class="w">
       </span><span class="kr">If</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="dl">""</span><span class="w">
         </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">You notice nothing unusual about </span><span class="si">$1</span><span class="s2">.</span><span class="dl">"</span><span class="w">
@@ -935,10 +937,12 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
   </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
     </span><span class="kr">Does</span><span class="w"> </span><span class="kr">only</span><span class="w">
       </span><span class="kr">If</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="w">
+        </span><span class="c1">-- Only shown when examining for the 1st time:</span><span class="w">
         </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">This old trolley has surely seen better days.</span><span class="se">$n</span><span class="s2">It seems barely
               capable of carrying its own weight without collapsing, let alone
               endure its daily use!</span><span class="dl">"</span><span class="w">
           </span><span class="kr">make</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+        </span><span class="c1">-- Shown on successive examination:</span><span class="w">
         </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">It's just an old trolley.</span><span class="dl">"</span><span class="w">
       </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
   </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
@@ -965,9 +969,11 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <h3 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h3>
 <div class="listingblock lib">
 <div class="content">
-<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
-</span><span class="c1">--==============================================================================</span><span class="w">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="w">
+</span><span class="c1">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span><span class="err">
+</span><span class="cm">A sample ALAN adventure, by Tristano Ajmone,</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
   </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
@@ -982,7 +988,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 
 </span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
   </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">""</span><span class="p">.</span><span class="w">
-  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="c1">-- Generic 'examine' verb</span><span class="w">
     </span><span class="kr">Does</span><span class="w">
       </span><span class="kr">If</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="dl">""</span><span class="w">
         </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">You notice nothing unusual about </span><span class="si">$1</span><span class="s2">.</span><span class="dl">"</span><span class="w">
@@ -1003,10 +1009,12 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
   </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
     </span><span class="kr">Does</span><span class="w"> </span><span class="kr">only</span><span class="w">
       </span><span class="kr">If</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="w">
+        </span><span class="c1">-- Only shown when examining for the 1st time:</span><span class="w">
         </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">This old trolley has surely seen better days.</span><span class="se">$n</span><span class="s2">It seems barely
               capable of carrying its own weight without collapsing, let alone
               endure its daily use!</span><span class="dl">"</span><span class="w">
           </span><span class="kr">make</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+        </span><span class="c1">-- Shown on successive examination:</span><span class="w">
         </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">It's just an old trolley.</span><span class="dl">"</span><span class="w">
       </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
   </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
@@ -1033,9 +1041,11 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <h3 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h3>
 <div class="listingblock tutorial">
 <div class="content">
-<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
-</span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
-</span><span class="c1">--==============================================================================</span><span class="w">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="w">
+</span><span class="c1">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span><span class="err">
+</span><span class="cm">A sample ALAN adventure, by Tristano Ajmone,</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
   </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
@@ -1050,7 +1060,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 
 </span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
   </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">""</span><span class="p">.</span><span class="w">
-  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="c1">-- Generic 'examine' verb</span><span class="w">
     </span><span class="kr">Does</span><span class="w">
       </span><span class="kr">If</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="dl">""</span><span class="w">
         </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">You notice nothing unusual about </span><span class="si">$1</span><span class="s2">.</span><span class="dl">"</span><span class="w">
@@ -1071,10 +1081,12 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
   </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
     </span><span class="kr">Does</span><span class="w"> </span><span class="kr">only</span><span class="w">
       </span><span class="kr">If</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="w">
+        </span><span class="c1">-- Only shown when examining for the 1st time:</span><span class="w">
         </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">This old trolley has surely seen better days.</span><span class="se">$n</span><span class="s2">It seems barely
               capable of carrying its own weight without collapsing, let alone
               endure its daily use!</span><span class="dl">"</span><span class="w">
           </span><span class="kr">make</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+        </span><span class="c1">-- Shown on successive examination:</span><span class="w">
         </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">It's just an old trolley.</span><span class="dl">"</span><span class="w">
       </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
   </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
