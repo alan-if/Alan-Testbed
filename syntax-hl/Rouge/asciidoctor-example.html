@@ -439,62 +439,387 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <style>
 pre.rouge table td { padding: 5px; }
 pre.rouge table pre { margin: 0; }
-pre.rouge, pre.rouge .w {
-  color: #d3d0c8;
-  background-color: #2d2d2d;
+pre.rouge {
+  color: #faf6e4;
+  background-color: #122b3b;
+}
+pre.rouge .gl {
+  color: #dee5e7;
+  background-color: #4e5d62;
+}
+pre.rouge .gp {
+  color: #a8e1fe;
+  font-weight: bold;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
+  color: #6c8b9f;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .err {
+  color: #fefeec;
+  background-color: #cc0000;
+}
+pre.rouge .gr {
+  color: #cc0000;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .k, pre.rouge .kd, pre.rouge .kv {
+  color: #f6dd62;
+  font-weight: bold;
 }
 pre.rouge .o, pre.rouge .ow {
-  color: #66cccc;
-}
-pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cp, pre.rouge .cpf, pre.rouge .cs {
-  color: #a09f93;
-  font-style: italic;
-}
-pre.rouge .cm {
-  color: #a09f93;
-  font-style: italic;
-}
-pre.rouge .c1 {
-  color: #a09f93;
-  font-style: italic;
-}
-pre.rouge .n, pre.rouge .na, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.rouge .ni, pre.rouge .ne, pre.rouge .nf, pre.rouge .fm, pre.rouge .py, pre.rouge .nl, pre.rouge .nn, pre.rouge .nt, pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
-  color: #f2f0ec;
-}
-pre.rouge .nb, pre.rouge .bp {
-  color: #ffcc66;
-  font-weight: bold;
-}
-pre.rouge .nx {
-  color: #6699cc;
-  font-weight: bold;
-}
-pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
-  color: #ffcc66;
-}
-pre.rouge .kr {
-  color: #f2777a;
+  color: #4df4ff;
   font-weight: bold;
 }
 pre.rouge .p, pre.rouge .pi {
-  color: #f2777a;
+  color: #4df4ff;
+}
+pre.rouge .gd {
+  color: #cc0000;
+}
+pre.rouge .gi {
+  color: #b2fd6d;
+}
+pre.rouge .ge {
+  font-style: italic;
+}
+pre.rouge .gs {
   font-weight: bold;
 }
-pre.rouge .s2 {
-  color: #99cc99;
+pre.rouge .gt {
+  color: #dee5e7;
+  background-color: #4e5d62;
 }
-pre.rouge .s1 {
-  color: #99cc99;
+pre.rouge .kc {
+  color: #f696db;
+  font-weight: bold;
 }
-pre.rouge .dl {
-  color: #ffcc66;
+pre.rouge .kn {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .gh {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .nc {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .nd {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .bp {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .ne {
+  color: #b2fd6d;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .nt {
+  color: #ffb000;
+  font-weight: bold;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
+  color: #f696db;
+  font-weight: bold;
+}
+pre.rouge .ld {
+  color: #f696db;
+  font-weight: bold;
+}
+pre.rouge .ss {
+  color: #f696db;
+  font-weight: bold;
+}
+pre.rouge .s, pre.rouge .sb, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .sh, pre.rouge .sx, pre.rouge .sr, pre.rouge .s1 {
+  color: #fff0a6;
+  font-weight: bold;
+}
+pre.rouge .sa {
+  color: #f6dd62;
+  font-weight: bold;
 }
 pre.rouge .se {
-  color: #cc99cc;
+  color: #4df4ff;
+  font-weight: bold;
+}
+pre.rouge .sc {
+  color: #4df4ff;
+  font-weight: bold;
 }
 pre.rouge .si {
-  color: #66cccc;
+  color: #4df4ff;
+  font-weight: bold;
 }
+pre.rouge .nb {
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #BBBBBB;
+}
+pre.rouge .go {
+  color: #BBBBBB;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #a8e1fe;
+}
+pre.rouge .py {
+  color: #a8e1fe;
+}
+pre.rouge .na {
+  color: #a8e1fe;
+}
+pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+  color: #a8e1fe;
+  font-weight: bold;
+}
+</style>
+<style>
+/* Alan Code Notation Mockup */
+.listingblock.alan pre {
+  color: #333;
+  background: #F8F8F8;
+}
+
+/* Shell/CMD */
+div.literalblock.shell pre {
+  background-color: #0C0C0C;
+  color: #F2F2F2;
+}
+div.literalblock.shell pre .conum {
+  background: #FFF945 !important;
+  color: #0C0C0C !important;
+}
+
+/* Game Transcripts */
+.exampleblock.gametranscript > .content {
+  background: #F7FDFF;
+  color: #0089B6;
+  border-color: #CCF2FF;
+}
+
+/* Commentary Blocks */
+div.openblock.commentary {
+  padding-left: 6em;
+}
+
+/* Inline Highlighting */
+span.green {
+  background-color: #A3FF8A;
+}
+
+/* Highlight Theme for Alan -- based on "github.com style" for highlight.js, by Vasily Polovnyov */
+.listingblock code[data-lang=alan]::before {
+  color: #a09f93;
+}
+
+.listingblock pre[class~=rouge][lang=alan] {
+  background-color: #F8F8F8;
+  border-radius: 4px;
+  border: 1px solid #F8F8F8;
+}
+.listingblock pre[class~=rouge][lang=alan] > code {
+  color: #333;
+  font-family: inherit;
+  font-size: inherit;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl {
+  color: #333;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.num {
+  color: #333;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.esc {
+  color: #ff980b;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.ipl {
+  color: #d572f1;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.sng {
+  color: #008080;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.slc {
+  color: #998;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.lin {
+  color: #998;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.opt {
+  color: #333;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.kwa {
+  color: #990000;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.kwb {
+  color: #000080;
+}
+.listingblock pre[class~=rouge][lang=alan] .hl.kwc {
+  color: #000080;
+}
+.listingblock pre[class~=rouge][lang=alan] mark {
+  background-color: #ccff00;
+  background-image: linear-gradient(to right, #ccff00 0%, #f5ff87 100%);
+}
+.listingblock pre[class~=rouge][lang=alan] span.green {
+  background-color: #a3ff8a;
+  background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
+}
+
+/* Rouge Theme for Alan Library -- Base16 Eighties, by Chris Kempson */
+.listingblock.lib code[data-lang=alan]::before {
+  color: #a09f93;
+}
+
+.listingblock.lib pre[class~=rouge][lang=alan] {
+  background-color: #2d2d2d;
+  border-radius: 4px;
+  border: 1px solid #a09f93;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] > code {
+  color: #d3d0c8;
+  font-family: inherit;
+  font-size: inherit;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl {
+  color: #d3d0c8;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.num {
+  color: #f99157;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.esc {
+  color: #f99157;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.ipl {
+  color: #d27b53;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.sng {
+  color: #99cc99;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.slc {
+  color: #a09f93;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.lin {
+  color: #747369;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.opt {
+  color: #d3d0c8;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.kwa {
+  color: #f2777a;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.kwb {
+  color: #ffcc66;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] .hl.kwc {
+  color: #6699cc;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] mark {
+  background-color: #ccff00;
+  background-image: linear-gradient(to right, #ccff00 0%, #f5ff87 100%);
+}
+.listingblock.lib pre[class~=rouge][lang=alan] span.green {
+  background-color: #a3ff8a;
+  background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
+}
+
+/* Rouge Theme for Alan tutorial -- Base16 Google, by  Seth Wright */
+.listingblock.tutorial code[data-lang=alan]::before {
+  color: #a09f93;
+}
+
+.listingblock.tutorial pre[class~=rouge][lang=alan] {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] > code {
+  color: #373b41;
+  font-family: inherit;
+  font-size: inherit;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl {
+  color: #373b41;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.num {
+  color: #373b41;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.esc {
+  color: #F96A38;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.ipl {
+  color: #3971ED;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.sng {
+  color: #198844;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.slc {
+  color: #969896;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.lin {
+  color: #c5c8c6;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.opt {
+  color: #373b41;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.kwa {
+  color: #CC342B;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.kwb {
+  color: #FBA922;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] .hl.kwc {
+  color: #3971ED;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] mark {
+  background-color: #f5ff87;
+  background-image: none;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] span.green {
+  background-color: #dbf8e6;
+  background-image: none;
+}
+
+/*# sourceMappingURL=rouge.css.map */
 </style>
 </head>
 <body class="article toc2 toc-left">
@@ -507,7 +832,14 @@ pre.rouge .si {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#alan">ALAN</a></li>
+<li><a href="#alan">ALAN</a>
+<ul class="sectlevel2">
+<li><a href="#default_theme">Default Theme</a></li>
+<li><a href="#library_theme">Library Theme</a></li>
+<li><a href="#tutorial_theme">Tutorial Theme</a></li>
+</ul>
+</li>
+<li><a href="#other_syntaxes">Other Syntaxes</a></li>
 </ul>
 </div>
 </div>
@@ -537,9 +869,35 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <div class="sect1">
 <h2 id="alan"><a class="anchor" href="#alan"></a>ALAN</h2>
 <div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>WIP THEMES!</strong>&#8201;&#8212;&#8201;The CSS themes are still broken, I need to:</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> adjust the old Highlight class names to those of Rouge.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> fix some precedence issues which are preventing the custom ALAN themes to override styles from the native Rouge theme.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
 </span><span class="c1">--==============================================================================</span><span class="w">
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
@@ -601,6 +959,308 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 
 </span><span class="kr">Start</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span></code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h3>
+<div class="listingblock lib">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
+  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Syntax</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)</span><span class="w">
+  </span><span class="kr">Where</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">thing</span><span class="w">
+    </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">You can only examine actors and objects.</span><span class="dl">"</span><span class="w">
+
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+        </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+    </span><span class="n">myself</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
+  </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">""</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="kr">If</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="dl">""</span><span class="w">
+        </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">You notice nothing unusual about </span><span class="si">$1</span><span class="s2">.</span><span class="dl">"</span><span class="w">
+        </span><span class="kr">Else</span><span class="w"> </span><span class="kr">say</span><span class="w"> </span><span class="n">obj</span><span class="p">:</span><span class="n">desc</span><span class="p">.</span><span class="w">
+      </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">chair</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="w">
+  </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">"</span><span class="s2">An old and battered chair.</span><span class="dl">"</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">chair</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">trolley</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="w">
+  </span><span class="kr">Container</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="nb">object</span><span class="p">.</span><span class="w">
+    </span><span class="kr">Limits</span><span class="w">
+      </span><span class="kr">Count</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="dl">"</span><span class="s2">The trolley is full!</span><span class="dl">"</span><span class="w">
+    </span><span class="kr">Has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+    </span><span class="kr">Does</span><span class="w"> </span><span class="kr">only</span><span class="w">
+      </span><span class="kr">If</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="w">
+        </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">This old trolley has surely seen better days.</span><span class="se">$n</span><span class="s2">It seems barely
+              capable of carrying its own weight without collapsing, let alone
+              endure its daily use!</span><span class="dl">"</span><span class="w">
+          </span><span class="kr">make</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+        </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">It's just an old trolley.</span><span class="dl">"</span><span class="w">
+      </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">trolley</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="nx">hero</span><span class="w">
+  </span><span class="kr">Mentioned</span><span class="w"> </span><span class="dl">"</span><span class="s2">yourself</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w">
+
+</span><span class="c1">-- A 'quit' verb to leave the game...</span><span class="w">
+</span><span class="kr">Syntax</span><span class="w"> </span><span class="n">'quit'</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">'quit'</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Meta</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">'quit'</span><span class="w">
+  </span><span class="kr">Does</span><span class="w">
+    </span><span class="dl">"</span><span class="se">$p</span><span class="s2">Already giving up on this adventure?</span><span class="dl">"</span><span class="w">
+    </span><span class="kr">quit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Start</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h3>
+<div class="listingblock tutorial">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="c1">-- "Barracks Example" by Tristano Ajmone | Alan Beta8</span><span class="w">
+</span><span class="c1">--==============================================================================</span><span class="w">
+</span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
+  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Syntax</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)</span><span class="w">
+  </span><span class="kr">Where</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">thing</span><span class="w">
+    </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">You can only examine actors and objects.</span><span class="dl">"</span><span class="w">
+
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+        </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+    </span><span class="n">myself</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
+  </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">""</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="kr">If</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="dl">""</span><span class="w">
+        </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">You notice nothing unusual about </span><span class="si">$1</span><span class="s2">.</span><span class="dl">"</span><span class="w">
+        </span><span class="kr">Else</span><span class="w"> </span><span class="kr">say</span><span class="w"> </span><span class="n">obj</span><span class="p">:</span><span class="n">desc</span><span class="p">.</span><span class="w">
+      </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">chair</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="w">
+  </span><span class="kr">Has</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="dl">"</span><span class="s2">An old and battered chair.</span><span class="dl">"</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">chair</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">trolley</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="w">
+  </span><span class="kr">Container</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="nb">object</span><span class="p">.</span><span class="w">
+    </span><span class="kr">Limits</span><span class="w">
+      </span><span class="kr">Count</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="dl">"</span><span class="s2">The trolley is full!</span><span class="dl">"</span><span class="w">
+    </span><span class="kr">Has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+    </span><span class="kr">Does</span><span class="w"> </span><span class="kr">only</span><span class="w">
+      </span><span class="kr">If</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="n">been_examined</span><span class="w">
+        </span><span class="kr">Then</span><span class="w"> </span><span class="dl">"</span><span class="s2">This old trolley has surely seen better days.</span><span class="se">$n</span><span class="s2">It seems barely
+              capable of carrying its own weight without collapsing, let alone
+              endure its daily use!</span><span class="dl">"</span><span class="w">
+          </span><span class="kr">make</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="n">been_examined</span><span class="p">.</span><span class="w">
+        </span><span class="kr">Else</span><span class="w"> </span><span class="dl">"</span><span class="s2">It's just an old trolley.</span><span class="dl">"</span><span class="w">
+      </span><span class="kr">End</span><span class="w"> </span><span class="kr">if</span><span class="p">.</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">examine</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">trolley</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="nx">hero</span><span class="w">
+  </span><span class="kr">Mentioned</span><span class="w"> </span><span class="dl">"</span><span class="s2">yourself</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w">
+
+</span><span class="c1">-- A 'quit' verb to leave the game...</span><span class="w">
+</span><span class="kr">Syntax</span><span class="w"> </span><span class="n">'quit'</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">'quit'</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Meta</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="n">'quit'</span><span class="w">
+  </span><span class="kr">Does</span><span class="w">
+    </span><span class="dl">"</span><span class="se">$p</span><span class="s2">Already giving up on this adventure?</span><span class="dl">"</span><span class="w">
+    </span><span class="kr">quit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Start</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="other_syntaxes"><a class="anchor" href="#other_syntaxes"></a>Other Syntaxes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Code blocks for languages not covered by our custom CSS will fallback to use the native Rouge theme defined via the <code>:rouge-style:</code> attribute.
+Example, using the <code>thankful_eyes</code> theme:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="ruby"><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CustomRougeAdapter</span> <span class="o">&lt;</span> <span class="p">(</span><span class="no">Asciidoctor</span><span class="o">::</span><span class="no">SyntaxHighlighter</span><span class="p">.</span><span class="nf">for</span> <span class="s1">'rouge'</span><span class="p">)</span>
+  <span class="n">register_for</span> <span class="s1">'rouge'</span>
+
+  <span class="c1"># defer loading rouge until the load_library method is called:</span>
+  <span class="k">def</span> <span class="nf">load_library</span>
+    <span class="nb">require</span> <span class="s1">'rouge'</span>
+    <span class="nb">require</span> <span class="s1">'./alan3.rb'</span>
+    <span class="nb">require</span> <span class="s1">'./themes/alan-b16-eighties.rb'</span>
+    <span class="ss">:loaded</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">format</span> <span class="n">node</span><span class="p">,</span> <span class="n">lang</span><span class="p">,</span> <span class="n">opts</span>
+    <span class="n">opts</span><span class="p">[</span><span class="ss">:transform</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">pre</span><span class="p">,</span> <span class="n">code</span><span class="o">|</span>
+      <span class="c1"># &lt;pre class="highlight" lang="alan"&gt;</span>
+      <span class="c1"># pre['class'] = 'rouge'</span>
+      <span class="n">pre</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="sx">%(#{lang})</span> <span class="k">if</span> <span class="n">lang</span>
+      <span class="c1"># from original example:</span>
+      <span class="n">code</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span> <span class="o">=</span> <span class="sx">%(language-#{lang})</span> <span class="k">if</span> <span class="n">lang</span>
+    <span class="k">end</span>
+    <span class="k">super</span>
+  <span class="k">end</span>
+
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If no theme is specified via <code>:rouge-style:</code>, Asciidoctor will default to the <code>github</code> theme.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Asciidoctor will convert the native Rouge theme to CSS and inject it in its default CSS stylesheet, which won&#8217;t interfere with out custom styles and themes.</p>
+</div>
+<div class="paragraph">
+<p>This is quite convenient, for it ensures that code examples from other languages are also highlighted (i.e. if Rouge has a lexer for that language), and authors of a document are free to choose their fallback theme of choice.</p>
+</div>
+<div class="paragraph">
+<p>The names of the currently available native Rouge themes are:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<code>base16</code> 
+</td>
+<td class="hdlist2">
+<p>Default base16 theme.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>bw</code> 
+</td>
+<td class="hdlist2">
+<p>A port of Pygment&#8217;s &#8220;Black and White&#8221; theme.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>colorful</code> 
+</td>
+<td class="hdlist2">
+<p>A port of Pygment&#8217;s &#8220;Colorful&#8221; theme.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>github</code> 
+</td>
+<td class="hdlist2">
+<p>&#8220;GitHub&#8221; theme.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>gruvbox</code> 
+</td>
+<td class="hdlist2">
+<p>Based on the <a href="https://github.com/morhetz/gruvbox" target="_blank" rel="noopener">&#8220;gruvbox&#8221;</a> theme.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>igorpro</code> 
+</td>
+<td class="hdlist2">
+<p>&#8220;Igor Pro&#8221;.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>magritte</code> 
+</td>
+<td class="hdlist2">
+<p>&#8220;Magritte&#8221;.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>molokai</code> 
+</td>
+<td class="hdlist2">
+<p>A &#8220;Monokai&#8221; variation.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>monokai.sublime</code> 
+</td>
+<td class="hdlist2">
+<p>&#8220;Monokai Sublime&#8221;, a Monokai variation inspired by Sublime Text.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>monokai</code> 
+</td>
+<td class="hdlist2">
+<p>&#8220;Monokai&#8221; classic.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>pastie</code> 
+</td>
+<td class="hdlist2">
+<p>A port of Pygment&#8217;s &#8220;Pastie&#8221; theme.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>thankful_eyes</code> 
+</td>
+<td class="hdlist2">
+<p>Thankful Eyes.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>tulip</code> 
+</td>
+<td class="hdlist2">
+<p>Tulip.</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

@@ -8,4 +8,16 @@ class CustomRougeAdapter < (Asciidoctor::SyntaxHighlighter.for 'rouge')
     require './themes/alan-b16-eighties.rb'
     :loaded
   end
+
+  def format node, lang, opts
+    opts[:transform] = proc do |pre, code|
+      # <pre class="highlight" lang="alan">
+      # pre['class'] = 'rouge'
+      pre['lang'] = %(#{lang}) if lang
+      # from original example:
+      code['class'] = %(language-#{lang}) if lang
+    end
+    super
+  end
+
 end

@@ -57,7 +57,7 @@ In order to integrate the Rouge highlighter with our ALAN Docs toolchain, we'll 
 - [ ] Define custom themes on a per language basis:
     + [ ] HTML Backend
         * [ ] Sass/CSS — for the HTML backend.
-        * [ ] Bypass Rouge default theme — i.e. tell Asciidoctor to not include any auto-generated Rouge theme, and rely entirely on our custom CSS, if possible.
+        * A native Rouge theme can still be specified via the `:rouge-style:` attribute (in doc header or via CLI opts) which will be converted to CSS as part of the default Asciidoctor CSS, this theme will be used as a fallback theme for code snippets in languages not covered by our custom CSS.
     + [ ] PDF Backend
         * [ ] Asciidoctor-pdf? when we'll switch from the DocBook/[asciidoctor-fopub] toolchain to [asciidoctor-pdf] we'll need to find a way to customize syntax themes.
 - [ ] Invoke Asciidoctor via its Ruby API, which offers a higher degree of control in terms of options when interacting with the Rouge library, replacing Bash scripts with a Rake build system in our toolchain.
