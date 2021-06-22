@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Custom Rouge Syntaxes</title>
+<meta name="author" content="Tristano Ajmone">
+<title>ALAN Docs Rouge Lexers</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -434,6 +435,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 pre.rouge table td { padding: 5px; }
 pre.rouge table pre { margin: 0; }
@@ -462,18 +464,22 @@ pre.rouge .n, pre.rouge .na, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.ro
 }
 pre.rouge .nb, pre.rouge .bp {
   color: #ffcc66;
+  font-weight: bold;
 }
 pre.rouge .nx {
   color: #6699cc;
+  font-weight: bold;
 }
 pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
-  color: #f99157;
+  color: #66cccc;
 }
 pre.rouge .kr {
   color: #f2777a;
+  font-weight: bold;
 }
 pre.rouge .p, pre.rouge .pi {
   color: #f2777a;
+  font-weight: bold;
 }
 pre.rouge .s2 {
   color: #99cc99;
@@ -492,13 +498,38 @@ pre.rouge .si {
 }
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Custom Rouge Syntaxes</h1>
+<h1>ALAN Docs Rouge Lexers</h1>
+<div class="details">
+<span id="author" class="author">Tristano Ajmone</span><br>
+<span id="email" class="email"><a href="mailto:tajmone@gmail.com">tajmone@gmail.com</a></span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#alan">ALAN</a></li>
+<li><a href="#alan_syntax_details">ALAN Syntax Details</a>
+<ul class="sectlevel2">
+<li><a href="#comments">Comments</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#predefined_classes">Predefined Classes</a></li>
+<li><a href="#predefined_hero_instance">Predefined Hero Instance</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Previews and testing of the Rouge lexers and themes for the ALAN Docs project, and other ALAN-related documentation.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_alan">Alan</h2>
+<h2 id="alan"><a class="anchor" href="#alan"></a>ALAN</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
@@ -808,10 +839,143 @@ pre.rouge .si {
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="alan_syntax_details"><a class="anchor" href="#alan_syntax_details"></a>ALAN Syntax Details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section we&#8217;ll focus on specific elements of the ALAN syntax, one at the time, in order to check that they are rendered properly by the lexer and theme.
+For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its corresponding HTML/CSS class.</p>
+</div>
+<div class="sect2">
+<h3 id="comments"><a class="anchor" href="#comments"></a>Comments</h3>
+<div class="paragraph">
+<p>Single line comments:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="c1">-- just a comment.</span><span class="w">
+
+</span><span class="kr">Every</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Is</span><span class="w"> </span><span class="n">edible</span><span class="p">.</span><span class="w"> </span><span class="c1">-- so that it passes the checks of 'eat'!</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">Every</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Block comments were introduced in ALAN Beta8:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="c1">////</span><span class="err">
+</span><span class="cm">A block comment.</span><span class="err">
+</span><span class="cm">It's delimited by 4 forward slashes (/).</span><span class="err">
+</span><span class="cm">////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">apple</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">//// Anything can follow the opening delimiter! ////////////////////////////////</span><span class="err">
+</span><span class="cm">But the closing delimiter can only be followed by more forward slashes...</span><span class="err">
+</span><span class="cm">//// therefore this is not a closing delimiter!</span><span class="err">
+</span><span class="cm">But the next line is:</span><span class="err">
+</span><span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">pear</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="numbers"><a class="anchor" href="#numbers"></a>Numbers</h3>
+<div class="paragraph">
+<p>Numbers (integers) are captured as <code>Literal::Number</code> (CSS: <code>m</code>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">If</span><span class="w"> </span><span class="n">minute</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">clock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">59</span><span class="w"> </span><span class="kr">Then</span><span class="w">
+  </span><span class="kr">Set</span><span class="w"> </span><span class="n">minute</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">clock</span><span class="w"> </span><span class="kr">To</span><span class="w"> </span><span class="m">0</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Increase</span><span class="w"> </span><span class="n">hour</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">clock</span><span class="p">.</span><span class="w">
+</span><span class="kr">Else</span><span class="w">
+  </span><span class="kr">Increase</span><span class="w"> </span><span class="n">minute</span><span class="w"> </span><span class="kr">OF</span><span class="w"> </span><span class="n">clock</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">If</span><span class="p">.</span><span class="w">
+</span><span class="kr">If</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">bottle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kr">Then</span><span class="w">
+  </span><span class="dl">"</span><span class="s2">You have no water.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">Elsif</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="kr">Of</span><span class="w"> </span><span class="n">bottle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="kr">Then</span><span class="w">
+  </span><span class="dl">"</span><span class="s2">You have almost no water left.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">Else</span><span class="w">
+  </span><span class="dl">"</span><span class="s2">You have plenty of water.</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">If</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="predefined_classes"><a class="anchor" href="#predefined_classes"></a>Predefined Classes</h3>
+<div class="paragraph">
+<p>There are eight predefined classes in Alan: <code>entity</code>, <code>thing</code>, <code>object</code>, <code>actor</code>, <code>location</code>, <code>literal</code>, <code>string</code> and <code>integer</code>, all of which receive a dedicated colouring in the syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">The</span><span class="w"> </span><span class="n">worn</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">entity</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">basement</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Description</span><span class="w"> </span><span class="dl">"</span><span class="s2">What a dark ang gloomy place!</span><span class="dl">"</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">vampire</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">actor</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">coffin</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Container</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="nb">thing</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">thing</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">examine</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You examine </span><span class="si">$+1</span><span class="s2">, but find nothing unusual.</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">string</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">'say'</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You say </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2">!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">integer</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">shout</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You shout </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2"> out loud!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">Add</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="nb">literal</span><span class="w">
+  </span><span class="kr">Verb</span><span class="w"> </span><span class="n">whisper</span><span class="w">
+    </span><span class="kr">Does</span><span class="w">
+      </span><span class="dl">"</span><span class="s2">You whisper </span><span class="se">""$$</span><span class="dl">"</span><span class="w"> </span><span class="kr">Say</span><span class="w"> </span><span class="kr">This</span><span class="p">.</span><span class="w"> </span><span class="dl">"</span><span class="se">$$""</span><span class="s2">!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">add</span><span class="w"> </span><span class="kr">to</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="predefined_hero_instance"><a class="anchor" href="#predefined_hero_instance"></a>Predefined Hero Instance</h3>
+<div class="paragraph">
+<p>The <code>hero</code> is a predefined actor (the player) which is hardcoded into every adventure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">HERO</span><span class="p">.</span><span class="w">
+</span><span class="kr">Synonyms</span><span class="w"> </span><span class="n">me</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Hero</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-20 17:58:04 +0200
 </div>
 </div>
 </body>

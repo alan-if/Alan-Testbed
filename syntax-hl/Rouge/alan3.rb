@@ -3,7 +3,7 @@
 
 =begin
 ================================================================================
-ALAN IF Syntax Definition for Rouge  | 2021/06/20 | Alan 3.0beta8 | Rouge 3.26.0
+ALAN IF Syntax Definition for Rouge  | 2021/06/22 | Alan 3.0beta8 | Rouge 3.26.0
 --------------------------------------------------------------------------------
 Created by Tristano Ajmone; (c) Copyright by The ALAN IF Development team,
 released under the MIT License:
@@ -76,14 +76,21 @@ module Rouge
 
       state :root do
         mixin :whitespace
-        # Comment single line
+
+        # Comments
+        ##########
+        # Single line comment
         rule %r(--[^\n]*), Comment::Single
-        # Comment block
+        # Block comment
         rule %r(^\/{4}.*$), Comment::Single, :block_comment
 
         # Strings
-        rule %r/"/, Str::Double::Delimiter, :string
+        ##########
+        rule %r/\d+/, Literal::Number
 
+        # Numbers
+        #########
+        rule %r/"/, Str::Double::Delimiter, :string
 
         # Operators
         ###########
