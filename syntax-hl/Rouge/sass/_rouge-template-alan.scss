@@ -76,7 +76,7 @@ $ref_role:  null;
   color: $HL-AlanHover;
 }
 // Highlight Theme:
-.listingblock#{$ref_role} > div.content > pre[class~=rouge][lang=alan] {
+.listingblock#{$ref_role} pre[class~=rouge][lang=alan] {
   background-color: $HL-Canvas;
   border-radius: $HL-Border-radius;
   border: $HL-Border-width solid $HL-Border-color;
@@ -85,12 +85,27 @@ $ref_role:  null;
     font-family: $HL-Font-family;
     font-size: $HL-Font-size;
     &>span {
-      color: $HL-Default;
-
+      // @TODO: identifiers
+      // @TODO: quoted identifiers [ still WIP]
+      // @TODO: parameter indicators [ still WIP ]
+      // @TODO: punctuation [ still WIP ]
+      // @TODO: file strings + delimiters (Single Quoted Str -> Import | Show | Play)
       &.n { // WIP! -> Literal::Number -> n
         // Numbers
         color: $HL-Number;
       }
+      &.lin { // TBD!
+        // Line numbers
+        color: $HL-LineNum;
+      }
+      &.o { // WIP! -> Operator -> o
+        // Operators
+        color: $HL-Operator;
+      }
+      // -------------
+      //    Strings
+      // -------------
+      // @TODO: String Delimiter
       &.se { // WIP! -> Str::Escape -> se
         // Escape sequences
         // ----------------
@@ -107,6 +122,9 @@ $ref_role:  null;
         // Strings
         color: $HL-String;
       }
+      // --------------
+      //    Comments
+      // --------------
       &.c1 { // WIP! -> Comment::Single -> c1
         // Single-line comments
         color: $HL-Comment;
@@ -115,23 +133,15 @@ $ref_role:  null;
         // Block comments
         color: $HL-Comment;
       }
-      &.lin { // TBD!
-        // Line numbers
-        color: $HL-LineNum;
-      }
-      &.o { // WIP! -> Operator -> o
-        // Operators
-        color: $HL-Operator;
-      }
-      // ---------------------
-      //    Keywords Groups
-      // ---------------------
+      // --------------------------
+      //    Keywords & Built-ins
+      // --------------------------
       &.kr { // WIP! -> Keyword::Reserved -> kr
         // Alan Keywords
         color: $HL-Keywords1; // @TODO: RENAME VAR
       }
       &.nb { // WIP! -> Name::Builtin -> nb
-        // Predefined Alan Classes
+        // Predefined Classes
         color: $HL-Keywords2; // @TODO: RENAME VAR
       }
       &.nx { // WIP! -> Name::Other -> nx
