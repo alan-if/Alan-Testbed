@@ -94,14 +94,30 @@ module Rouge
 
         # Operators
         ###########
-        # Arythmetic: '+', '-', '*', '/'
-        # Comparison: '=', '<', '>', '<=', '>=', '<>', '=='
-        # Other:
-        #   (1) parameter indicators: '!', '*'
-        # NOTE: This RegEx is designed to avoid capturing '=>' as an operator, because we
-        #       want to capture it as a keyword (shorthand for 'THEN'). Otherwise it could
-        #       have been optimized to be much shorter.
-        rule %r/\+|\-|\*|\/|<|(?<!\=)>|<>|<\=|>\=|\=(?!>)|\=\=|\(|\)|\{|\}|!/, Operator
+        # NOTE: This RegEx is designed to avoid capturing '=>' as an operator,
+        #       since we want to capture it as a keyword (shorthand for 'THEN').
+        #       Otherwise it could have been optimized to be much shorter.
+        rule %r(
+          # Arythmetic:
+            \+ |  # +
+            \- |  # -
+            \* |  # *
+            \/ |  # /
+          # Comparison:
+            <        |  # <
+            (?<!\=)> |  # >
+            <>       |  # <>
+            <\=      |  # <=
+            >\=      |  # >=
+            \=(?!>)  |  # =
+            \=\=     |  # ==
+          # Brackets:
+            \(  | \)  | # ( )
+            \{  | \}  | # { }
+          # Parameter indicators:
+            \!  |  # !  omnipotent parameter
+            \*     # *  multiple parameter
+        )x, Operator
 
         # Punctuation
         rule %r/[\.:,]/, Punctuation

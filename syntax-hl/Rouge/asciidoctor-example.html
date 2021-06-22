@@ -444,8 +444,7 @@ pre.rouge, pre.rouge .w {
   background-color: #2d2d2d;
 }
 pre.rouge .o, pre.rouge .ow {
-  color: #d3d0c8;
-  background-color: #2d2d2d;
+  color: #66cccc;
 }
 pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cp, pre.rouge .cpf, pre.rouge .cs {
   color: #a09f93;
@@ -471,7 +470,7 @@ pre.rouge .nx {
   font-weight: bold;
 }
 pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
-  color: #66cccc;
+  color: #ffcc66;
 }
 pre.rouge .kr {
   color: #f2777a;
@@ -513,6 +512,7 @@ pre.rouge .si {
 <ul class="sectlevel2">
 <li><a href="#comments">Comments</a></li>
 <li><a href="#numbers">Numbers</a></li>
+<li><a href="#parameter_indicators">Parameter Indicators</a></li>
 <li><a href="#predefined_classes">Predefined Classes</a></li>
 <li><a href="#predefined_hero_instance">Predefined Hero Instance</a></li>
 </ul>
@@ -904,6 +904,21 @@ For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its c
 </span><span class="kr">Else</span><span class="w">
   </span><span class="dl">"</span><span class="s2">You have plenty of water.</span><span class="dl">"</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">If</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="parameter_indicators"><a class="anchor" href="#parameter_indicators"></a>Parameter Indicators</h3>
+<div class="paragraph">
+<p>I haven&#8217;t yet decided how to capture the <em>multiple</em> (<code>*</code>) and <em>omnipotent</em> (<code>!</code>)
+<a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">parameter indicators</a>,
+so for the time being they&#8217;re caputred as <code>Operator</code> tokens.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="alan"><span class="kr">Syntax</span><span class="w">
+  </span><span class="n">take</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)*</span><span class="p">.</span><span class="w">      </span><span class="c1">-- multiple indicator (*)</span><span class="w">
+  </span><span class="n">remember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)!</span><span class="p">.</span><span class="w">  </span><span class="c1">-- omnipotent indicator (!)</span></code></pre>
 </div>
 </div>
 </div>

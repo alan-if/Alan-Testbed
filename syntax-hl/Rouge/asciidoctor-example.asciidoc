@@ -87,6 +87,19 @@ End If.
 
 
 
+=== Parameter Indicators
+
+I haven't yet decided how to capture the _multiple_ (``*``) and _omnipotent_ (``!``)
+https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators[parameter indicators^,title="Learn more in The ALAN Manual"],
+so for the time being they're caputred as `Operator` tokens.
+
+[source,alan]
+----------------------
+Syntax
+  take     = take (obj)*.      -- multiple indicator (*)
+  remember = remember (obj)!.  -- omnipotent indicator (!)
+----------------------
+
 
 === Predefined Classes
 

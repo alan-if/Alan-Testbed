@@ -33,15 +33,15 @@ module Rouge
       palette :base0E   => '#cc99cc'
       palette :base0F   => '#d27b53'
 
-      style Text,
-            Operator,                 :fg => :base05, :bg => :base00
+      style Text,                     :fg => :base05, :bg => :base00
+      style Operator,                 :fg => :base0C
       style Comment,
             Comment::Multiline,
             Comment::Single,          :fg => :base04, :italic => true
       style Name,                     :fg => :base07
       style Name::Builtin,            :fg => :base0A, :bold => true
       style Name::Other,              :fg => :base0D, :bold => true
-      style Literal::Number,          :fg => :base0C
+      style Literal::Number,          :fg => :base0A
       style Keyword::Reserved,
             Punctuation,              :fg => :base08, :bold => true
       style Str::Double,
