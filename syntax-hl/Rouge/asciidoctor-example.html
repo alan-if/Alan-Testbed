@@ -1120,21 +1120,21 @@ Example, using the <code>thankful_eyes</code> theme:</p>
 <pre class="rouge highlight" lang="ruby"><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CustomRougeAdapter</span> <span class="o">&lt;</span> <span class="p">(</span><span class="no">Asciidoctor</span><span class="o">::</span><span class="no">SyntaxHighlighter</span><span class="p">.</span><span class="nf">for</span> <span class="s1">'rouge'</span><span class="p">)</span>
   <span class="n">register_for</span> <span class="s1">'rouge'</span>
 
-  <span class="c1"># defer loading rouge until the load_library method is called:</span>
+  <span class="c1"># Defer loading Rouge until the `load_library` method is called:</span>
   <span class="k">def</span> <span class="nf">load_library</span>
     <span class="nb">require</span> <span class="s1">'rouge'</span>
     <span class="nb">require</span> <span class="s1">'./alan3.rb'</span>
-    <span class="nb">require</span> <span class="s1">'./themes/alan-b16-eighties.rb'</span>
+    <span class="nb">require</span> <span class="s1">'./themes/alan-tester.rb'</span> <span class="c1"># Custom theme for tests.</span>
     <span class="ss">:loaded</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">format</span> <span class="n">node</span><span class="p">,</span> <span class="n">lang</span><span class="p">,</span> <span class="n">opts</span>
     <span class="n">opts</span><span class="p">[</span><span class="ss">:transform</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">pre</span><span class="p">,</span> <span class="n">code</span><span class="o">|</span>
-      <span class="c1"># &lt;pre class="highlight" lang="alan"&gt;</span>
-      <span class="c1"># pre['class'] = 'rouge'</span>
-      <span class="n">pre</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="sx">%(#{lang})</span> <span class="k">if</span> <span class="n">lang</span>
-      <span class="c1"># from original example:</span>
       <span class="n">code</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span> <span class="o">=</span> <span class="sx">%(language-#{lang})</span> <span class="k">if</span> <span class="n">lang</span>
+      <span class="c1"># Add to the generated &lt;pre&gt; tag  the`lang=` attribute,</span>
+      <span class="c1"># in order to control CSS styling of code blocks:</span>
+      <span class="c1">#   &lt;pre class="rouge highlight" lang="alan"&gt;</span>
+      <span class="n">pre</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="sx">%(#{lang})</span> <span class="k">if</span> <span class="n">lang</span>
     <span class="k">end</span>
     <span class="k">super</span>
   <span class="k">end</span>

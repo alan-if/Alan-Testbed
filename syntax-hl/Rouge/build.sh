@@ -5,7 +5,6 @@ for doc in *.asciidoc; do
 	asciidoctor \
 		-r ./custom-rouge-adapter.rb \
 		-a data-uri \
-		-a docinfo=shared-head \
 		$doc
 done
 

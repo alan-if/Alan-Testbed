@@ -4,6 +4,7 @@ Tristano Ajmone <tajmone@gmail.com>
 :rouge-style: thankful_eyes
 :toclevels: 5
 :toc: left
+:docinfo: shared-head
 :idprefix:
 :experimental: true
 :icons: font

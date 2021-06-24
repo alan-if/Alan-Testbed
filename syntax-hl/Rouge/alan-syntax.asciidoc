@@ -1,7 +1,7 @@
 = ALAN IF Rouge Lexer
 Tristano Ajmone <tajmone@gmail.com>
 :source-highlighter: rouge
-:rouge-style: eighties
+:rouge-style: alan-tester
 :toclevels: 5
 :toc: left
 :idprefix:
@@ -13,6 +13,8 @@ Tristano Ajmone <tajmone@gmail.com>
 
 In this document we'll focus on specific elements of the ALAN syntax, one element per section, in order to check that they are rendered properly by the lexer and theme.
 For each element, we'll also mention it's Rouge token name and its corresponding HTML/CSS class.
+
+For better visual inspection, we'll be using a custom Rouge theme here, designed to cover all the syntax elements of the ALAN IF lexer.
 
 == Comments
 

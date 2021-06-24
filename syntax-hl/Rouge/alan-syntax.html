@@ -440,268 +440,60 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 pre.rouge table td { padding: 5px; }
 pre.rouge table pre { margin: 0; }
 pre.rouge, pre.rouge .w {
-  color: #d3d0c8;
-  background-color: #2d2d2d;
+  color: #aaaaaa;
+  background-color: #000000;
 }
 pre.rouge .o, pre.rouge .ow {
-  color: #66cccc;
+  color: #5adaff;
 }
 pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cp, pre.rouge .cpf, pre.rouge .cs {
-  color: #a09f93;
+  color: #c19a6b;
   font-style: italic;
 }
 pre.rouge .cm {
-  color: #a09f93;
+  color: #c19a6b;
   font-style: italic;
 }
 pre.rouge .c1 {
-  color: #a09f93;
+  color: #c19a6b;
   font-style: italic;
 }
 pre.rouge .n, pre.rouge .na, pre.rouge .nc, pre.rouge .no, pre.rouge .nd, pre.rouge .ni, pre.rouge .ne, pre.rouge .nf, pre.rouge .fm, pre.rouge .py, pre.rouge .nl, pre.rouge .nn, pre.rouge .nt, pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
-  color: #f2f0ec;
+  color: #ffffff;
 }
 pre.rouge .nb, pre.rouge .bp {
-  color: #ffcc66;
+  color: #0b8dff;
   font-weight: bold;
 }
 pre.rouge .nx {
-  color: #6699cc;
-  font-weight: bold;
+  color: #0b8dff;
+  font-style: italic;
 }
 pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
-  color: #ffcc66;
+  color: #ffff00;
 }
 pre.rouge .kr {
-  color: #f2777a;
+  color: #ff0000;
   font-weight: bold;
 }
 pre.rouge .p, pre.rouge .pi {
-  color: #f2777a;
-  font-weight: bold;
+  color: #ffbcd9;
 }
 pre.rouge .s2 {
-  color: #99cc99;
+  color: #2ecb55;
 }
 pre.rouge .s1 {
-  color: #99cc99;
+  color: #2ecb55;
 }
 pre.rouge .dl {
-  color: #ffcc66;
+  color: #ffff00;
 }
 pre.rouge .se {
-  color: #cc99cc;
+  color: #b180ed;
 }
 pre.rouge .si {
-  color: #66cccc;
+  color: #ffae2b;
 }
-</style>
-<style>
-/* Alan Code Notation Mockup */
-.listingblock.alan pre {
-  color: #333;
-  background: #F8F8F8;
-}
-
-/* Shell/CMD */
-div.literalblock.shell pre {
-  background-color: #0C0C0C;
-  color: #F2F2F2;
-}
-div.literalblock.shell pre .conum {
-  background: #FFF945 !important;
-  color: #0C0C0C !important;
-}
-
-/* Game Transcripts */
-.exampleblock.gametranscript > .content {
-  background: #F7FDFF;
-  color: #0089B6;
-  border-color: #CCF2FF;
-}
-
-/* Commentary Blocks */
-div.openblock.commentary {
-  padding-left: 6em;
-}
-
-/* Inline Highlighting */
-span.green {
-  background-color: #A3FF8A;
-}
-
-/* Highlight Theme for Alan -- based on "github.com style" for highlight.js, by Vasily Polovnyov */
-.listingblock code[data-lang=alan]::before {
-  color: #a09f93;
-}
-
-.listingblock pre[class~=rouge][lang=alan] {
-  background-color: #F8F8F8;
-  border-radius: 4px;
-  border: 1px solid #F8F8F8;
-}
-.listingblock pre[class~=rouge][lang=alan] > code {
-  color: #333;
-  font-family: inherit;
-  font-size: inherit;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.n {
-  color: #333;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.lin {
-  color: #998;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.o {
-  color: #333;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.se {
-  color: #ff980b;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.si {
-  color: #d572f1;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.s2 {
-  color: #008080;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.c1 {
-  color: #998;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.cm {
-  color: #998;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.kr {
-  color: #990000;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.nb {
-  color: #000080;
-}
-.listingblock pre[class~=rouge][lang=alan] > code > span.nx {
-  color: #000080;
-}
-.listingblock pre[class~=rouge][lang=alan] > code mark {
-  background-color: #ccff00;
-  background-image: linear-gradient(to right, #ccff00 0%, #f5ff87 100%);
-}
-.listingblock pre[class~=rouge][lang=alan] > code span.green {
-  background-color: #a3ff8a;
-  background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
-}
-
-/* Rouge Theme for Alan Library -- Base16 Eighties, by Chris Kempson */
-.listingblock.lib code[data-lang=alan]::before {
-  color: #a09f93;
-}
-
-.listingblock.lib pre[class~=rouge][lang=alan] {
-  background-color: #2d2d2d;
-  border-radius: 4px;
-  border: 1px solid #a09f93;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code {
-  color: #d3d0c8;
-  font-family: inherit;
-  font-size: inherit;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.n {
-  color: #f99157;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.lin {
-  color: #747369;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.o {
-  color: #d3d0c8;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.se {
-  color: #f99157;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.si {
-  color: #d27b53;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.s2 {
-  color: #99cc99;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.c1 {
-  color: #a09f93;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.cm {
-  color: #a09f93;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.kr {
-  color: #f2777a;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.nb {
-  color: #ffcc66;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code > span.nx {
-  color: #6699cc;
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code mark {
-  background-color: #ccff00;
-  background-image: linear-gradient(to right, #ccff00 0%, #f5ff87 100%);
-}
-.listingblock.lib pre[class~=rouge][lang=alan] > code span.green {
-  background-color: #a3ff8a;
-  background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
-}
-
-/* Rouge Theme for Alan tutorial -- Base16 Google, by  Seth Wright */
-.listingblock.tutorial code[data-lang=alan]::before {
-  color: #a09f93;
-}
-
-.listingblock.tutorial pre[class~=rouge][lang=alan] {
-  background-color: #ffffff;
-  border-radius: 4px;
-  border: 1px solid #e0e0e0;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code {
-  color: #373b41;
-  font-family: inherit;
-  font-size: inherit;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.n {
-  color: #373b41;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.lin {
-  color: #c5c8c6;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.o {
-  color: #373b41;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.se {
-  color: #F96A38;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.si {
-  color: #3971ED;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.s2 {
-  color: #198844;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.c1 {
-  color: #969896;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.cm {
-  color: #969896;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.kr {
-  color: #CC342B;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.nb {
-  color: #FBA922;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.nx {
-  color: #3971ED;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code mark {
-  background-color: #f5ff87;
-  background-image: none;
-}
-.listingblock.tutorial pre[class~=rouge][lang=alan] > code span.green {
-  background-color: #dbf8e6;
-  background-image: none;
-}
-
-/*# sourceMappingURL=rouge.css.map */
 </style>
 </head>
 <body class="article toc2 toc-left">
@@ -728,6 +520,9 @@ span.green {
 <div class="paragraph">
 <p>In this document we&#8217;ll focus on specific elements of the ALAN syntax, one element per section, in order to check that they are rendered properly by the lexer and theme.
 For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its corresponding HTML/CSS class.</p>
+</div>
+<div class="paragraph">
+<p>For better visual inspection, we&#8217;ll be using a custom Rouge theme here, designed to cover all the syntax elements of the ALAN IF lexer.</p>
 </div>
 </div>
 </div>

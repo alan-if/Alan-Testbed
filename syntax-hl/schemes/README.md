@@ -14,6 +14,7 @@ This directory contains references to the colour palettes and schemes used for s
     - [Default Theme](#default-theme)
     - [Library Theme](#library-theme)
     - [Tutorial Theme](#tutorial-theme)
+    - [Test Theme](#test-theme)
 
 <!-- /MarkdownTOC -->
 
@@ -21,6 +22,8 @@ This directory contains references to the colour palettes and schemes used for s
 
 # Directory Contents
 
+- [`alan-tester.cifc`][alan-tester.cifc] — [ColorImpact 4] palette project file for our test theme.
+- [`alan-tester.txt`][alan-tester.txt] — Colour specs for our test theme.
 - [`palettes.cifc`][palettes.cifc] — [ColorImpact 4] palettes collection project file.
 - [`swatches_b16-eighties.png`][swatches_b16-eighties.png] — [HLJS GitHub] palette swatches.
 - [`swatches_b16-google-dark.png`][swatches_b16-google-dark.png] — [Base16 Eighties] palette swatches.
@@ -62,6 +65,15 @@ For its theme, we use the [Base16 Google Dark] scheme by [Seth Wright], where we
 
 This palette contains duplicate colours, with entries __base0C__, __base0D__ and __base0F__ sharing the same colour value (`#3971ED`).
 
+
+## Test Theme
+
+The **ALAN Tester** palette is used in a custom Rouge theme to visually test and inspect results of our ALAN IF lexer, and it's not used in production.
+
+![ALAN Tester palette][swatches_alan-tester.png]
+
+It's main goal is to highlight with a different colour each syntax element covered by the lexer, whereas in our production themes some elements are hidden from view by assigning them the default text colour, or the same colour as other elmeents.
+
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
@@ -82,10 +94,13 @@ This palette contains duplicate colours, with entries __base0C__, __base0D__ and
 
 <!-- project files -->
 
-[palettes.cifc]: ./palettes.cifc
+[alan-tester.txt]: ./alan-tester.txt "View colour specs"
+[alan-tester.cifc]: ./alan-tester.cifc "ColorImpact 4 palettes files"
+[palettes.cifc]: ./palettes.cifc "ColorImpact 4 palettes files"
 [swatches_b16-eighties.png]: ./swatches_b16-eighties.png "Base 16 Eighties palette swatches"
 [swatches_b16-google-dark.png]: ./swatches_b16-google-dark.png "Base 16 Google Dark palette swatches"
 [swatches_github.png]: ./swatches_github.png "GitHub palette swatches"
+[swatches_alan-tester.png]: ./swatches_alan-tester.png "ALAN Tester palette swatches"
 
 <!-- people -->
 

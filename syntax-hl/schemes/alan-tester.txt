@@ -1,0 +1,42 @@
+COLOR SPEC SHEET
+
+
+white: 
+    #ffffff
+
+grey: 
+    #aaaaaa
+
+black: 
+    #000000
+
+brown: 
+    #c19a6b
+
+red: 
+    #ff0000
+
+orange: 
+    #ffae2b
+
+yellow: 
+    #ffff00
+
+green: 
+    #2ecb55
+
+cyan: 
+    #5adaff
+
+blue: 
+    #0b8dff
+
+purple: 
+    #b180ed
+
+magenta: 
+    #ff00ff
+
+pink: 
+    #ffbcd9
+
