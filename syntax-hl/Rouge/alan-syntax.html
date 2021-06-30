@@ -506,8 +506,15 @@ pre.rouge .si {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#comments">Comments</a></li>
+<li><a href="#comments">Comments</a>
+<ul class="sectlevel2">
+<li><a href="#single_line_comments">Single Line Comments</a></li>
+<li><a href="#block_comments">Block Comments</a></li>
+</ul>
+</li>
 <li><a href="#numbers">Numbers</a></li>
+<li><a href="#operators">Operators</a></li>
+<li><a href="#punctuation">Punctuation</a></li>
 <li><a href="#parameter_indicators">Parameter Indicators</a></li>
 <li><a href="#predefined_classes">Predefined Classes</a></li>
 <li><a href="#predefined_hero_instance">Predefined Hero Instance</a></li>
@@ -529,8 +536,27 @@ For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its c
 <div class="sect1">
 <h2 id="comments"><a class="anchor" href="#comments"></a>Comments</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Single line comments:</p>
+<div class="sect2">
+<h3 id="single_line_comments"><a class="anchor" href="#single_line_comments"></a>Single Line Comments</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Comment::Single</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>c1</code></p>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -540,6 +566,45 @@ For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its c
   </span><span class="kr">Is</span><span class="w"> </span><span class="n">edible</span><span class="p">.</span><span class="w"> </span><span class="c1">-- so that it passes the checks of 'eat'!</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">Every</span><span class="p">.</span></code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>I still haven&#8217;t understood the difference between <code>Comment</code> and <code>Comment::Single</code> in Rouge lexers.
+The former is described as "Single line comments", the latter as "Comments that end at the end of the line".
+Since they map to different CSS classes (<code>c</code> and <code>c1</code>), I&#8217;ve settled for the latter.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="block_comments"><a class="anchor" href="#block_comments"></a>Block Comments</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Comment::Multiline</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>cm</code></p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Block comments were introduced in ALAN Beta8:</p>
@@ -566,11 +631,47 @@ For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its c
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="numbers"><a class="anchor" href="#numbers"></a>Numbers</h2>
 <div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Literal::Number</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>m</code></p>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Numbers (integers) are captured as <code>Literal::Number</code> (CSS: <code>m</code>).</p>
+<p>Numbers (i.e. integers).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Can integers in ALAN be also negative?
+And, if so, should we highlight the <code>-</code> sign differently?</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -592,18 +693,168 @@ For each element, we&#8217;ll also mention it&#8217;s Rouge token name and its c
 </div>
 </div>
 <div class="sect1">
+<h2 id="operators"><a class="anchor" href="#operators"></a>Operators</h2>
+<div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Operator</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>o</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_binary_operators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">Binary Operators</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="o">+</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">/</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_relational_and_equality_operators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">Relational and Equality Operators</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="o">=</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">&gt;=</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But not <code>&#8658;</code>, which is the short hand for the <code>THEN</code> keyword in Rules, and should therefore be highlighted as a keyword:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">When</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="kr">At</span><span class="w"> </span><span class="n">cave</span><span class="w">
+  </span><span class="kr">=&gt;</span><span class="w"> </span><span class="kr">Use</span><span class="w"> </span><span class="kr">Script</span><span class="w"> </span><span class="n">eat_hero</span><span class="w"> </span><span class="kr">For</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">When</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="punctuation"><a class="anchor" href="#punctuation"></a>Punctuation</h2>
+<div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Punctuation</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>p</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>I still haven&#8217;t decided how to handle punctuation.
+In the past, we&#8217;ve always highlighted fullstops <code>.</code>, commas <code>,</code> and colons <code>:</code> as a keywords, just because of their major role in the ALAN syntax, and because they are referred to as keywords in <em>The ALAN Manual</em>.</p>
+</div>
+<div class="paragraph">
+<p>Technically speaking, these should be handled as all other punctuation marks, but this would mean that we won&#8217;t be able to colour them like keywords via CSS.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Just testing how generic punctuation is being highlighted:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="p">.</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>ALAN doesn&#8217;t make use of square brackets <code>[ ]</code>.</p>
+</div>
+<div class="paragraph">
+<p>I don&#8217;t think it ues semi-colons <code>;</code> either (need to check this).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="parameter_indicators"><a class="anchor" href="#parameter_indicators"></a>Parameter Indicators</h2>
 <div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Operator</code> (<em>temporary</em>)</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>o</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>I haven&#8217;t yet decided how to capture the <em>multiple</em> (<code>*</code>) and <em>omnipotent</em> (<code>!</code>)
 <a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">parameter indicators</a>,
 so for the time being they&#8217;re caputred as <code>Operator</code> tokens.</p>
 </div>
+</td>
+</tr>
+</table>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Syntax</span><span class="w">
-  </span><span class="n">take</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)*</span><span class="p">.</span><span class="w">      </span><span class="c1">-- multiple indicator (*)</span><span class="w">
-  </span><span class="n">remember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="o">(</span><span class="n">obj</span><span class="o">)!</span><span class="p">.</span><span class="w">  </span><span class="c1">-- omnipotent indicator (!)</span></code></pre>
+  </span><span class="n">take</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="w">      </span><span class="c1">-- multiple indicator (*)</span><span class="w">
+  </span><span class="n">remember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">!</span><span class="p">.</span><span class="w">  </span><span class="c1">-- omnipotent indicator (!)</span></code></pre>
 </div>
 </div>
 </div>
@@ -611,6 +862,26 @@ so for the time being they&#8217;re caputred as <code>Operator</code> tokens.</p
 <div class="sect1">
 <h2 id="predefined_classes"><a class="anchor" href="#predefined_classes"></a>Predefined Classes</h2>
 <div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Name::Builtin</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>nb</code></p>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>There are eight predefined classes in Alan: <code>entity</code>, <code>thing</code>, <code>object</code>, <code>actor</code>, <code>location</code>, <code>literal</code>, <code>string</code> and <code>integer</code>, all of which receive a dedicated colouring in the syntax.</p>
 </div>
@@ -664,6 +935,26 @@ so for the time being they&#8217;re caputred as <code>Operator</code> tokens.</p
 <div class="sect1">
 <h2 id="predefined_hero_instance"><a class="anchor" href="#predefined_hero_instance"></a>Predefined Hero Instance</h2>
 <div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Name::Other</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>nx</code></p>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The <code>hero</code> is a predefined actor (the player) which is hardcoded into every adventure.</p>
 </div>

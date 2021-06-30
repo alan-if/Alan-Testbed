@@ -25,10 +25,11 @@ In the future this document we'll also cover the other required lexers (BNF) and
 
 [WARNING]
 ========================
-**WIP THEMES!** -- The CSS themes are still broken, I need to:
+**WIP THEMES!** -- The CSS themes are still incomplete, I need to:
 
-* [ ] adjust the old Highlight class names to those of Rouge.
-* [ ] fix some precedence issues which are preventing the custom ALAN themes to override styles from the native Rouge theme.
+* [ ] Adjust the old Highlight class names to those of Rouge.
+* [ ] Add/cover new syntax elements introduced by Rouge.
+* [x] Fix some precedence issues which are preventing the custom ALAN themes to override styles from the native Rouge theme.
 ========================
 
 

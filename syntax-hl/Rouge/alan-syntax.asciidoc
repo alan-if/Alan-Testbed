@@ -16,9 +16,18 @@ For each element, we'll also mention it's Rouge token name and its corresponding
 
 For better visual inspection, we'll be using a custom Rouge theme here, designed to cover all the syntax elements of the ALAN IF lexer.
 
+// CUSTOM ATTRIBUTES:
+:manURL: https://alan-if.github.io/alan-docs/manual-alpha/manual.html#
+
+
 == Comments
 
-Single line comments:
+=== Single Line Comments
+
+[horizontal]
+Lexer class :: `Comment::Single`
+CSS class   :: `c1`
+
 
 [source,alan]
 ---------------------------------------
@@ -28,6 +37,22 @@ Every fruit IsA object.
   Is edible. -- so that it passes the checks of 'eat'!
 End Every.
 ---------------------------------------
+
+
+[NOTE]
+====================
+I still haven't understood the difference between `Comment` and `Comment::Single` in Rouge lexers.
+The former is described as "Single line comments", the latter as "Comments that end at the end of the line".
+Since they map to different CSS classes (`c` and `c1`), I've settled for the latter.
+====================
+
+
+=== Block Comments
+
+[horizontal]
+Lexer class :: `Comment::Multiline`
+CSS class   :: `cm`
+
 
 Block comments were introduced in ALAN Beta8:
 
@@ -54,7 +79,18 @@ End the pear.
 
 == Numbers
 
-Numbers (integers) are captured as `Literal::Number` (CSS: `m`).
+[horizontal]
+Lexer class :: `Literal::Number`
+CSS class   :: `m`
+
+
+Numbers (i.e. integers).
+
+[WARNING]
+============
+Can integers in ALAN be also negative?
+And, if so, should we highlight the `-` sign differently?
+============
 
 [source,alan]
 ----------------------------------
@@ -74,12 +110,79 @@ End If.
 ----------------------------------
 
 
+== Operators
+
+[horizontal]
+Lexer class :: `Operator`
+CSS class   :: `o`
+
+link:{manURL}_binary_operators[Binary Operators^,title="Learn more in The ALAN Manual"]:
+
+[source,alan]
+----------------------------------
++ - * /
+----------------------------------
+
+link:{manURL}_relational_and_equality_operators[Relational and Equality Operators^,title="Learn more in The ALAN Manual"]:
+
+[source,alan]
+----------------------------------
+= == <> < > <= >=
+----------------------------------
+
+But not `=>`, which is the short hand for the `THEN` keyword in Rules, and should therefore be highlighted as a keyword:
+
+[source,alan]
+-------------------------------------
+When hero At cave
+  => Use Script eat_hero For monster.
+End When.
+-------------------------------------
+
+
+== Punctuation
+
+[horizontal]
+Lexer class :: `Punctuation`
+CSS class   :: `p`
+
+
+[WARNING]
+=======================
+I still haven't decided how to handle punctuation.
+In the past, we've always highlighted fullstops ``.``, commas ``,`` and colons ``:`` as a keywords, just because of their major role in the ALAN syntax, and because they are referred to as keywords in _The ALAN Manual_.
+
+Technically speaking, these should be handled as all other punctuation marks, but this would mean that we won't be able to colour them like keywords via CSS.
+=======================
+
+Just testing how generic punctuation is being highlighted:
+
+[source,alan]
+----------------------------------
+. , ; : () { }
+----------------------------------
+
+[NOTE]
+=======================
+ALAN doesn't make use of square brackets ``[ ]``.
+
+I don't think it ues semi-colons ``;`` either (need to check this).
+=======================
+
 
 == Parameter Indicators
 
+[horizontal]
+Lexer class :: `Operator` (_temporary_)
+CSS class   :: `o`
+
+
+[WARNING]
+=======================
 I haven't yet decided how to capture the _multiple_ (``*``) and _omnipotent_ (``!``)
-https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators[parameter indicators^,title="Learn more in The ALAN Manual"],
+link:{manURL}_indicators[parameter indicators^,title="Learn more in The ALAN Manual"],
 so for the time being they're caputred as `Operator` tokens.
+=======================
 
 [source,alan]
 ----------------------
@@ -90,6 +193,11 @@ Syntax
 
 
 == Predefined Classes
+
+[horizontal]
+Lexer class :: `Name::Builtin`
+CSS class   :: `nb`
+
 
 There are eight predefined classes in Alan: `entity`, `thing`, `object`, `actor`, `location`, `literal`, `string` and `integer`, all of which receive a dedicated colouring in the syntax.
 
@@ -140,6 +248,11 @@ End add to.
 
 
 == Predefined Hero Instance
+
+[horizontal]
+Lexer class :: `Name::Other`
+CSS class   :: `nx`
+
 
 The `hero` is a predefined actor (the player) which is hardcoded into every adventure.
 

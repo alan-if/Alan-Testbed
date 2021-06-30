@@ -110,17 +110,14 @@ module Rouge
             <\=      |  # <=
             >\=      |  # >=
             \=(?!>)  |  # =
-            \=\=     |  # ==
-          # Brackets:
-            \(  | \)  | # ( )
-            \{  | \}  | # { }
+            \=\=     |  # == (strings identity operator)
           # Parameter indicators:
             \!  |  # !  omnipotent parameter
             \*     # *  multiple parameter
         )x, Operator
 
         # Punctuation
-        rule %r/[\.:,]/, Punctuation
+        rule %r/[\.,;:(){}]/, Punctuation
 
         # Numbers
         rule %r/\d+/, Num
