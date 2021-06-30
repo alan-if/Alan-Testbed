@@ -38,12 +38,14 @@ module Rouge
       style Name::Other,              :fg => :blue, :italic => true
       style Literal::Number,          :fg => :yellow
       style Keyword::Reserved,        :fg => :red, :bold => true
+    # style Keyword::Pseudo,          :fg => :red, :bold => true
       style Punctuation,              :fg => :pink
       style Str::Double,
             Str::Single,              :fg => :green
       style Str::Double::Delimiter,   :fg => :yellow
       style Str::Escape,              :fg => :purple
       style Str::Interpol,            :fg => :orange
+      style Error,                    :fg => :white, :bg => :red
 
     end
   end

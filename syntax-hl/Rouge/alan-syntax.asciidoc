@@ -47,6 +47,36 @@ Since they map to different CSS classes (`c` and `c1`), I've settled for the lat
 ====================
 
 
+== Keywords
+
+
+=== Reserved Keywords
+
+
+[horizontal]
+Lexer class :: `Keyword::Reserved`
+CSS class   :: `kr`
+
+All ALAN reserved keywords are captured in this group, including the ``=>`` shorthand for `THEN` in Rules.
+
+
+[source,alan]
+---------------------------------------
+add after an and are article at attributes before between by can cancel
+character characters check container contains count current decrease definite
+depend depending describe description directly do does each else elsif empty
+end entered event every exclude exit extract first for form from has header
+here if import in include increase indefinite indirectly initialize into is isa
+it last limits list locate look make max mentioned message meta min name near
+nearby negative no not of off on only opaque option options or play prompt
+pronoun quit random restart restore save say schedule score script set show
+start step stop strip style sum synonyms syntax system taking the then this to
+transcript transitively until use verb visits wait when where with word words
+
+=>
+---------------------------------------
+
+
 === Block Comments
 
 [horizontal]
@@ -116,12 +146,32 @@ End If.
 Lexer class :: `Operator`
 CSS class   :: `o`
 
+
+=== Arithmetic
+
 link:{manURL}_binary_operators[Binary Operators^,title="Learn more in The ALAN Manual"]:
+
 
 [source,alan]
 ----------------------------------
 + - * /
 ----------------------------------
+
+[NOTE]
+============================
+Ideally, the ``*`` operator must not be preceded by a `)`, or it will be considered a
+<<Parameter Indicators,multiple parameter indicator>>:
+
+[source,alan]
+-------------
+(obj)*
+-------------
+
+But since I wasn't able to enforce this, I'm keeping the indicators as part of the operators group, for now.
+============================
+
+
+=== Comparison
 
 link:{manURL}_relational_and_equality_operators[Relational and Equality Operators^,title="Learn more in The ALAN Manual"]:
 
@@ -138,6 +188,24 @@ When hero At cave
   => Use Script eat_hero For monster.
 End When.
 -------------------------------------
+
+
+
+=== Indicators
+
+link:{manURL}_indicators[Parameter indicators^,title="Learn more in The ALAN Manual"] are not really operators, but due to technical problems I've added them to the operators group (see the <<Parameter Indicators>> section):
+
+[source,alan]
+----------------------
+Syntax
+  take     = take (obj)*.      -- multiple indicator (*)
+  remember = remember (obj)!.  -- omnipotent indicator (!)
+----------------------
+
+[WARNING]
+===================
+Not including the ``!`` indicator among the operators was not really an option, since the  ``*`` indicator was being captured as an operator; so it's better to capture them both, for consistency sake.
+===================
 
 
 == Punctuation
@@ -182,6 +250,8 @@ CSS class   :: `o`
 I haven't yet decided how to capture the _multiple_ (``*``) and _omnipotent_ (``!``)
 link:{manURL}_indicators[parameter indicators^,title="Learn more in The ALAN Manual"],
 so for the time being they're caputred as `Operator` tokens.
+
+I wanted to capture them as `Keyword::Pseudo`, but failed to find an easy way to preventing them being captured as `Operator` via lookahead/lookbehind (for some reason, no matter what the rules order, they'll always be captured as operators).
 =======================
 
 [source,alan]
@@ -207,7 +277,7 @@ The worn IsA entity.
 End the.
 
 The basement IsA location.
-  Description "What a dark ang gloomy place!"
+  Description "What a dark and gloomy place!"
 End the.
 
 The vampire IsA actor at basement.

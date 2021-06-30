@@ -494,6 +494,10 @@ pre.rouge .se {
 pre.rouge .si {
   color: #ffae2b;
 }
+pre.rouge .err {
+  color: #ffffff;
+  background-color: #ff0000;
+}
 </style>
 </head>
 <body class="article toc2 toc-left">
@@ -509,11 +513,22 @@ pre.rouge .si {
 <li><a href="#comments">Comments</a>
 <ul class="sectlevel2">
 <li><a href="#single_line_comments">Single Line Comments</a></li>
+</ul>
+</li>
+<li><a href="#keywords">Keywords</a>
+<ul class="sectlevel2">
+<li><a href="#reserved_keywords">Reserved Keywords</a></li>
 <li><a href="#block_comments">Block Comments</a></li>
 </ul>
 </li>
 <li><a href="#numbers">Numbers</a></li>
-<li><a href="#operators">Operators</a></li>
+<li><a href="#operators">Operators</a>
+<ul class="sectlevel2">
+<li><a href="#arithmetic">Arithmetic</a></li>
+<li><a href="#comparison">Comparison</a></li>
+<li><a href="#indicators">Indicators</a></li>
+</ul>
+</li>
 <li><a href="#punctuation">Punctuation</a></li>
 <li><a href="#parameter_indicators">Parameter Indicators</a></li>
 <li><a href="#predefined_classes">Predefined Classes</a></li>
@@ -582,6 +597,53 @@ Since they map to different CSS classes (<code>c</code> and <code>c1</code>), I&
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keywords"><a class="anchor" href="#keywords"></a>Keywords</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="reserved_keywords"><a class="anchor" href="#reserved_keywords"></a>Reserved Keywords</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Keyword::Reserved</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>kr</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>All ALAN reserved keywords are captured in this group, including the <code>&#8658;</code> shorthand for <code>THEN</code> in Rules.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">add</span><span class="w"> </span><span class="kr">after</span><span class="w"> </span><span class="kr">an</span><span class="w"> </span><span class="kr">and</span><span class="w"> </span><span class="kr">are</span><span class="w"> </span><span class="kr">article</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="kr">attributes</span><span class="w"> </span><span class="kr">before</span><span class="w"> </span><span class="kr">between</span><span class="w"> </span><span class="kr">by</span><span class="w"> </span><span class="kr">can</span><span class="w"> </span><span class="kr">cancel</span><span class="w">
+</span><span class="kr">character</span><span class="w"> </span><span class="kr">characters</span><span class="w"> </span><span class="kr">check</span><span class="w"> </span><span class="kr">container</span><span class="w"> </span><span class="kr">contains</span><span class="w"> </span><span class="kr">count</span><span class="w"> </span><span class="kr">current</span><span class="w"> </span><span class="kr">decrease</span><span class="w"> </span><span class="kr">definite</span><span class="w">
+</span><span class="kr">depend</span><span class="w"> </span><span class="kr">depending</span><span class="w"> </span><span class="kr">describe</span><span class="w"> </span><span class="kr">description</span><span class="w"> </span><span class="kr">directly</span><span class="w"> </span><span class="kr">do</span><span class="w"> </span><span class="kr">does</span><span class="w"> </span><span class="kr">each</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="kr">empty</span><span class="w">
+</span><span class="kr">end</span><span class="w"> </span><span class="kr">entered</span><span class="w"> </span><span class="kr">event</span><span class="w"> </span><span class="kr">every</span><span class="w"> </span><span class="kr">exclude</span><span class="w"> </span><span class="kr">exit</span><span class="w"> </span><span class="kr">extract</span><span class="w"> </span><span class="kr">first</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="kr">form</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="kr">has</span><span class="w"> </span><span class="kr">header</span><span class="w">
+</span><span class="kr">here</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="kr">include</span><span class="w"> </span><span class="kr">increase</span><span class="w"> </span><span class="kr">indefinite</span><span class="w"> </span><span class="kr">indirectly</span><span class="w"> </span><span class="kr">initialize</span><span class="w"> </span><span class="kr">into</span><span class="w"> </span><span class="kr">is</span><span class="w"> </span><span class="kr">isa</span><span class="w">
+</span><span class="kr">it</span><span class="w"> </span><span class="kr">last</span><span class="w"> </span><span class="kr">limits</span><span class="w"> </span><span class="kr">list</span><span class="w"> </span><span class="kr">locate</span><span class="w"> </span><span class="kr">look</span><span class="w"> </span><span class="kr">make</span><span class="w"> </span><span class="kr">max</span><span class="w"> </span><span class="kr">mentioned</span><span class="w"> </span><span class="kr">message</span><span class="w"> </span><span class="kr">meta</span><span class="w"> </span><span class="kr">min</span><span class="w"> </span><span class="kr">name</span><span class="w"> </span><span class="kr">near</span><span class="w">
+</span><span class="kr">nearby</span><span class="w"> </span><span class="kr">negative</span><span class="w"> </span><span class="kr">no</span><span class="w"> </span><span class="kr">not</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="kr">off</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="kr">only</span><span class="w"> </span><span class="kr">opaque</span><span class="w"> </span><span class="kr">option</span><span class="w"> </span><span class="kr">options</span><span class="w"> </span><span class="kr">or</span><span class="w"> </span><span class="kr">play</span><span class="w"> </span><span class="kr">prompt</span><span class="w">
+</span><span class="kr">pronoun</span><span class="w"> </span><span class="kr">quit</span><span class="w"> </span><span class="kr">random</span><span class="w"> </span><span class="kr">restart</span><span class="w"> </span><span class="kr">restore</span><span class="w"> </span><span class="kr">save</span><span class="w"> </span><span class="kr">say</span><span class="w"> </span><span class="kr">schedule</span><span class="w"> </span><span class="kr">score</span><span class="w"> </span><span class="kr">script</span><span class="w"> </span><span class="kr">set</span><span class="w"> </span><span class="kr">show</span><span class="w">
+</span><span class="kr">start</span><span class="w"> </span><span class="kr">step</span><span class="w"> </span><span class="kr">stop</span><span class="w"> </span><span class="kr">strip</span><span class="w"> </span><span class="kr">style</span><span class="w"> </span><span class="kr">sum</span><span class="w"> </span><span class="kr">synonyms</span><span class="w"> </span><span class="kr">syntax</span><span class="w"> </span><span class="kr">system</span><span class="w"> </span><span class="kr">taking</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">this</span><span class="w"> </span><span class="kr">to</span><span class="w">
+</span><span class="kr">transcript</span><span class="w"> </span><span class="kr">transitively</span><span class="w"> </span><span class="kr">until</span><span class="w"> </span><span class="kr">use</span><span class="w"> </span><span class="kr">verb</span><span class="w"> </span><span class="kr">visits</span><span class="w"> </span><span class="kr">wait</span><span class="w"> </span><span class="kr">when</span><span class="w"> </span><span class="kr">where</span><span class="w"> </span><span class="kr">with</span><span class="w"> </span><span class="kr">word</span><span class="w"> </span><span class="kr">words</span><span class="w">
+
+</span><span class="kr">=&gt;</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -715,6 +777,8 @@ CSS class
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="arithmetic"><a class="anchor" href="#arithmetic"></a>Arithmetic</h3>
 <div class="paragraph">
 <p><a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_binary_operators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">Binary Operators</a>:</p>
 </div>
@@ -723,6 +787,32 @@ CSS class
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="o">+</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">/</span></code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ideally, the <code>*</code> operator must not be preceded by a <code>)</code>, or it will be considered a
+<a href="#parameter_indicators">multiple parameter indicator</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">*</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But since I wasn&#8217;t able to enforce this, I&#8217;m keeping the indicators as part of the operators group, for now.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="comparison"><a class="anchor" href="#comparison"></a>Comparison</h3>
 <div class="paragraph">
 <p><a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_relational_and_equality_operators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">Relational and Equality Operators</a>:</p>
 </div>
@@ -739,6 +829,34 @@ CSS class
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">When</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="kr">At</span><span class="w"> </span><span class="n">cave</span><span class="w">
   </span><span class="kr">=&gt;</span><span class="w"> </span><span class="kr">Use</span><span class="w"> </span><span class="kr">Script</span><span class="w"> </span><span class="n">eat_hero</span><span class="w"> </span><span class="kr">For</span><span class="w"> </span><span class="n">monster</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">When</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="indicators"><a class="anchor" href="#indicators"></a>Indicators</h3>
+<div class="paragraph">
+<p><a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">Parameter indicators</a> are not really operators, but due to technical problems I&#8217;ve added them to the operators group (see the <a href="#parameter_indicators">Parameter Indicators</a> section):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Syntax</span><span class="w">
+  </span><span class="n">take</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="w">      </span><span class="c1">-- multiple indicator (*)</span><span class="w">
+  </span><span class="n">remember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">!</span><span class="p">.</span><span class="w">  </span><span class="c1">-- omnipotent indicator (!)</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Not including the <code>!</code> indicator among the operators was not really an option, since the  <code>*</code> indicator was being captured as an operator; so it&#8217;s better to capture them both, for consistency sake.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -846,6 +964,9 @@ CSS class
 <a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_indicators" title="Learn more in The ALAN Manual" target="_blank" rel="noopener">parameter indicators</a>,
 so for the time being they&#8217;re caputred as <code>Operator</code> tokens.</p>
 </div>
+<div class="paragraph">
+<p>I wanted to capture them as <code>Keyword::Pseudo</code>, but failed to find an easy way to preventing them being captured as <code>Operator</code> via lookahead/lookbehind (for some reason, no matter what the rules order, they&#8217;ll always be captured as operators).</p>
+</div>
 </td>
 </tr>
 </table>
@@ -891,7 +1012,7 @@ CSS class
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">The</span><span class="w"> </span><span class="n">basement</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="p">.</span><span class="w">
-  </span><span class="kr">Description</span><span class="w"> </span><span class="dl">"</span><span class="s2">What a dark ang gloomy place!</span><span class="dl">"</span><span class="w">
+  </span><span class="kr">Description</span><span class="w"> </span><span class="dl">"</span><span class="s2">What a dark and gloomy place!</span><span class="dl">"</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">The</span><span class="w"> </span><span class="n">vampire</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">actor</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">basement</span><span class="p">.</span><span class="w">

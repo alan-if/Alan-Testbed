@@ -117,9 +117,11 @@ module Rouge
         )x, Operator
 
         # Punctuation
+        #############
         rule %r/[\.,;:(){}]/, Punctuation
 
         # Numbers
+        #########
         rule %r/\d+/, Num
 
         # Reserved Keywords
