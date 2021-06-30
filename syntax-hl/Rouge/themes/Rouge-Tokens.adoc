@@ -48,7 +48,7 @@ The "`Token name`" column shows the tokens identifiers used in the Ruby sources 
 | Keyword::Namespace            | kn  | Keywords used for namespace declarations
 | Keyword::Pseudo               | kp  | Keywords that aren't really keywords
 | Keyword::Reserved             | kr  | Keywords which are reserved (such as `end` in Ruby)
-| Keyword.Type                  | kt  | Keywords wich refer to a type id (such as `int` in C)
+| Keyword::Type                 | kt  | Keywords wich refer to a type id (such as `int` in C)
 | Name                          | n   | Variable/function names
 | Name::Attribute               | na  | Attributes (in HTML for instance)
 | Name::Builtin                 | nb  | Built-in names which are available in the global namespace
