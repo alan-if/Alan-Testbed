@@ -82,7 +82,7 @@ module Rouge
         # Single line comment
         rule %r(--[^\n]*), Comment::Single
         # Block comment
-        rule %r(^\/{4}.*$), Comment::Multiline, :block_comment
+        rule %r(^\/{4}.*), Comment::Multiline, :block_comment
 
         # Strings
         ##########
@@ -153,6 +153,7 @@ module Rouge
       end # :root
 
       state :block_comment do
+        rule %r/\n+/, Text # Consume EOLs!
         rule %r/^\/{4,}$/, Comment::Multiline, :pop!
         rule %r/.+/, Comment::Multiline
       end
