@@ -1,0 +1,28 @@
+
+
+Kitchen
+A small and cosy house Kitchen. There is a table here. On the table you
+can see a cake.
+
+> ï»¿x table
+I don't know the word 'ï'.
+
+> x cake
+You notice nothing unusual about the cake.
+
+> take cake
+Taken.
+
+> x table
+It's an old wooden table. There's nothing on the table.
+
+> look
+Kitchen
+A small and cosy house Kitchen. There is a table here.
+
+> i
+You're carrying a cake.
+
+> 
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 

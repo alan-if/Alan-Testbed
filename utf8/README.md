@@ -2,13 +2,13 @@
 
 ALAN 3.0beta8 will introduce support for UTF-8 encoded source files and scripting, which will become the default encoding in Beta9; here we'll be testing this feature using developer snapshot [3.0beta8 build 2209].
 
-
 -----
 
 **Table of Contents**
 
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
+- [Directory Contents](#directory-contents)
 - [About UTF-8 Support](#about-utf-8-support)
     - [New SDK Switches](#new-sdk-switches)
 - [Links](#links)
@@ -16,6 +16,12 @@ ALAN 3.0beta8 will introduce support for UTF-8 encoded source files and scriptin
 <!-- /MarkdownTOC -->
 
 -----
+
+# Directory Contents
+
+- [`/run-ascii/`][/run-ascii/] — ARun tests using only ASCII chars.
+- [`kitchen-ascii.alan`][kitchen-ascii.alan] — test adventure containing only ASCII chars.
+
 
 # About UTF-8 Support
 
@@ -95,6 +101,11 @@ For the interpreter (see [§A.5. _Interpreter Switches_]) we have `-u` and `-i`:
 
 [development snapshots]: https://www.alanif.se/download-alan-v3/development-snapshots/development-snapshots "Development Snapshots page at www.alanif.se"
 [3.0beta8 build 2209]: https://www.alanif.se/download-alan-v3/development-snapshots/development-snapshots/build2209 "ALAN SDK Development Snapshot 3.0beta8 build 2209"
+
+<!-- project files and folders -->
+
+[/run-ascii/]: ./run-ascii/
+[kitchen-ascii.alan]: ./kitchen-ascii.alan
 
 <!-- people and organizations -->
 
