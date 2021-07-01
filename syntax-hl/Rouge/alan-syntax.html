@@ -513,12 +513,19 @@ pre.rouge .err {
 <li><a href="#comments">Comments</a>
 <ul class="sectlevel2">
 <li><a href="#single_line_comments">Single Line Comments</a></li>
+<li><a href="#block_comments">Block Comments</a></li>
 </ul>
 </li>
 <li><a href="#keywords">Keywords</a>
 <ul class="sectlevel2">
 <li><a href="#reserved_keywords">Reserved Keywords</a></li>
-<li><a href="#block_comments">Block Comments</a></li>
+</ul>
+</li>
+<li><a href="#strings">Strings</a>
+<ul class="sectlevel2">
+<li><a href="#escapes">Escapes</a></li>
+<li><a href="#interpolations">Interpolations</a></li>
+<li><a href="#file_names">File Names</a></li>
 </ul>
 </li>
 <li><a href="#numbers">Numbers</a></li>
@@ -599,6 +606,52 @@ Since they map to different CSS classes (<code>c</code> and <code>c1</code>), I&
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="block_comments"><a class="anchor" href="#block_comments"></a>Block Comments</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Comment::Multiline</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>cm</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Block comments were introduced in ALAN Beta8:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">////</span>
+<span class="cm">A block comment.</span>
+<span class="cm">It's delimited by 4 forward slashes (/).</span>
+<span class="cm">////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">apple</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span><span class="w">
+
+</span><span class="cm">//// Anything can follow the opening delimiter! ////////////////////////////////</span>
+<span class="cm">But the closing delimiter can only be followed by more forward slashes...</span>
+<span class="cm">//// therefore this is not a closing delimiter!</span>
+<span class="cm">But the next line is:</span>
+<span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">pear</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -646,8 +699,11 @@ CSS class
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="block_comments"><a class="anchor" href="#block_comments"></a>Block Comments</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="strings"><a class="anchor" href="#strings"></a>Strings</h2>
+<div class="sectionbody">
 <div class="hdlist">
 <table>
 <tr>
@@ -655,7 +711,7 @@ CSS class
 Lexer class 
 </td>
 <td class="hdlist2">
-<p><code>Comment::Multiline</code></p>
+<p><code>Str::Double</code> + <code>Str::Delimiter</code></p>
 </td>
 </tr>
 <tr>
@@ -663,32 +719,250 @@ Lexer class
 CSS class   
 </td>
 <td class="hdlist2">
-<p><code>cm</code></p>
+<p><code>s2</code> + <code>dl</code></p>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Block comments were introduced in ALAN Beta8:</p>
+<p>With the Rouge lexer we also capture double-quoted string delimiters:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">////</span>
-<span class="cm">A block comment.</span>
-<span class="cm">It's delimited by 4 forward slashes (/).</span>
-<span class="cm">////</span><span class="w">
-
-</span><span class="kr">The</span><span class="w"> </span><span class="n">apple</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span><span class="w">
-
-</span><span class="cm">//// Anything can follow the opening delimiter! ////////////////////////////////</span>
-<span class="cm">But the closing delimiter can only be followed by more forward slashes...</span>
-<span class="cm">//// therefore this is not a closing delimiter!</span>
-<span class="cm">But the next line is:</span>
-<span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
-
-</span><span class="kr">The</span><span class="w"> </span><span class="n">pear</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="n">fruit</span><span class="p">.</span><span class="w">
-</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">pear</span><span class="p">.</span></code></pre>
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="escapes"><a class="anchor" href="#escapes"></a>Escapes</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Str::Escape</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>se</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We treat as escape sequences all those ALAN special string symbols which are substituted with some other literal character:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<code>$$</code>           
+</td>
+<td class="hdlist2">
+<p>Escape from automatic space insertion and capitalization</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$_</code>           
+</td>
+<td class="hdlist2">
+<p>Print this as a '$' if in conflict with other symbols</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$i</code>           
+</td>
+<td class="hdlist2">
+<p>Indent on a new line</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$n</code>           
+</td>
+<td class="hdlist2">
+<p>New line</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$p</code>           
+</td>
+<td class="hdlist2">
+<p>New paragraph (usually one empty line)</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$t</code>           
+</td>
+<td class="hdlist2">
+<p>Insert a tabulation</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>&#34;&#34;</code> 
+</td>
+<td class="hdlist2">
+<p>Escape double quotes</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="s2">xyz</span><span class="se">$$</span><span class="s2">xyz</span><span class="se">$_</span><span class="s2">xyz</span><span class="se">$i</span><span class="s2">xyz</span><span class="se">$n</span><span class="s2">xyz</span><span class="se">$p</span><span class="s2">xyz</span><span class="se">$t</span><span class="s2">xyz</span><span class="se">""</span><span class="s2">xyz</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="interpolations"><a class="anchor" href="#interpolations"></a>Interpolations</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Str::Interpol</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>si</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We treat as interpolation sequences all those ALAN special string symbols which are substituted with a dynamic game-reference:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<code>$&lt;n&gt;</code>   
+</td>
+<td class="hdlist2">
+<p>The parameter &lt;n&gt; (&lt;n&gt; is a digit &gt; 0, e.g. <code>$1</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$+&lt;n&gt;</code>  
+</td>
+<td class="hdlist2">
+<p>Definite form of parameter &lt;n&gt;</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$0&lt;n&gt;</code>  
+</td>
+<td class="hdlist2">
+<p>Indefinite form of parameter &lt;n&gt;</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$-&lt;n&gt;</code>  
+</td>
+<td class="hdlist2">
+<p>Negative form of parameter &lt;n&gt;</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$!&lt;n&gt;</code>  
+</td>
+<td class="hdlist2">
+<p>Pronoun for the parameter &lt;n&gt;</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$a</code>     
+</td>
+<td class="hdlist2">
+<p>The name of the actor that is executing</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$l</code>     
+</td>
+<td class="hdlist2">
+<p>The name of the current location</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$o</code>     
+</td>
+<td class="hdlist2">
+<p>The current object (first parameter) <span class="red"><strong>[DEPRECATED]</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<code>$v</code>     
+</td>
+<td class="hdlist2">
+<p>The verb the player used (the first word)</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="s2">xyz</span><span class="si">$1</span><span class="s2">xyz</span><span class="si">$+2</span><span class="s2">xyz</span><span class="si">$03</span><span class="s2">xyz</span><span class="si">$-1</span><span class="s2">xyz</span><span class="si">$!2</span><span class="s2">xyz</span><span class="si">$a</span><span class="s2">xyz</span><span class="si">$l</span><span class="s2">xyz</span><span class="si">$o</span><span class="s2">xyz</span><span class="si">$v</span><span class="s2">xyz</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="file_names"><a class="anchor" href="#file_names"></a>File Names</h3>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Str::Single</code> + <code>Str::Delimiter</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>s1</code> + <code>dl</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>ALAN uses quoted IDs to hand file names, instead of strings.</p>
+</div>
+<div class="paragraph">
+<p>So the ALAN lexer will treat as single-quoted strings any quoted ID following those keywords that precede filenames (i.e. <code>import</code>, <code>play</code> and <code>show</code>), and capture their enclosing <code>&#39;</code> as a single-quote string delimiter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">'</span><span class="s1">StdLib/library.i</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">PLAY</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\music.aiff</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\picture.jpeg</span><span class="dl">'</span><span class="p">.</span></code></pre>
 </div>
 </div>
 </div>

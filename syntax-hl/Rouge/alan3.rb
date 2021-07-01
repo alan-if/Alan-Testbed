@@ -90,7 +90,7 @@ module Rouge
 
         # Numbers
         #########
-        rule %r/"/, Str::Double::Delimiter, :string
+        rule %r/"/, Str::Delimiter, :string
 
         # Operators
         ###########
@@ -181,6 +181,9 @@ module Rouge
       end
 
       state :string do
+
+        # Interpolations
+        ################
         # $<n>   The parameter <n> (<n> is a digit > 0, e.g. "$1")
         # $+<n>  Definite form of parameter <n>
         # $0<n>  Indefinite form of parameter <n>
@@ -191,14 +194,18 @@ module Rouge
         # $o     The current object (first parameter) [DEPRECATED]
         # $v     The verb the player used (the first word)
         rule %r/\$[+\-!0]?[1-9]|\$[alov]/, Str::Interpol
+
+        # Escape sequences
+        ##################
         # $$  Escape from automatic space insertion and capitalization
         # $_  Print this as a '$' if in conflict with other symbols
         # $i  Indent on a new line
         # $n  New line
         # $p  New paragraph (usually one empty line)
         # $t  Insert a tabulation
+        # ""  Escape double quotes
         rule %r/[\$][\$_inpt]|""/, Str::Escape
-        rule %r/"/, Str::Double::Delimiter, :pop!
+        rule %r/"/, Str::Delimiter, :pop!
         rule %r/[^\$"]+/, Str::Double
       end
 

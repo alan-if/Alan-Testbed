@@ -23,9 +23,11 @@ $Alan-background:    #F8F8F8;
 $Alan-normal:        #333;
 $Alan-comment:       #998;
 $Alan-linenums:      $Alan-comment; // untested (might need better color)
-$Alan-string:        #008080;
-$Alan-predefined:    #000080;
 $Alan-keyword:       #990000;
+$Alan-predefined:    #000080;
+// @TODO: Need other colour for predefined Hero instance?
+$Alan-string:        #008080;
+$Alan-str-delimiter: $Alan-normal; // @TODO: Need other colour!
 $Alan-escapes:       #ff980b; // $p $n $i $t $a $l $v $$
 $Alan-interpolation: #d572f1; // $<n> $+<n> $0<n> $-<n> $!<n> $o
 

@@ -37,6 +37,7 @@ $HL-Number:         $Alan-normal !default; // don't show numbers!
 $HL-Escape:         $Alan-escapes !default; // $p $n $i $t $a $l $v $$
 $HL-Interpolation:  $Alan-interpolation !default; // $<n> $+<n> $0<n> $-<n> $!<n> $o
 $HL-String:         $Alan-string !default;
+$HL-StrDelimiter:   $Alan-str-delimiter !default;
 $HL-Comment:        $Alan-comment !default;
 $HL-Operator:       $HL-Default !default;
 $HL-Keywords1:      $Alan-keyword !default; // Alan keywords
@@ -87,66 +88,84 @@ $ref_role:  null;
     &>span {
       // @TODO: identifiers
       // @TODO: quoted identifiers [ still WIP]
-      // @TODO: parameter indicators [ still WIP ]
-      // @TODO: punctuation [ still WIP ]
+      // @TODO: punctuation
       // @TODO: file strings + delimiters (Single Quoted Str -> Import | Show | Play)
-      &.n { // WIP! -> Literal::Number -> n
-        // Numbers
+      font-style: normal;
+      font-weight: normal;
+      &.m {
+        // Numbers -> Literal::Number
         color: $HL-Number;
       }
       &.lin { // TBD!
         // Line numbers
         color: $HL-LineNum;
       }
-      &.o { // WIP! -> Operator -> o
-        // Operators
+      &.o {
+        // Operators -> Operator
+        // ---------
         color: $HL-Operator;
       }
       // -------------
       //    Strings
       // -------------
-      // @TODO: String Delimiter
-      &.se { // WIP! -> Str::Escape -> se
-        // Escape sequences
+      &.dl {
+        // String delimiter -> Str::Double::Delimiter
         // ----------------
-        // In Alan these are: $p, $n, $i, $t, $a, $l, $v and $$.
+        color: $HL-StrDelimiter;
+      }
+      &.s2 {
+        // String contents -> Str::Double
+        // ---------------
+        color: $HL-String;
+      }
+      &.se {
+        // Escape sequences -> Str::Escape
+        // ----------------
+        // i.e. $$, $_, $i, $n, $p, $t and "".
         color: $HL-Escape;
       }
-      &.si { // WIP! -> Str::Interpol -> si
-        // Interpolation sequences
-        // -----------------------
-        // In Alan these are: $<n>, $+<n>, $0<n>, $-<n>, $!<n> and $o.
+      &.si {
+        // Interpolations -> Str::Interpol
+        // --------------
+        // i.e. $<n> $+<n>, $0<n>, $-<n>, $!<n>, $a, $l, $o and $v.
         color: $HL-Interpolation;
-      }
-      &.s2 { // WIP! -> Str::Double -> s2
-        // Strings
-        color: $HL-String;
       }
       // --------------
       //    Comments
       // --------------
-      &.c1 { // WIP! -> Comment::Single -> c1
-        // Single-line comments
+      &.c1 {
+        // Single-line comments -> Comment::Single
+        // --------------------
         color: $HL-Comment;
+        font-style: italic;
       }
-      &.cm { // WIP! -> Comment::Multiline -> cm
-        // Block comments
+      &.cm {
+        // Block comments -> Comment::Multiline
+        // --------------
         color: $HL-Comment;
+        font-style: italic;
       }
       // --------------------------
       //    Keywords & Built-ins
       // --------------------------
-      &.kr { // WIP! -> Keyword::Reserved -> kr
-        // Alan Keywords
+      &.kr {
+        // Alan Keywords -> Keyword::Reserved
+        // -------------
         color: $HL-Keywords1; // @TODO: RENAME VAR
+        font-weight: bold;
       }
-      &.nb { // WIP! -> Name::Builtin -> nb
-        // Predefined Classes
+      &.nb {
+        // Predefined Classes -> Name::Builtin
+        // ------------------
         color: $HL-Keywords2; // @TODO: RENAME VAR
+        font-weight: bold;
       }
-      &.nx { // WIP! -> Name::Other -> nx
-        // Predefined Instances (i.e. the 'hero')
+      &.nx {
+        // Predefined Instances -> Name::Other
+        // --------------------
+        // i.e. the 'hero'
         color: $HL-Keywords3; // @TODO: RENAME VAR
+        font-style: italic;
       }
     }
     // =========================================================================

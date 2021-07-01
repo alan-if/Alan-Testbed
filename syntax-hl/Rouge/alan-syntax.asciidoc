@@ -46,6 +46,36 @@ The former is described as "Single line comments", the latter as "Comments that 
 Since they map to different CSS classes (`c` and `c1`), I've settled for the latter.
 ====================
 
+=== Block Comments
+
+[horizontal]
+Lexer class :: `Comment::Multiline`
+CSS class   :: `cm`
+
+
+Block comments were introduced in ALAN Beta8:
+
+[source,alan]
+---------------------------------------
+////
+A block comment.
+It's delimited by 4 forward slashes (/).
+////
+
+The apple IsA fruit.
+End the pear.
+
+//// Anything can follow the opening delimiter! ////////////////////////////////
+But the closing delimiter can only be followed by more forward slashes...
+//// therefore this is not a closing delimiter!
+But the next line is:
+////////////////////////////////////////////////////////////////////////////////
+
+The pear IsA fruit.
+End the pear.
+---------------------------------------
+
+
 
 == Keywords
 
@@ -77,34 +107,87 @@ transcript transitively until use verb visits wait when where with word words
 ---------------------------------------
 
 
-=== Block Comments
+== Strings
 
 [horizontal]
-Lexer class :: `Comment::Multiline`
-CSS class   :: `cm`
+Lexer class :: `Str::Double` + `Str::Delimiter`
+CSS class   :: `s2` + `dl`
 
 
-Block comments were introduced in ALAN Beta8:
+With the Rouge lexer we also capture double-quoted string delimiters:
 
 [source,alan]
----------------------------------------
-////
-A block comment.
-It's delimited by 4 forward slashes (/).
-////
+--------------
+"Hello world!"
+--------------
 
-The apple IsA fruit.
-End the pear.
 
-//// Anything can follow the opening delimiter! ////////////////////////////////
-But the closing delimiter can only be followed by more forward slashes...
-//// therefore this is not a closing delimiter!
-But the next line is:
-////////////////////////////////////////////////////////////////////////////////
+=== Escapes
 
-The pear IsA fruit.
-End the pear.
----------------------------------------
+[horizontal]
+Lexer class :: `Str::Escape`
+CSS class   :: `se`
+
+We treat as escape sequences all those ALAN special string symbols which are substituted with some other literal character:
+
+[horizontal]
+``$$``           :: Escape from automatic space insertion and capitalization
+``$_``           :: Print this as a '$' if in conflict with other symbols
+``$i``           :: Indent on a new line
+``$n``           :: New line
+``$p``           :: New paragraph (usually one empty line)
+``$t``           :: Insert a tabulation
+``{quot}{quot}`` :: Escape double quotes
+
+
+[source,alan]
+----------------------------------------
+"xyz$$xyz$_xyz$ixyz$nxyz$pxyz$txyz""xyz"
+----------------------------------------
+
+
+=== Interpolations
+
+[horizontal]
+Lexer class :: `Str::Interpol`
+CSS class   :: `si`
+
+We treat as interpolation sequences all those ALAN special string symbols which are substituted with a dynamic game-reference:
+
+[horizontal]
+``$<n>``   :: The parameter <n> (<n> is a digit > 0, e.g. `$1`)
+``$+<n>``  :: Definite form of parameter <n>
+``$0<n>``  :: Indefinite form of parameter <n>
+``$-<n>``  :: Negative form of parameter <n>
+``$!<n>``  :: Pronoun for the parameter <n>
+``$a``     :: The name of the actor that is executing
+``$l``     :: The name of the current location
+``$o``     :: The current object (first parameter) [.red]##**[DEPRECATED]**##
+``$v``     :: The verb the player used (the first word)
+
+[source,alan]
+------------------------------------------------------
+"xyz$1xyz$+2xyz$03xyz$-1xyz$!2xyz$axyz$lxyz$oxyz$vxyz"
+------------------------------------------------------
+
+
+=== File Names
+
+[horizontal]
+Lexer class :: `Str::Single` + `Str::Delimiter`
+CSS class   :: `s1` + `dl`
+
+ALAN uses quoted IDs to hand file names, instead of strings.
+
+So the ALAN lexer will treat as single-quoted strings any quoted ID following those keywords that precede filenames (i.e. `import`, `play` and `show`), and capture their enclosing ``{apos}`` as a single-quote string delimiter.
+
+
+[source,alan]
+------------------------------------------------------
+IMPORT 'StdLib/library.i'.
+PLAY 'mmedia\music.aiff'.
+SHOW 'mmedia\picture.jpeg'.
+------------------------------------------------------
 
 
 == Numbers
