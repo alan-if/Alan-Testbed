@@ -686,6 +686,9 @@ span.green {
 .listingblock pre[class~=rouge][lang=alan] > code > span.s2 {
   color: #008080;
 }
+.listingblock pre[class~=rouge][lang=alan] > code > span.s1 {
+  color: #008080;
+}
 .listingblock pre[class~=rouge][lang=alan] > code > span.se {
   color: #ff980b;
 }
@@ -757,6 +760,9 @@ span.green {
   color: #333;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.s2 {
+  color: #99cc99;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] > code > span.s1 {
   color: #99cc99;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.se {
@@ -832,6 +838,9 @@ span.green {
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.s2 {
   color: #198844;
 }
+.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.s1 {
+  color: #198844;
+}
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.se {
   color: #F96A38;
 }
@@ -880,18 +889,19 @@ span.green {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#alan">ALAN</a>
+<li><a href="#alan_samples">ALAN Samples</a>
 <ul class="sectlevel2">
-<li><a href="#samples">Samples</a>
-<ul class="sectlevel3">
 <li><a href="#default_theme">Default Theme</a></li>
 <li><a href="#library_theme">Library Theme</a></li>
 <li><a href="#tutorial_theme">Tutorial Theme</a></li>
 </ul>
 </li>
-<li><a href="#syntax_details">Syntax Details</a>
+<li><a href="#alan_syntax_details">ALAN Syntax Details</a>
+<ul class="sectlevel2">
+<li><a href="#strings">Strings</a>
 <ul class="sectlevel3">
-<li><a href="#strings">Strings</a></li>
+<li><a href="#escapes_and_interpolations">Escapes and Interpolations</a></li>
+<li><a href="#file_names_as_quoted_ids">File Names as Quoted IDs</a></li>
 </ul>
 </li>
 </ul>
@@ -924,8 +934,11 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 <div class="sect1">
-<h2 id="alan"><a class="anchor" href="#alan"></a>ALAN</h2>
+<h2 id="alan_samples"><a class="anchor" href="#alan_samples"></a>ALAN Samples</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>A basic ALAN IF code sample, shown in all available theme variations.</p>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -954,12 +967,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </table>
 </div>
 <div class="sect2">
-<h3 id="samples"><a class="anchor" href="#samples"></a>Samples</h3>
-<div class="paragraph">
-<p>A basic ALAN IF code sample, shown in all available theme variations.</p>
-</div>
-<div class="sect3">
-<h4 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h4>
+<h3 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1029,8 +1037,8 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h4>
+<div class="sect2">
+<h3 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h3>
 <div class="listingblock lib">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1100,8 +1108,8 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h4>
+<div class="sect2">
+<h3 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h3>
 <div class="listingblock tutorial">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1172,13 +1180,15 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="syntax_details"><a class="anchor" href="#syntax_details"></a>Syntax Details</h3>
+</div>
+<div class="sect1">
+<h2 id="alan_syntax_details"><a class="anchor" href="#alan_syntax_details"></a>ALAN Syntax Details</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Here we&#8217;ll have a closer look at specific syntax elements, and how they are rendered (or hidden) by the various CSS themes for ALAN code.</p>
 </div>
-<div class="sect3">
-<h4 id="strings"><a class="anchor" href="#strings"></a>Strings</h4>
+<div class="sect2">
+<h3 id="strings"><a class="anchor" href="#strings"></a>Strings</h3>
 <div class="paragraph">
 <p>Here&#8217;s how strings and their delimiters, along with escapes and interpolations are rendered across themes:</p>
 </div>
@@ -1204,6 +1214,109 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Say</span><span class="w"> </span><span class="dl">"</span><span class="s2">You carefully inspect </span><span class="si">$+1</span><span class="s2">; it surely doesn't resemble
      any other </span><span class="si">$01</span><span class="s2"> you've ever seen, </span><span class="si">$!1</span><span class="s2"> features are unique.
      </span><span class="se">$p$i</span><span class="s2">You tell Bob </span><span class="se">""</span><span class="s2">This </span><span class="si">$1</span><span class="s2"> might be what we were looking for</span><span class="se">""</span><span class="s2">.</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="escapes_and_interpolations"><a class="anchor" href="#escapes_and_interpolations"></a>Escapes and Interpolations</h4>
+<div class="paragraph">
+<p>ALAN&#8217;s
+<a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_string_statement" target="_blank" rel="noopener">&#8220;special characters combinations&#8221;</a>
+are captured as either <em>escape sequences</em> or <em>interpolations</em> by our Rouge lexer.</p>
+</div>
+<div class="paragraph">
+<p>We capture as escape sequences those special characters groups which are substituted by some fixed literal character (including <code>&#34;&#34;</code>):</p>
+</div>
+<div class="listingblock">
+<div class="title">String Escapes: Default Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="se">$$</span><span class="s2"> </span><span class="se">$_</span><span class="s2"> </span><span class="se">$i</span><span class="s2"> </span><span class="se">$n</span><span class="s2"> </span><span class="se">$p</span><span class="s2"> </span><span class="se">$t</span><span class="s2"> </span><span class="se">""</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="listingblock lib">
+<div class="title">String Escapes: Library Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="se">$$</span><span class="s2"> </span><span class="se">$_</span><span class="s2"> </span><span class="se">$i</span><span class="s2"> </span><span class="se">$n</span><span class="s2"> </span><span class="se">$p</span><span class="s2"> </span><span class="se">$t</span><span class="s2"> </span><span class="se">""</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="listingblock tutorial">
+<div class="title">String Escapes: Tutorial Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="se">$$</span><span class="s2"> </span><span class="se">$_</span><span class="s2"> </span><span class="se">$i</span><span class="s2"> </span><span class="se">$n</span><span class="s2"> </span><span class="se">$p</span><span class="s2"> </span><span class="se">$t</span><span class="s2"> </span><span class="se">""</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We capture as interpolations those special characters groups which are substituted by some dynamic game-reference:</p>
+</div>
+<div class="listingblock">
+<div class="title">String Interpolations: Default Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="si">$1</span><span class="s2"> </span><span class="si">$+2</span><span class="s2"> </span><span class="si">$03</span><span class="s2"> </span><span class="si">$-1</span><span class="s2"> </span><span class="si">$!2</span><span class="s2"> </span><span class="si">$a</span><span class="s2"> </span><span class="si">$l</span><span class="s2"> </span><span class="si">$o</span><span class="s2"> </span><span class="si">$v</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="listingblock lib">
+<div class="title">String Interpolations: Library Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="si">$1</span><span class="s2"> </span><span class="si">$+2</span><span class="s2"> </span><span class="si">$03</span><span class="s2"> </span><span class="si">$-1</span><span class="s2"> </span><span class="si">$!2</span><span class="s2"> </span><span class="si">$a</span><span class="s2"> </span><span class="si">$l</span><span class="s2"> </span><span class="si">$o</span><span class="s2"> </span><span class="si">$v</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="listingblock tutorial">
+<div class="title">String Interpolations: Tutorial Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="dl">"</span><span class="si">$1</span><span class="s2"> </span><span class="si">$+2</span><span class="s2"> </span><span class="si">$03</span><span class="s2"> </span><span class="si">$-1</span><span class="s2"> </span><span class="si">$!2</span><span class="s2"> </span><span class="si">$a</span><span class="s2"> </span><span class="si">$l</span><span class="s2"> </span><span class="si">$o</span><span class="s2"> </span><span class="si">$v</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The way these special characters are grouped in the
+<a href="https://alan-if.github.io/alan-docs/manual-alpha/manual.html#_string_statement" target="_blank" rel="noopener"><em>ALAN Manual</em></a>
+differs from the way they are treated by our lexer.</p>
+</div>
+<div class="paragraph">
+<p>The official documentation doesn&#8217;t classify them as either escapes or interpolations, and they are presented in two separate groups based on whether they refer to <code>VERB</code> parameters or not.</p>
+</div>
+<div class="paragraph">
+<p>Our approach here is different, for we&#8217;re trying to classify them as tokens, according to their nature.
+The closest token types that I could come up with (and which are supported by Rouge) are <em>escape sequences</em> and <em>interpolations</em>, which seem to represent their behaviour fairly accurately.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="file_names_as_quoted_ids"><a class="anchor" href="#file_names_as_quoted_ids"></a>File Names as Quoted IDs</h4>
+<div class="paragraph">
+<p>ALAN uses quoted IDs (instead of strings) to hand file names following  <code>import</code>, <code>play</code> and <code>show</code>.
+The Rouge ALAN lexer will capture as single-quoted strings quoted IDs representing files names, and capture their enclosing <code>&#39;</code> as a single-quote string delimiter.</p>
+</div>
+<div class="listingblock">
+<div class="title">Default Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">'</span><span class="s1">StdLib/library.i</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">PLAY</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\music.aiff</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\picture.jpeg</span><span class="dl">'</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="listingblock lib">
+<div class="title">Library Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">'</span><span class="s1">StdLib/library.i</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">PLAY</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\music.aiff</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\picture.jpeg</span><span class="dl">'</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="listingblock tutorial">
+<div class="title">Tutorial Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">IMPORT</span><span class="w"> </span><span class="dl">'</span><span class="s1">StdLib/library.i</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">PLAY</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\music.aiff</span><span class="dl">'</span><span class="p">.</span><span class="w">
+</span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\picture.jpeg</span><span class="dl">'</span><span class="p">.</span></code></pre>
 </div>
 </div>
 </div>

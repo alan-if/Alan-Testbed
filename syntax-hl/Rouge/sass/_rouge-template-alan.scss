@@ -87,7 +87,6 @@ $ref_role:  null;
     font-size: $HL-Font-size;
     &>span {
       // @TODO: punctuation
-      // @TODO: file strings + delimiters (Single Quoted Str -> Import | Show | Play)
       font-style: normal;
       font-weight: normal;
       &.m {
@@ -120,6 +119,11 @@ $ref_role:  null;
       &.s2 {
         // String contents -> Str::Double
         // ---------------
+        color: $HL-String;
+      }
+      &.s1 {
+        // Files String -> Str::Single
+        // ------------
         color: $HL-String;
       }
       &.se {

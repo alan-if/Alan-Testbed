@@ -14,6 +14,8 @@ Tristano Ajmone <tajmone@gmail.com>
 
 Previews of our custom Rouge lexers and themes for the ALAN Docs project, and other ALAN-related documentation.
 
+// CUSTOM ATTRIBUTES:
+:manURL: https://alan-if.github.io/alan-docs/manual-alpha/manual.html#
 
 [WARNING]
 ========================
@@ -21,7 +23,9 @@ Currently we only have the ALAN lexer, and a single theme.
 In the future this document we'll also cover the other required lexers (BNF) and ALAN themes ("tutorial" and "lib").
 ========================
 
-== ALAN
+== ALAN Samples
+
+A basic ALAN IF code sample, shown in all available theme variations.
 
 [WARNING]
 ========================
@@ -33,12 +37,7 @@ In the future this document we'll also cover the other required lexers (BNF) and
 ========================
 
 
-=== Samples
-
-A basic ALAN IF code sample, shown in all available theme variations.
-
-
-==== Default Theme
+=== Default Theme
 
 [source,alan]
 ----------------------
@@ -46,7 +45,7 @@ include::sample.alan[]
 ----------------------
 
 
-==== Library Theme
+=== Library Theme
 
 [source,alan,role=lib]
 ----------------------
@@ -54,7 +53,7 @@ include::sample.alan[]
 ----------------------
 
 
-==== Tutorial Theme
+=== Tutorial Theme
 
 [source,alan,role=tutorial]
 ----------------------
@@ -62,12 +61,12 @@ include::sample.alan[]
 ----------------------
 
 
-=== Syntax Details
+== ALAN Syntax Details
 
 Here we'll have a closer look at specific syntax elements, and how they are rendered (or hidden) by the various CSS themes for ALAN code.
 
 
-==== Strings
+=== Strings
 
 Here's how strings and their delimiters, along with escapes and interpolations are rendered across themes:
 
@@ -94,6 +93,99 @@ Say "You carefully inspect $+1; it surely doesn't resemble
      any other $01 you've ever seen, $!1 features are unique.
      $p$iYou tell Bob ""This $1 might be what we were looking for""."
 ----------------------
+
+
+==== Escapes and Interpolations
+
+ALAN's
+link:{manURL}_string_statement["`special characters combinations`"^]
+are captured as either _escape sequences_ or _interpolations_ by our Rouge lexer.
+
+We capture as escape sequences those special characters groups which are substituted by some fixed literal character (including ``{quot}{quot}``):
+
+.String Escapes: Default Theme
+[source,alan]
+----------------------------------------
+"$$ $_ $i $n $p $t """
+----------------------------------------
+
+.String Escapes: Library Theme
+[source,alan,role=lib]
+---------------------------
+"$$ $_ $i $n $p $t """
+---------------------------
+
+.String Escapes: Tutorial Theme
+[source,alan,role=tutorial]
+---------------------------
+"$$ $_ $i $n $p $t """
+---------------------------
+
+
+We capture as interpolations those special characters groups which are substituted by some dynamic game-reference:
+
+.String Interpolations: Default Theme
+[source,alan]
+----------------------------------------
+"$1 $+2 $03 $-1 $!2 $a $l $o $v"
+----------------------------------------
+
+.String Interpolations: Library Theme
+[source,alan,role=lib]
+---------------------------
+"$1 $+2 $03 $-1 $!2 $a $l $o $v"
+---------------------------
+
+.String Interpolations: Tutorial Theme
+[source,alan,role=tutorial]
+---------------------------
+"$1 $+2 $03 $-1 $!2 $a $l $o $v"
+---------------------------
+
+[NOTE]
+=============
+The way these special characters are grouped in the
+link:{manURL}_string_statement[_ALAN Manual_^]
+differs from the way they are treated by our lexer.
+
+The official documentation doesn't classify them as either escapes or interpolations, and they are presented in two separate groups based on whether they refer to `VERB` parameters or not.
+
+Our approach here is different, for we're trying to classify them as tokens, according to their nature.
+The closest token types that I could come up with (and which are supported by Rouge) are _escape sequences_ and _interpolations_, which seem to represent their behaviour fairly accurately.
+=============
+
+
+
+==== File Names as Quoted IDs
+
+ALAN uses quoted IDs (instead of strings) to hand file names following  `import`, `play` and `show`.
+The Rouge ALAN lexer will capture as single-quoted strings quoted IDs representing files names, and capture their enclosing ``{apos}`` as a single-quote string delimiter.
+
+
+.Default Theme
+[source,alan]
+---------------------------
+IMPORT 'StdLib/library.i'.
+PLAY 'mmedia\music.aiff'.
+SHOW 'mmedia\picture.jpeg'.
+---------------------------
+
+.Library Theme
+[source,alan,role=lib]
+---------------------------
+IMPORT 'StdLib/library.i'.
+PLAY 'mmedia\music.aiff'.
+SHOW 'mmedia\picture.jpeg'.
+---------------------------
+
+.Tutorial Theme
+[source,alan,role=tutorial]
+---------------------------
+IMPORT 'StdLib/library.i'.
+PLAY 'mmedia\music.aiff'.
+SHOW 'mmedia\picture.jpeg'.
+---------------------------
+
 
 
 
