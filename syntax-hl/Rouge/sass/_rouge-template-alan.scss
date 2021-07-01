@@ -86,8 +86,6 @@ $ref_role:  null;
     font-family: $HL-Font-family;
     font-size: $HL-Font-size;
     &>span {
-      // @TODO: identifiers
-      // @TODO: quoted identifiers [ still WIP]
       // @TODO: punctuation
       // @TODO: file strings + delimiters (Single Quoted Str -> Import | Show | Play)
       font-style: normal;
@@ -99,6 +97,12 @@ $ref_role:  null;
       &.lin { // TBD!
         // Line numbers
         color: $HL-LineNum;
+      }
+      &.n {
+        // Identifiers -> Name
+        // -----------
+        color: $HL-Default; // @TODO: Need new Var and Colour!
+        font-weight: bold;
       }
       &.o {
         // Operators -> Operator

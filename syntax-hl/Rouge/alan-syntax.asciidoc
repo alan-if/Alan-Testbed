@@ -190,6 +190,33 @@ SHOW 'mmedia\picture.jpeg'.
 ------------------------------------------------------
 
 
+== IDs and Quoted IDs
+
+[horizontal]
+Lexer class :: `Name`
+CSS class   :: `n`
+
+
+Identifiers (quoted or otherwise) are captures as ``Name``s; and here respented in white colour, to distinguish them from the base `Text` (which is grey).
+
+[source,alan]
+------------------------------------------------------
+Every XYZ IsA object
+End the XYZ.
+
+The 'Rock''n''Roll Hall' IsA location.
+End the.
+------------------------------------------------------
+
+Basically, any word matching the definition of an identifier, which is neither a reserved keyword or built-in class/instance, is currently assumed to be an ID (i.e. semantic context doesn't determine what is an ID or not).
+
+
+[NOTE]
+===============
+I decided againt capturing the delimiting single-quotes of Quoted IDs as if they were string-delimiters, or escaped double quotes as if they were string escape sequences; instead, I opted to keep them simple, and treat them as a single token, of the same type of unquoted IDs.
+===============
+
+
 == Numbers
 
 [horizontal]

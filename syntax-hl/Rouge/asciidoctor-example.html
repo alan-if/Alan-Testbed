@@ -673,6 +673,10 @@ span.green {
 .listingblock pre[class~=rouge][lang=alan] > code > span.lin {
   color: #998;
 }
+.listingblock pre[class~=rouge][lang=alan] > code > span.n {
+  color: #333;
+  font-weight: bold;
+}
 .listingblock pre[class~=rouge][lang=alan] > code > span.o {
   color: #333;
 }
@@ -741,6 +745,10 @@ span.green {
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.lin {
   color: #747369;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] > code > span.n {
+  color: #d3d0c8;
+  font-weight: bold;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.o {
   color: #d3d0c8;
@@ -811,6 +819,10 @@ span.green {
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.lin {
   color: #c5c8c6;
 }
+.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.n {
+  color: #373b41;
+  font-weight: bold;
+}
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.o {
   color: #373b41;
 }
@@ -870,9 +882,18 @@ span.green {
 <ul class="sectlevel1">
 <li><a href="#alan">ALAN</a>
 <ul class="sectlevel2">
+<li><a href="#samples">Samples</a>
+<ul class="sectlevel3">
 <li><a href="#default_theme">Default Theme</a></li>
 <li><a href="#library_theme">Library Theme</a></li>
 <li><a href="#tutorial_theme">Tutorial Theme</a></li>
+</ul>
+</li>
+<li><a href="#syntax_details">Syntax Details</a>
+<ul class="sectlevel3">
+<li><a href="#strings">Strings</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#other_syntaxes">Other Syntaxes</a></li>
@@ -933,7 +954,12 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </table>
 </div>
 <div class="sect2">
-<h3 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h3>
+<h3 id="samples"><a class="anchor" href="#samples"></a>Samples</h3>
+<div class="paragraph">
+<p>A basic ALAN IF code sample, shown in all available theme variations.</p>
+</div>
+<div class="sect3">
+<h4 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -941,7 +967,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
 
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
-  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack''s Mess Hall'</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">Syntax</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w">
@@ -1003,8 +1029,8 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h3>
+<div class="sect3">
+<h4 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h4>
 <div class="listingblock lib">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1012,7 +1038,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
 
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
-  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack''s Mess Hall'</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">Syntax</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w">
@@ -1074,8 +1100,8 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h3>
+<div class="sect3">
+<h4 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h4>
 <div class="listingblock tutorial">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1083,7 +1109,7 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <span class="cm">////////////////////////////////////////////////////////////////////////////////</span><span class="w">
 
 </span><span class="kr">The</span><span class="w"> </span><span class="n">canteen</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="w">
-  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack</span><span class="se">''</span><span class="n">s Mess Hall'</span><span class="p">.</span><span class="w">
+  </span><span class="kr">Name</span><span class="w"> </span><span class="n">'The Barrack''s Mess Hall'</span><span class="p">.</span><span class="w">
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">Syntax</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">examine</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w">
@@ -1142,6 +1168,43 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">Start</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="syntax_details"><a class="anchor" href="#syntax_details"></a>Syntax Details</h3>
+<div class="paragraph">
+<p>Here we&#8217;ll have a closer look at specific syntax elements, and how they are rendered (or hidden) by the various CSS themes for ALAN code.</p>
+</div>
+<div class="sect3">
+<h4 id="strings"><a class="anchor" href="#strings"></a>Strings</h4>
+<div class="paragraph">
+<p>Here&#8217;s how strings and their delimiters, along with escapes and interpolations are rendered across themes:</p>
+</div>
+<div class="listingblock">
+<div class="title">Default Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Say</span><span class="w"> </span><span class="dl">"</span><span class="s2">You carefully inspect </span><span class="si">$+1</span><span class="s2">; it surely doesn't resemble
+     any other </span><span class="si">$01</span><span class="s2"> you've ever seen, </span><span class="si">$!1</span><span class="s2"> features are unique.
+     </span><span class="se">$p$i</span><span class="s2">You tell Bob </span><span class="se">""</span><span class="s2">This </span><span class="si">$1</span><span class="s2"> might be what we were looking for</span><span class="se">""</span><span class="s2">.</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="listingblock lib">
+<div class="title">Library Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Say</span><span class="w"> </span><span class="dl">"</span><span class="s2">You carefully inspect </span><span class="si">$+1</span><span class="s2">; it surely doesn't resemble
+     any other </span><span class="si">$01</span><span class="s2"> you've ever seen, </span><span class="si">$!1</span><span class="s2"> features are unique.
+     </span><span class="se">$p$i</span><span class="s2">You tell Bob </span><span class="se">""</span><span class="s2">This </span><span class="si">$1</span><span class="s2"> might be what we were looking for</span><span class="se">""</span><span class="s2">.</span><span class="dl">"</span></code></pre>
+</div>
+</div>
+<div class="listingblock tutorial">
+<div class="title">Tutorial Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Say</span><span class="w"> </span><span class="dl">"</span><span class="s2">You carefully inspect </span><span class="si">$+1</span><span class="s2">; it surely doesn't resemble
+     any other </span><span class="si">$01</span><span class="s2"> you've ever seen, </span><span class="si">$!1</span><span class="s2"> features are unique.
+     </span><span class="se">$p$i</span><span class="s2">You tell Bob </span><span class="se">""</span><span class="s2">This </span><span class="si">$1</span><span class="s2"> might be what we were looking for</span><span class="se">""</span><span class="s2">.</span><span class="dl">"</span></code></pre>
+</div>
 </div>
 </div>
 </div>

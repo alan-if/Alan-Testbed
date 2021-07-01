@@ -33,7 +33,12 @@ In the future this document we'll also cover the other required lexers (BNF) and
 ========================
 
 
-=== Default Theme
+=== Samples
+
+A basic ALAN IF code sample, shown in all available theme variations.
+
+
+==== Default Theme
 
 [source,alan]
 ----------------------
@@ -41,7 +46,7 @@ include::sample.alan[]
 ----------------------
 
 
-=== Library Theme
+==== Library Theme
 
 [source,alan,role=lib]
 ----------------------
@@ -49,11 +54,45 @@ include::sample.alan[]
 ----------------------
 
 
-=== Tutorial Theme
+==== Tutorial Theme
 
 [source,alan,role=tutorial]
 ----------------------
 include::sample.alan[]
+----------------------
+
+
+=== Syntax Details
+
+Here we'll have a closer look at specific syntax elements, and how they are rendered (or hidden) by the various CSS themes for ALAN code.
+
+
+==== Strings
+
+Here's how strings and their delimiters, along with escapes and interpolations are rendered across themes:
+
+.Default Theme
+[source,alan]
+----------------------
+Say "You carefully inspect $+1; it surely doesn't resemble
+     any other $01 you've ever seen, $!1 features are unique.
+     $p$iYou tell Bob ""This $1 might be what we were looking for""."
+----------------------
+
+.Library Theme
+[source,alan,role=lib]
+----------------------
+Say "You carefully inspect $+1; it surely doesn't resemble
+     any other $01 you've ever seen, $!1 features are unique.
+     $p$iYou tell Bob ""This $1 might be what we were looking for""."
+----------------------
+
+.Tutorial Theme
+[source,alan,role=tutorial]
+----------------------
+Say "You carefully inspect $+1; it surely doesn't resemble
+     any other $01 you've ever seen, $!1 features are unique.
+     $p$iYou tell Bob ""This $1 might be what we were looking for""."
 ----------------------
 
 

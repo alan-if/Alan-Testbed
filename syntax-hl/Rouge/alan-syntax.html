@@ -528,6 +528,7 @@ pre.rouge .err {
 <li><a href="#file_names">File Names</a></li>
 </ul>
 </li>
+<li><a href="#ids_and_quoted_ids">IDs and Quoted IDs</a></li>
 <li><a href="#numbers">Numbers</a></li>
 <li><a href="#operators">Operators</a>
 <ul class="sectlevel2">
@@ -965,6 +966,60 @@ CSS class
 </span><span class="kr">SHOW</span><span class="w"> </span><span class="dl">'</span><span class="s1">mmedia\picture.jpeg</span><span class="dl">'</span><span class="p">.</span></code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ids_and_quoted_ids"><a class="anchor" href="#ids_and_quoted_ids"></a>IDs and Quoted IDs</h2>
+<div class="sectionbody">
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Lexer class 
+</td>
+<td class="hdlist2">
+<p><code>Name</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+CSS class   
+</td>
+<td class="hdlist2">
+<p><code>n</code></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Identifiers (quoted or otherwise) are captures as <code>Name</code>s; and here respented in white colour, to distinguish them from the base <code>Text</code> (which is grey).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Every</span><span class="w"> </span><span class="n">XYZ</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="w"> </span><span class="n">XYZ</span><span class="p">.</span><span class="w">
+
+</span><span class="kr">The</span><span class="w"> </span><span class="n">'Rock''n''Roll Hall'</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">location</span><span class="p">.</span><span class="w">
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">the</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Basically, any word matching the definition of an identifier, which is neither a reserved keyword or built-in class/instance, is currently assumed to be an ID (i.e. semantic context doesn&#8217;t determine what is an ID or not).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>I decided againt capturing the delimiting single-quotes of Quoted IDs as if they were string-delimiters, or escaped double quotes as if they were string escape sequences; instead, I opted to keep them simple, and treat them as a single token, of the same type of unquoted IDs.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

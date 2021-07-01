@@ -175,7 +175,7 @@ module Rouge
 
 
       state :quoted_id do
-        rule %r/''/, Str::Escape
+        rule %r/''/, Name
         rule %r/'/, Name, :pop!
         rule %r/[^']+/, Name
       end
