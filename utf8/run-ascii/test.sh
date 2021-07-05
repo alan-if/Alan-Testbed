@@ -1,5 +1,17 @@
 #!/bin/bash
 
+## Delete Old Transcripts
+#########################
+
+echo -e "\n\e[0;34m# \e[33mDeleting Old Transcripts"
+echo -e "\e[0;34m#########################\e[1;30m"
+
+rm *.a3t
+
+
+## Compile Adventure
+####################
+
 echo -e "\n\e[0;34m# \e[33mCompiling Adventure"
 echo -e "\e[0;34m#####################\e[1;30m"
 
