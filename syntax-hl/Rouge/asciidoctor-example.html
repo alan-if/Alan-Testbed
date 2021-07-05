@@ -656,7 +656,7 @@ span.green {
 .listingblock pre[class~=rouge][lang=alan] {
   background-color: #F8F8F8;
   border-radius: 4px;
-  border: 1px solid #F8F8F8;
+  border: 1px solid #998;
 }
 .listingblock pre[class~=rouge][lang=alan] > code {
   color: #333;
@@ -675,10 +675,14 @@ span.green {
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.n {
   color: #333;
-  font-weight: bold;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.o {
   color: #333;
+  font-weight: bold;
+}
+.listingblock pre[class~=rouge][lang=alan] > code > span.p {
+  color: #990000;
+  font-weight: bold;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.dl {
   color: #333;
@@ -712,7 +716,7 @@ span.green {
   font-weight: bold;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.nx {
-  color: #000080;
+  color: #d572f1;
   font-style: italic;
 }
 .listingblock pre[class~=rouge][lang=alan] > code mark {
@@ -744,20 +748,24 @@ span.green {
   font-weight: normal;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.m {
-  color: #f99157;
+  color: #d3d0c8;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.lin {
   color: #747369;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.n {
   color: #d3d0c8;
-  font-weight: bold;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.o {
   color: #d3d0c8;
+  font-weight: bold;
+}
+.listingblock.lib pre[class~=rouge][lang=alan] > code > span.p {
+  color: #f2777a;
+  font-weight: bold;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.dl {
-  color: #333;
+  color: #99cc99;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.s2 {
   color: #99cc99;
@@ -772,11 +780,11 @@ span.green {
   color: #d27b53;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.c1 {
-  color: #a09f93;
+  color: #998;
   font-style: italic;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.cm {
-  color: #a09f93;
+  color: #998;
   font-style: italic;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.kr {
@@ -800,7 +808,7 @@ span.green {
   background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
 }
 
-/* Rouge Theme for Alan tutorial -- Base16 Google, by  Seth Wright */
+/* Rouge Theme for Alan tutorial -- Base16 Google, by Seth Wright */
 .listingblock.tutorial code[data-lang=alan]::before {
   color: #a09f93;
 }
@@ -827,13 +835,17 @@ span.green {
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.n {
   color: #373b41;
-  font-weight: bold;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.o {
   color: #373b41;
+  font-weight: bold;
+}
+.listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.p {
+  color: #CC342B;
+  font-weight: bold;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.dl {
-  color: #333;
+  color: #F96A38;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.s2 {
   color: #198844;
@@ -891,9 +903,19 @@ span.green {
 <ul class="sectlevel1">
 <li><a href="#alan_samples">ALAN Samples</a>
 <ul class="sectlevel2">
+<li><a href="#basic_sample">Basic Sample</a>
+<ul class="sectlevel3">
 <li><a href="#default_theme">Default Theme</a></li>
 <li><a href="#library_theme">Library Theme</a></li>
 <li><a href="#tutorial_theme">Tutorial Theme</a></li>
+</ul>
+</li>
+<li><a href="#asciidoc_features">AsciiDoc Features</a>
+<ul class="sectlevel3">
+<li><a href="#callouts">Callouts</a></li>
+<li><a href="#code_markers">Code Markers</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#alan_syntax_details">ALAN Syntax Details</a>
@@ -936,9 +958,6 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 <div class="sect1">
 <h2 id="alan_samples"><a class="anchor" href="#alan_samples"></a>ALAN Samples</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>A basic ALAN IF code sample, shown in all available theme variations.</p>
-</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -967,7 +986,12 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </table>
 </div>
 <div class="sect2">
-<h3 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h3>
+<h3 id="basic_sample"><a class="anchor" href="#basic_sample"></a>Basic Sample</h3>
+<div class="paragraph">
+<p>A basic ALAN IF code sample, shown in all available theme variations.</p>
+</div>
+<div class="sect3">
+<h4 id="default_theme"><a class="anchor" href="#default_theme"></a>Default Theme</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1037,8 +1061,8 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h3>
+<div class="sect3">
+<h4 id="library_theme"><a class="anchor" href="#library_theme"></a>Library Theme</h4>
 <div class="listingblock lib">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1108,8 +1132,8 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h3>
+<div class="sect3">
+<h4 id="tutorial_theme"><a class="anchor" href="#tutorial_theme"></a>Tutorial Theme</h4>
 <div class="listingblock tutorial">
 <div class="content">
 <pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="cm">//// "The Barracks" | Alan Beta8 ///////////////////////////////////////////////</span>
@@ -1176,6 +1200,142 @@ In the future this document we&#8217;ll also cover the other required lexers (BN
 </span><span class="kr">End</span><span class="w"> </span><span class="kr">verb</span><span class="p">.</span><span class="w">
 
 </span><span class="kr">Start</span><span class="w"> </span><span class="kr">at</span><span class="w"> </span><span class="n">canteen</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="asciidoc_features"><a class="anchor" href="#asciidoc_features"></a>AsciiDoc Features</h3>
+<div class="paragraph">
+<p>Here some sample of advanced AsciiDoc features and how they&#8217;re rendered for each theme.</p>
+</div>
+<div class="sect3">
+<h4 id="callouts"><a class="anchor" href="#callouts"></a>Callouts</h4>
+<div class="exampleblock">
+<div class="title">Example 1. Callouts: Default Theme</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Every</span><span class="w"> </span><span class="n">beverage</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w">  <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
+  </span><span class="kr">Is</span><span class="w"> </span><span class="n">drinkable</span><span class="p">.</span><span class="w"> <i class="conum" data-value="3"></i><b>(3)</b>
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">every</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>beverage</code> is the new class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>object</code> is the parent class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>drinkable</code> attribute is used by the <code>drink</code> verb.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. Callouts: Library Theme</div>
+<div class="content">
+<div class="listingblock lib">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Every</span><span class="w"> </span><span class="n">beverage</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w">  <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
+  </span><span class="kr">Is</span><span class="w"> </span><span class="n">drinkable</span><span class="p">.</span><span class="w"> <i class="conum" data-value="3"></i><b>(3)</b>
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">every</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>beverage</code> is the new class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>object</code> is the parent class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>drinkable</code> attribute is used by the <code>drink</code> verb.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. Callouts: Tutorial Theme</div>
+<div class="content">
+<div class="listingblock tutorial">
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><span class="kr">Every</span><span class="w"> </span><span class="n">beverage</span><span class="w"> </span><span class="kr">IsA</span><span class="w"> </span><span class="nb">object</span><span class="w">  <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
+  </span><span class="kr">Is</span><span class="w"> </span><span class="n">drinkable</span><span class="p">.</span><span class="w"> <i class="conum" data-value="3"></i><b>(3)</b>
+</span><span class="kr">End</span><span class="w"> </span><span class="kr">every</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>beverage</code> is the new class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>object</code> is the parent class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>drinkable</code> attribute is used by the <code>drink</code> verb.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="code_markers"><a class="anchor" href="#code_markers"></a>Code Markers</h4>
+<div class="paragraph">
+<p>Specific code selections can be styled as if marked via a highlighter pen, using the <code>#..#</code> and <code>[green]#..#</code> notations for yellow and green, which will wrap their in content in <code>&lt;mark&gt;</code> and <code>&lt;span class="green"&gt;</code>, respectively.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+It looks like using <code>subs=quotes</code> completely breaks syntax highlighting with Rouge.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Highlighter Marks: Default Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><mark>Every beverage</mark> IsA object -- yellow marker
+  <span class="green">Is drinkable.</span>    -- green marker
+End every.</code></pre>
+</div>
+</div>
+<div class="listingblock lib">
+<div class="title">Highlighter Marks: Library Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><mark>Every beverage</mark> IsA object -- yellow marker
+  <span class="green">Is drinkable.</span>    -- green marker
+End every.</code></pre>
+</div>
+</div>
+<div class="listingblock tutorial">
+<div class="title">Highlighter Marks: Tutorial Theme</div>
+<div class="content">
+<pre class="rouge highlight" lang="alan"><code class="language-alan" data-lang="alan"><mark>Every beverage</mark> IsA object -- yellow marker
+  <span class="green">Is drinkable.</span>    -- green marker
+End every.</code></pre>
+</div>
 </div>
 </div>
 </div>

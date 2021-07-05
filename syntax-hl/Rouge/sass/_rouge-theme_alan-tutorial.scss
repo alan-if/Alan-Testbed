@@ -1,38 +1,40 @@
 // *****************************************************************************
-/* Rouge Theme for Alan tutorial -- Base16 Google, by  Seth Wright */
+/* Rouge Theme for Alan tutorial -- Base16 Google, by Seth Wright */
 // *****************************************************************************
 
-// Provides an alternative extra-light theme for Alan code with "role=lib" to
-// visually distinguish between code of a tutorial file from generic examples.
+// Provides an alternative extra-light theme for Alan code with "role=tutorial"
+// to visually distinguish between code of a tutorial file from generic
+// examples.
 
-$HL-Role: 'tutorial';
+$ALAN-Role: 'tutorial';
 
 @import 'base16-google-dark';  // Base16 Google Dark color scheme (light).
 
-$HL-Canvas:             $base07;
-$HL-Default:            $base02;
+$ALAN-Background:      $base07;
+$ALAN-Normal-Text:     $base02;
+$ALAN-Numbers:          $ALAN-Normal-Text; //$base09;
+$ALAN-Operators:        $ALAN-Normal-Text;
+$ALAN-LineNumbers:     $base05;
+$ALAN-Comments:        $base03;
+$ALAN-String:          $base0B;
+$ALAN-StrDelimiter:    $base09; // @TODO: Need other colour!
+$ALAN-Escapes:         $base09; // $p $n $i $t $a $l $v $$
+$ALAN-Interpolations:  $base0F; // $<n> $+<n> $0<n> $-<n> $!<n> $o
+$ALAN-Keywords:        $base08;
+$ALAN-Punctuation:     $ALAN-Keywords;
+$ALAN-Default-Classes: $base0A;
+$ALAN-Hero:            $base0D;
 
-$HL-Border-color:       $base06;
-
-$HL-LineNum:            $base05;
-
-$HL-Comment:            $base03;
-$HL-String:             $base0B;
-$HL-Number:             $HL-Default; //$base09;
-$HL-Operator:           $HL-Default;
-$HL-Escape:             $base09; // $p $n $i $t $a $l $v $$
-$HL-Interpolation:      $base0F; // $<n> $+<n> $0<n> $-<n> $!<n> $o
-$HL-Keywords1:          $base08;
-$HL-Keywords2:          $base0A;
-$HL-Keywords3:          $base0D;
+// Context Vars:
+$ALAN-Border-Color:    $base06;
 
 // -----------------
 // Highlight Markers
 // -----------------
-$HL-MarkerYellow1: #f5ff87;
-$HL-MarkerYellow2: $HL-MarkerYellow1;
-$HL-MarkerGreen1:  lighten($base0B, 60%);
-$HL-MarkerGreen2:  $HL-MarkerGreen1;
+$ALAN-MarkerYellow1: #f5ff87;
+$ALAN-MarkerYellow2: $ALAN-MarkerYellow1;
+$ALAN-MarkerGreen1:  lighten($base0B, 60%);
+$ALAN-MarkerGreen2:  $ALAN-MarkerGreen1;
 
 @import 'rouge-template-alan'; // Reusable template for Alan themes.
 

@@ -25,7 +25,6 @@ In the future this document we'll also cover the other required lexers (BNF) and
 
 == ALAN Samples
 
-A basic ALAN IF code sample, shown in all available theme variations.
 
 [WARNING]
 ========================
@@ -36,8 +35,11 @@ A basic ALAN IF code sample, shown in all available theme variations.
 * [x] Fix some precedence issues which are preventing the custom ALAN themes to override styles from the native Rouge theme.
 ========================
 
+=== Basic Sample
 
-=== Default Theme
+A basic ALAN IF code sample, shown in all available theme variations.
+
+==== Default Theme
 
 [source,alan]
 ----------------------
@@ -45,7 +47,7 @@ include::sample.alan[]
 ----------------------
 
 
-=== Library Theme
+==== Library Theme
 
 [source,alan,role=lib]
 ----------------------
@@ -53,12 +55,100 @@ include::sample.alan[]
 ----------------------
 
 
-=== Tutorial Theme
+==== Tutorial Theme
 
 [source,alan,role=tutorial]
 ----------------------
 include::sample.alan[]
 ----------------------
+
+
+=== AsciiDoc Features
+
+Here some sample of advanced AsciiDoc features and how they're rendered for each theme.
+
+==== Callouts
+
+.Callouts: Default Theme
+=================================
+[source,alan]
+----------------------
+Every beverage IsA object -- <1> <2>
+  Is drinkable. -- <3>
+End every.
+----------------------
+
+<1> `beverage` is the new class.
+<2> `object` is the parent class.
+<3> The `drinkable` attribute is used by the `drink` verb.
+=================================
+
+.Callouts: Library Theme
+=================================
+[source,alan,role=lib]
+----------------------
+Every beverage IsA object -- <1> <2>
+  Is drinkable. -- <3>
+End every.
+----------------------
+
+<1> `beverage` is the new class.
+<2> `object` is the parent class.
+<3> The `drinkable` attribute is used by the `drink` verb.
+=================================
+
+.Callouts: Tutorial Theme
+=================================
+[source,alan,role=tutorial]
+----------------------
+Every beverage IsA object -- <1> <2>
+  Is drinkable. -- <3>
+End every.
+----------------------
+
+<1> `beverage` is the new class.
+<2> `object` is the parent class.
+<3> The `drinkable` attribute is used by the `drink` verb.
+=================================
+
+
+==== Code Markers
+
+Specific code selections can be styled as if marked via a highlighter pen, using the ``+++#..#+++`` and ``+++[green]#..#+++`` notations for yellow and green, which will wrap their in content in ``<mark>`` and ``<span class="green">``, respectively.
+
+[WARNING]
+=============================
+It looks like using `subs=quotes` completely breaks syntax highlighting with Rouge!
+
+This is going to affect the _ALAN Beginner's Guide_, which heavily relies on this feature; so probably we can't use Rouge for that publication.
+=============================
+
+.Highlighter Marks: Default Theme
+[source,alan,subs=quotes]
+----------------------
+#Every beverage# IsA object -- yellow marker
+  [green]#Is drinkable.#    -- green marker
+End every.
+----------------------
+
+
+.Highlighter Marks: Library Theme
+[source,alan,role=lib,subs=quotes]
+----------------------
+#Every beverage# IsA object -- yellow marker
+  [green]#Is drinkable.#    -- green marker
+End every.
+----------------------
+
+
+.Highlighter Marks: Tutorial Theme
+[source,alan,role=tutorial,subs=quotes]
+----------------------
+#Every beverage# IsA object -- yellow marker
+  [green]#Is drinkable.#    -- green marker
+End every.
+----------------------
+
 
 
 == ALAN Syntax Details

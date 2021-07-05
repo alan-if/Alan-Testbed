@@ -5,7 +5,7 @@
 // *****************************************************************************
 // A reusable variables-based '@import' template to quickly define Rouge themes
 // for Alan code in Asciidoctor. It can create both generic themes as well as
-// themes targetting a specific role/class, via the $HL-Role variable.
+// themes targetting a specific role/class, via the $ALAN-Role variable.
 
 // =============================================================================
 // Default Values
@@ -13,59 +13,58 @@
 // Let's define some defaults for the template variables, so users don't have to
 // define every single variable.
 
-$HL-Border-radius:  4px !default;
-$HL-Border-width:   1px !default;
-$HL-Font-family: inherit  !default;
-// $HL-Font-family: Consolas, Monaco, "Courier New", Courier, monospace  !default;
-$HL-Font-size:      inherit !default;
-// $HL-Font-size:      1em !default;
+$ALAN-Border-radius:  4px !default;
+$ALAN-Border-width:   1px !default;
+$ALAN-Font-family:    inherit  !default;
+$ALAN-Font-size:      inherit !default;
 
-// -----------------------------------------------------------------------------
 // Default Scheme: Use Alan scheme defined in "_color-scheme.scss"
-// -----------------------------------------------------------------------------
-$HL-AlanHover:      #a09f93 !default;
 
-$HL-Canvas:         $Alan-background !default;
-$HL-Default:        $Alan-normal !default;
-$HL-LineNum:        $Alan-linenums !default;
+// ------------------
+// Template Variables
+// ------------------
+// $ALAN-Hover          -->
+// $ALAN-Border-Color   -->   $ALAN-Background !default;
 
-$HL-Border-color:   $Alan-background !default;
-$HL-Border-radius:  inherit !default;
-$HL-Border-width:   0px     !default;
+// $ALAN-Background:     $ALAN-Background !default;
+// $ALAN-Normal-Text:    $ALAN-Normal-Text !default;
+// $ALAN-LineNumbers:    $ALAN-LineNumbers !default;
 
-$HL-Number:         $Alan-normal !default; // don't show numbers!
-$HL-Escape:         $Alan-escapes !default; // $p $n $i $t $a $l $v $$
-$HL-Interpolation:  $Alan-interpolation !default; // $<n> $+<n> $0<n> $-<n> $!<n> $o
-$HL-String:         $Alan-string !default;
-$HL-StrDelimiter:   $Alan-str-delimiter !default;
-$HL-Comment:        $Alan-comment !default;
-$HL-Operator:       $HL-Default !default;
-$HL-Keywords1:      $Alan-keyword !default; // Alan keywords
-$HL-Keywords2:      $Alan-predefined !default; // Predefined classes
-$HL-Keywords3:      $Alan-predefined !default; // Predefined instances ('hero')
+
+// $ALAN-Numbers            // don't show numbers!
+// $ALAN-Escapes           // $p $n $i $t $a $l $v $$
+// $ALAN-Interpolations    // $<n> $+<n> $0<n> $-<n> $!<n> $o
+// $ALAN-String
+// $ALAN-StrDelimiter
+// $ALAN-Comments
+// $ALAN-Operators
+// $ALAN-Punctuation
+// $ALAN-Keywords          // Alan keywords
+// $ALAN-Default-Classes   // Predefined classes
+// $ALAN-Hero              // Predefined instances ('hero')
 
 // -----------------
 // Highlight Markers
 // -----------------
 // Yellow Marker (for <mark> tag):
-$HL-MarkerYellow1: #ccff00 !default; // Gradient left
-$HL-MarkerYellow2: #f5ff87 !default; // Gradient right
+$ALAN-MarkerYellow1: #ccff00 !default; // Gradient left
+$ALAN-MarkerYellow2: #f5ff87 !default; // Gradient right
 
 // Green Marker (for <span class="green"> tag):
-$HL-MarkerGreen1: #a3ff8a !default; // Gradient left
-$HL-MarkerGreen2: rgba($HL-MarkerGreen1, .5) !default; // Gradient right
+$ALAN-MarkerGreen1: #a3ff8a !default; // Gradient left
+$ALAN-MarkerGreen2: rgba($ALAN-MarkerGreen1, .5) !default; // Gradient right
 
 // -----------------------------------------------------------------------------
 // Optional Language Settings
 // -----------------------------------------------------------------------------
-// If $HL-Role is set, the output theme will target that language, otherwise it
+// If $ALAN-Role is set, the output theme will target that language, otherwise it
 // will be a generic theme for Highlight.
 
-$HL-Role:   null    !default;
+$ALAN-Role: null    !default;
 $ref_role:  null;
 
-@if $HL-Role != null {
-  $ref_role:  ".#{$HL-Role}"   !global;
+@if $ALAN-Role != null {
+  $ref_role:  ".#{$ALAN-Role}"   !global;
 }
 
 // =============================================================================
@@ -74,39 +73,44 @@ $ref_role:  null;
 
 // Language name shown when hovering:
 .listingblock#{$ref_role} code[data-lang=alan]::before{
-  color: $HL-AlanHover;
+  color: $ALAN-Hover;
 }
 // Highlight Theme:
 .listingblock#{$ref_role} pre[class~=rouge][lang=alan] {
-  background-color: $HL-Canvas;
-  border-radius: $HL-Border-radius;
-  border: $HL-Border-width solid $HL-Border-color;
+  background-color: $ALAN-Background;
+  border-radius: $ALAN-Border-radius;
+  border: $ALAN-Border-width solid $ALAN-Border-Color;
   &>code {
-    color: $HL-Default;
-    font-family: $HL-Font-family;
-    font-size: $HL-Font-size;
+    color: $ALAN-Normal-Text;
+    font-family: $ALAN-Font-family;
+    font-size: $ALAN-Font-size;
     &>span {
-      // @TODO: punctuation
       font-style: normal;
       font-weight: normal;
       &.m {
         // Numbers -> Literal::Number
-        color: $HL-Number;
+        color: $ALAN-Numbers;
       }
       &.lin { // TBD!
         // Line numbers
-        color: $HL-LineNum;
+        color: $ALAN-LineNumbers;
       }
       &.n {
         // Identifiers -> Name
         // -----------
-        color: $HL-Default; // @TODO: Need new Var and Colour!
-        font-weight: bold;
+        color: $ALAN-Normal-Text; // @TODO: Need new Var and Colour!
       }
       &.o {
         // Operators -> Operator
         // ---------
-        color: $HL-Operator;
+        color: $ALAN-Operators;
+        font-weight: bold;
+      }
+      &.p {
+        // Punctuation -> Punctuation
+        // -----------
+        color: $ALAN-Punctuation;
+        font-weight: bold;
       }
       // -------------
       //    Strings
@@ -114,29 +118,29 @@ $ref_role:  null;
       &.dl {
         // String delimiter -> Str::Double::Delimiter
         // ----------------
-        color: $HL-StrDelimiter;
+        color: $ALAN-StrDelimiter;
       }
       &.s2 {
         // String contents -> Str::Double
         // ---------------
-        color: $HL-String;
+        color: $ALAN-String;
       }
       &.s1 {
         // Files String -> Str::Single
         // ------------
-        color: $HL-String;
+        color: $ALAN-String;
       }
       &.se {
         // Escape sequences -> Str::Escape
         // ----------------
         // i.e. $$, $_, $i, $n, $p, $t and "".
-        color: $HL-Escape;
+        color: $ALAN-Escapes;
       }
       &.si {
         // Interpolations -> Str::Interpol
         // --------------
         // i.e. $<n> $+<n>, $0<n>, $-<n>, $!<n>, $a, $l, $o and $v.
-        color: $HL-Interpolation;
+        color: $ALAN-Interpolations;
       }
       // --------------
       //    Comments
@@ -144,13 +148,13 @@ $ref_role:  null;
       &.c1 {
         // Single-line comments -> Comment::Single
         // --------------------
-        color: $HL-Comment;
+        color: $ALAN-Comments;
         font-style: italic;
       }
       &.cm {
         // Block comments -> Comment::Multiline
         // --------------
-        color: $HL-Comment;
+        color: $ALAN-Comments;
         font-style: italic;
       }
       // --------------------------
@@ -159,20 +163,20 @@ $ref_role:  null;
       &.kr {
         // Alan Keywords -> Keyword::Reserved
         // -------------
-        color: $HL-Keywords1; // @TODO: RENAME VAR
+        color: $ALAN-Keywords; // @TODO: RENAME VAR
         font-weight: bold;
       }
       &.nb {
         // Predefined Classes -> Name::Builtin
         // ------------------
-        color: $HL-Keywords2; // @TODO: RENAME VAR
+        color: $ALAN-Default-Classes; // @TODO: RENAME VAR
         font-weight: bold;
       }
       &.nx {
         // Predefined Instances -> Name::Other
         // --------------------
         // i.e. the 'hero'
-        color: $HL-Keywords3; // @TODO: RENAME VAR
+        color: $ALAN-Hero; // @TODO: RENAME VAR
         font-style: italic;
       }
     }
@@ -190,13 +194,13 @@ $ref_role:  null;
     // -------------------------------------------------------------------------
     // Let's add to the <mark> tag a smeared fluorescent marker effect.
 
-    @include MarkerMark($HL-MarkerYellow1, $HL-MarkerYellow2);
+    @include MarkerMark($ALAN-MarkerYellow1, $ALAN-MarkerYellow2);
 
     // -------------------------------------------------------------------------
     // Green Marker: <span class="green">
     // -------------------------------------------------------------------------
     // Let's add to the <mark> tag a smeared fluorescent marker effect.
-    @include MarkerSpan('green', $HL-MarkerGreen1, $HL-MarkerGreen2);
+    @include MarkerSpan('green', $ALAN-MarkerGreen1, $ALAN-MarkerGreen2);
   }
 }
 
