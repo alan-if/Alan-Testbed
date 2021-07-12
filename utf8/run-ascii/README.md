@@ -56,7 +56,7 @@ The `input_utf8-bom.a3s` solution file is passed to ARun, without encoding optio
 
 - [`output_utf8-bom.a3t`][output_utf8-bom.a3t]
 
-It generates an ISO encoded transcript, which is broken due to the BOM slipping through the emitted player input.
+It generates an UTF-8 transcript (no BOM), which works correctly but contains an inline BOM where the first command from the solution file is found (see [alan#32]).
 
 
 ## UTF-8 BOM Solution, With `-u` Option
@@ -65,7 +65,8 @@ The `input_utf8-bom.a3s` solution file is passed to ARun, with the `-u` optioon 
 
 - [`output_utf8-bom_-u.a3t`][output_utf8-bom_-u.a3t]
 
-It generates an UTF-8 encoded transcript, which is broken due to the BOM slipping through the emitted player input.
+It generates an UTF-8 transcript (no BOM), which works correctly but contains an inline BOM where the first command from the solution file is found (see [alan#32]).
+
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
@@ -82,5 +83,9 @@ It generates an UTF-8 encoded transcript, which is broken due to the BOM slippin
 [output_iso.a3t]: ./output_iso.a3t
 [output_utf8-bom.a3t]: ./output_utf8-bom.a3t
 [output_utf8-bom_-u.a3t]: ./output_utf8-bom_-u.a3t
+
+<!-- Issues -->
+
+[alan#32]: https://github.com/alan-if/alan/issues/32 "Issue #32 at alan-if/alan — BUG: ARun w/ UTF-8 BOM Solution Files"
 
 <!-- EOF -->

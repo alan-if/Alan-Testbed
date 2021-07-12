@@ -5,8 +5,7 @@ A small and cosy house Kitchen. There is a table here. On the table you
 can see a cake.
 
 > ﻿x table
-Conversion of command input from UTF-8 failed, are you sure about the input encoding? ('Illegal byte sequence')
-I don't understand.
+It's an old wooden table. On the table you can see a cake.
 
 > x cake
 You notice nothing unusual about the cake.
