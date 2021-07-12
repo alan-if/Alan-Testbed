@@ -17,7 +17,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
     - [Custom Lexers with Rougify via CLI](#custom-lexers-with-rougify-via-cli)
     - [Custom Lexers via Rouge API](#custom-lexers-via-rouge-api)
     - [Custom Lexers with Asciidoctor](#custom-lexers-with-asciidoctor)
-- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 - [Links](#links)
     - [Rouge](#rouge)
     - [Asciidoctor](#asciidoctor)
@@ -28,6 +28,7 @@ Testing how to employ custom [Rouge] lexers in [Asciidoctor] projects.
 
 # Directory Contents
 
+- [`/sass/`][/sass/] — CUstom Sass/CSS for Asciidoctor.
 - [`/themes/`][/themes/] — themes references and work.
 - [`sample.alan`][sample.alan] — sample Alan source (UTF-8 + BOM).
 
@@ -171,9 +172,9 @@ end
 They both produce equal results for our scope.
 
 
-# Credits
+# Acknowledgements
 
-We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] for his having helped us out with the solution on how to make Rouge require a custom lexer:
+We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] for having helped us out with the solution on how to make Rouge require a custom lexer:
 
 - [asciidoctor#4080]
 
@@ -246,7 +247,8 @@ We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] fo
 
 <!-- project files and folders -->
 
-[/themes/]: ./themes/ "Navigate to folder"
+[/sass/]: ./sass/ "Navigate to Sass folder"
+[/themes/]: ./themes/ "Navigate to Rouge themes folder"
 [alan-b16-eighties.rb]: ./themes/alan-b16-eighties.rb
 
 [alan3.rb]: ./alan3.rb "View source file"
@@ -255,11 +257,11 @@ We'd like to thank [Dan Allen]  (@mojavelinux) from the [Asciidoctor Project] fo
 
 [asciidoctor-example.asciidoc]: ./asciidoctor-example.asciidoc
 [asciidoctor-example.html]: ./asciidoctor-example.html
-[ADoc Ex Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/asciidoctor-example.html "Live HTML Preview of 'asciidoctor-example.htm'"
+[ADoc Ex Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/asciidoctor-example.html "Live HTML Preview of 'asciidoctor-example.html'"
 
 [alan-syntax.asciidoc]: ./alan-syntax.asciidoc
 [alan-syntax.html]: ./alan-syntax.html
-[ADoc Synt Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/alan-syntax.html "Live HTML Preview of 'alan-syntax.htm'"
+[ADoc Synt Live]: https://htmlpreview.github.io/?https://github.com/alan-if/Alan-Testbed/blob/master/syntax-hl/Rouge/alan-syntax.html "Live HTML Preview of 'alan-syntax.html'"
 
 [custom-rouge-adapter.rb]: ./custom-rouge-adapter.rb
 [rougify-term.sh]: ./rougify-term.sh "View source file"
