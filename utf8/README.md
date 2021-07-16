@@ -1,6 +1,6 @@
 # Testing UTF-8 Support
 
-ALAN 3.0beta8 will introduce support for UTF-8 encoded source files and scripting, which will become the default encoding in Beta9; here we'll be testing this feature using developer snapshot [3.0beta8 build 2218].
+ALAN 3.0beta8 will introduce support for UTF-8 encoded source files and scripting, which will become the default encoding in Beta9; here we'll be testing this feature using developer snapshot [3.0beta8 build 2220].
 
 -----
 
@@ -74,7 +74,7 @@ For the interpreter (see [§A.5. _Interpreter Switches_]) we have `-u` and `-i`:
     + [§A.2. _Compiler Switches_]
     + [§A.3. _Encodings and character sets_]
     + [§A.5. _Interpreter Switches_]
-- [ALAN website] » [development snapshots] » [3.0beta8 build 2218]
+- [ALAN website] » [development snapshots] » [3.0beta8 build 2220]
 
 
 <!-----------------------------------------------------------------------------
@@ -100,7 +100,7 @@ For the interpreter (see [§A.5. _Interpreter Switches_]) we have `-u` and `-i`:
 <!-- Alan SDKs -->
 
 [development snapshots]: https://www.alanif.se/download-alan-v3/development-snapshots/development-snapshots "Development Snapshots page at www.alanif.se"
-[3.0beta8 build 2218]: https://www.alanif.se/download-alan-v3/development-snapshots/development-snapshots/build2218 "ALAN SDK Development Snapshot 3.0beta8 build 2218"
+[3.0beta8 build 2220]: https://www.alanif.se/download-alan-v3/development-snapshots/development-snapshots/build2220 "ALAN SDK Development Snapshot 3.0beta8 build 2220"
 
 <!-- project files and folders -->
 
