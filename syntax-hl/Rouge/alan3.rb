@@ -3,16 +3,13 @@
 
 =begin
 ================================================================================
-ALAN IF Syntax Definition for Rouge  | 2021/06/22 | Alan 3.0beta8 | Rouge 3.26.0
+ALAN IF Lexer for Rouge       v1.0.0 | 2021/07/30 | Alan 3.0beta8 | Rouge 3.26.0
 --------------------------------------------------------------------------------
 Created by Tristano Ajmone; (c) Copyright by The ALAN IF Development team,
 released under the MIT License:
 
   https://github.com/alan-if
   https://www.alanif.se
---------------------------------------------------------------------------------
-Custom lexer, still WIP. The lexer filename "alan3.rb", as well as the syntax
-tag and its aliases are temporary and might change in the final version.
 ================================================================================
 =end
 
@@ -25,7 +22,7 @@ module Rouge
       tag 'alan3'
       aliases 'alan-if', 'alan'
 
-      # @FIXME: The '*.i' extension clashes with OpenEdge!
+      # @NOTE: The '*.i' extension clashes with OpenEdge!
       filenames '*.alan' # , '*.i'
 
       mimetypes 'text/x-alan-if', 'application/x-alan-if',
@@ -62,13 +59,9 @@ module Rouge
         )
       end
 
-      # LETTER: 'a-zA-Zà-þ&&[^÷]' # <= [a-zA-Z\x{00E0}-\x{00FE}&&[^\x{00F7}]]
-      # ID: '(\b[{{LETTER}}][0-9_{{LETTER}}]*\b)'
-
       # Valid ID letters are: 'a-z', 'A-Z' and 'U+00E0-U+00FE' ~'U+00F7' (÷)
       letter = 'a-zA-Zà-þ&&[^÷]'
       id = /[#{letter}][0-9_#{letter}]*/
-      # id = /[a-zA-Zà-þ&&[^÷]][0-9_a-zA-Zà-þ&&[^÷]]*/
 
       state :whitespace do
         rule %r/\s+/, Text::Whitespace
@@ -163,7 +156,7 @@ module Rouge
       state :filename do
         mixin :whitespace
         rule %r/'/, Str::Delimiter, :file_id
-        rule(//) { pop! } # Force pop back to parent context!!
+        rule(//) { pop! } # Force popping back to parent context!!
       end
 
       state :file_id do
@@ -208,7 +201,6 @@ module Rouge
         rule %r/"/, Str::Delimiter, :pop!
         rule %r/[^\$"]+/, Str::Double
       end
-
 
     end # class
   end
