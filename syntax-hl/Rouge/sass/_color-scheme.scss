@@ -1,4 +1,4 @@
-// "_color-scheme.scss"                 v1.2.0 | 2021/07/05 | by Tristano Ajmone
+// "_color-scheme.scss"                 v3.0.0 | 2021/07/30 | by Tristano Ajmone
 // *****************************************************************************
 // *                                                                           *
 // *                          Alan-Docs Color-Scheme                           *
@@ -7,58 +7,43 @@
 // Custom color schemes for additional styling of the Alan-Docs project.
 // Created by Tristano Ajmone.
 
-// ==============
+// --------------
 // Default Colors
-// ==============
+// --------------
 $verbatim-default-background: #FEFEFE;
-$verbatim-default-normal:     #000;
+$verbatim-default-normal:     #000000;
 
-// ==================
-// ALAN Default Theme
-// ==================
+// ---------------
+// Alan Sourcecode
+// ---------------
 // Based on "github.com style" for highlight.js:
 // https://github.com/highlightjs/highlight.js/blob/master/src/styles/github.css
 // Author:  (c) Vasily Polovnyov <vast@whiteants.net>
+$GH-Whitish:    #F8F8F8;
+$GH-Blackish:   #333333;
+$GH-Grey:       #999988;
+$GH-Green:      #008080;
+$GH-DarkBlu:    #000080;
+$GH-DarkRed:    #990000;
+$GH-Orange:     #FF980B; // $p $n $i $t $a $l $v $$
+$GH-Fuchsia:    #D572F1; // $<n> $+<n> $0<n> $-<n> $!<n> $o
 
-$ALAN-Background:      #F8F8F8;
-$ALAN-Normal-Text:     #333;
-$ALAN-Numbers:         $ALAN-Normal-Text;
-$ALAN-Operators:       $ALAN-Normal-Text;
-$ALAN-Comments:        #998;
-$ALAN-LineNumbers:     $ALAN-Comments; // untested (might need better color)
-$ALAN-Keywords:        #990000;
-$ALAN-Punctuation:     $ALAN-Keywords;
-$ALAN-Default-Classes: #ff980b; // @FIXME!
-$ALAN-Hero:            #d572f1; // @FIXME!
-$ALAN-Default-Classes: #000080;
-// @TODO: Need other colour for predefined Hero instance?
-$ALAN-String:          #008080;
-$ALAN-StrDelimiter:    $ALAN-Normal-Text; // @TODO: Need other colour!
-$ALAN-Escapes:         #ff980b; // $p $n $i $t $a $l $v $$
-$ALAN-Interpolations:  #d572f1; // $<n> $+<n> $0<n> $-<n> $!<n> $o
-
-// Context Vars:
-$ALAN-Hover:          #a09f93;
-$ALAN-Border-Color:   $ALAN-Comments;
-// $ALAN-Border-radius:  inherit;
-// $ALAN-Border-width:   0px;
-
-// =========
+// ---------
 // BNF Rules
-// =========
+// ---------
 $BNF-background: #FFEBD6;
 $BNF-normal:     #492E11;
 
-// ===============
+// ---------------
 // Game Transcript
-// ===============
+// ---------------
 $Transcript-background: #F7FDFF;
 $Transcript-normal:     #0089B6;
 $Transcript-border:     #CCF2FF;
 
-// ==============
+// --------------
 // Shell Examples
-// ==============
+// --------------
 // Based on Windows 10 new CMD default colors:
 // https://blogs.msdn.microsoft.com/commandline/2017/08/02/updating-the-windows-console-colors/
 $CMD-Black: #0C0C0C;
@@ -66,9 +51,9 @@ $CMD-White: #F2F2F2;
 // Callouts BG:
 $CMD-callouts-background: #FFF945; // bright yellow
 
-// ===================
+// -------------------
 // Inline Highlighting
-// ===================
+// -------------------
 // Used to provide a highlighter marker effect to both text and code examples.
 // Mainly used in "ALAN Beginner's Guide" to mark added code in the source code
 // examples.

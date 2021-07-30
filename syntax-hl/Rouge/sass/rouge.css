@@ -1,6 +1,6 @@
 /* Alan Code Notation Mockup */
 .listingblock.alan pre {
-  color: #333;
+  color: #333333;
   background: #F8F8F8;
 }
 
@@ -33,16 +33,16 @@ span.green {
 
 /* Highlight Theme for Alan -- based on "github.com style" for highlight.js, by Vasily Polovnyov */
 .listingblock code[data-lang=alan]::before {
-  color: #a09f93;
+  color: #A09F93;
 }
 
 .listingblock pre[class~=rouge][lang=alan] {
   background-color: #F8F8F8;
   border-radius: 4px;
-  border: 1px solid #998;
+  border: 1px solid #F8F8F8;
 }
 .listingblock pre[class~=rouge][lang=alan] > code {
-  color: #333;
+  color: #333333;
   font-family: inherit;
   font-size: inherit;
 }
@@ -51,24 +51,22 @@ span.green {
   font-weight: normal;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.m {
-  color: #333;
+  color: #333333;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.lin {
-  color: #998;
+  color: #999988;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.n {
-  color: #333;
+  color: #333333;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.o {
-  color: #333;
-  font-weight: bold;
+  color: #333333;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.p {
   color: #990000;
-  font-weight: bold;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.dl {
-  color: #333;
+  color: #008080;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.s2 {
   color: #008080;
@@ -77,52 +75,47 @@ span.green {
   color: #008080;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.se {
-  color: #ff980b;
+  color: #FF980B;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.si {
-  color: #d572f1;
+  color: #D572F1;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.c1 {
-  color: #998;
-  font-style: italic;
+  color: #999988;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.cm {
-  color: #998;
-  font-style: italic;
+  color: #999988;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.kr {
   color: #990000;
-  font-weight: bold;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.nb {
   color: #000080;
-  font-weight: bold;
 }
 .listingblock pre[class~=rouge][lang=alan] > code > span.nx {
-  color: #d572f1;
-  font-style: italic;
+  color: #000080;
 }
 .listingblock pre[class~=rouge][lang=alan] > code mark {
-  background-color: #ccff00;
-  background-image: linear-gradient(to right, #ccff00 0%, #f5ff87 100%);
+  background-color: #CCFF00;
+  background-image: linear-gradient(to right, #CCFF00 0%, #F5FF87 100%);
 }
 .listingblock pre[class~=rouge][lang=alan] > code span.green {
-  background-color: #a3ff8a;
-  background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
+  background-color: #A3FF8A;
+  background-image: linear-gradient(to right, #A3FF8A 0%, rgba(163, 255, 138, 0.5) 100%);
 }
 
 /* Rouge Theme for Alan Library -- Base16 Eighties, by Chris Kempson */
 .listingblock.lib code[data-lang=alan]::before {
-  color: #a09f93;
+  color: #A09F93;
 }
 
 .listingblock.lib pre[class~=rouge][lang=alan] {
-  background-color: #2d2d2d;
+  background-color: #2D2D2D;
   border-radius: 4px;
-  border: 1px solid #a09f93;
+  border: 1px solid #A09F93;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code {
-  color: #d3d0c8;
+  color: #D3D0C8;
   font-family: inherit;
   font-size: inherit;
 }
@@ -131,78 +124,71 @@ span.green {
   font-weight: normal;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.m {
-  color: #d3d0c8;
+  color: #D3D0C8;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.lin {
   color: #747369;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.n {
-  color: #d3d0c8;
+  color: #D3D0C8;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.o {
-  color: #d3d0c8;
-  font-weight: bold;
+  color: #D3D0C8;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.p {
-  color: #f2777a;
-  font-weight: bold;
+  color: #F2777A;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.dl {
-  color: #99cc99;
+  color: #99CC99;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.s2 {
-  color: #99cc99;
+  color: #99CC99;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.s1 {
-  color: #99cc99;
+  color: #99CC99;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.se {
-  color: #f99157;
+  color: #F99157;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.si {
-  color: #d27b53;
+  color: #D27B53;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.c1 {
-  color: #998;
-  font-style: italic;
+  color: #999988;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.cm {
-  color: #998;
-  font-style: italic;
+  color: #999988;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.kr {
-  color: #f2777a;
-  font-weight: bold;
+  color: #F2777A;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.nb {
-  color: #ffcc66;
-  font-weight: bold;
+  color: #FFCC66;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code > span.nx {
-  color: #6699cc;
-  font-style: italic;
+  color: #6699CC;
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code mark {
-  background-color: #ccff00;
-  background-image: linear-gradient(to right, #ccff00 0%, #f5ff87 100%);
+  background-color: #CCFF00;
+  background-image: linear-gradient(to right, #CCFF00 0%, #F5FF87 100%);
 }
 .listingblock.lib pre[class~=rouge][lang=alan] > code span.green {
-  background-color: #a3ff8a;
-  background-image: linear-gradient(to right, #a3ff8a 0%, rgba(163, 255, 138, 0.5) 100%);
+  background-color: #A3FF8A;
+  background-image: linear-gradient(to right, #A3FF8A 0%, rgba(163, 255, 138, 0.5) 100%);
 }
 
 /* Rouge Theme for Alan tutorial -- Base16 Google, by Seth Wright */
 .listingblock.tutorial code[data-lang=alan]::before {
-  color: #a09f93;
+  color: #A09F93;
 }
 
 .listingblock.tutorial pre[class~=rouge][lang=alan] {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 4px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #E0E0E0;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code {
-  color: #373b41;
+  color: #373B41;
   font-family: inherit;
   font-size: inherit;
 }
@@ -211,21 +197,19 @@ span.green {
   font-weight: normal;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.m {
-  color: #373b41;
+  color: #373B41;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.lin {
-  color: #c5c8c6;
+  color: #C5C8C6;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.n {
-  color: #373b41;
+  color: #373B41;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.o {
-  color: #373b41;
-  font-weight: bold;
+  color: #373B41;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.p {
   color: #CC342B;
-  font-weight: bold;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.dl {
   color: #F96A38;
@@ -244,23 +228,18 @@ span.green {
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.c1 {
   color: #969896;
-  font-style: italic;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.cm {
   color: #969896;
-  font-style: italic;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.kr {
   color: #CC342B;
-  font-weight: bold;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.nb {
   color: #FBA922;
-  font-weight: bold;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code > span.nx {
   color: #3971ED;
-  font-style: italic;
 }
 .listingblock.tutorial pre[class~=rouge][lang=alan] > code mark {
   background-color: #f5ff87;

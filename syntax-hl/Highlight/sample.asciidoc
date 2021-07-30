@@ -1,4 +1,4 @@
-= Hihglight for ALAN Sample
+= Highlight for ALAN Sample
 Tristano Ajmone <tajmone@gmail.com>
 v1, 2021-06-18
 

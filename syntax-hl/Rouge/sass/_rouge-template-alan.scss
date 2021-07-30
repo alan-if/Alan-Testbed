@@ -20,38 +20,35 @@ $ALAN-Font-size:      inherit !default;
 
 // Default Scheme: Use Alan scheme defined in "_color-scheme.scss"
 
-// ------------------
-// Template Variables
-// ------------------
-// $ALAN-Hover          -->
-// $ALAN-Border-Color   -->   $ALAN-Background !default;
+$ALAN-Background:      $GH-Whitish !default;
+$ALAN-Normal-Text:     $GH-Blackish !default;
+$ALAN-Numbers:         $GH-Blackish !default;
+$ALAN-Operators:       $GH-Blackish !default;
+$ALAN-Comments:        $GH-Grey !default;
+$ALAN-LineNumbers:     $GH-Grey !default; // untested (might need better color)
+$ALAN-Keywords:        $GH-DarkRed !default;
+$ALAN-Punctuation:     $GH-DarkRed !default;
+$ALAN-Default-Classes: $GH-DarkBlu !default;
+$ALAN-Hero:            $GH-DarkBlu !default; // @FIXME!
+// @TODO: Need other colour for predefined Hero instance?
+$ALAN-String:          $GH-Green !default;
+$ALAN-StrDelimiter:    $GH-Green !default; // @TODO: Need other colour!
+$ALAN-Escapes:         $GH-Orange !default; // $p $n $i $t $a $l $v $$
+$ALAN-Interpolations:  $GH-Fuchsia !default; // $<n> $+<n> $0<n> $-<n> $!<n> $o
 
-// $ALAN-Background:     $ALAN-Background !default;
-// $ALAN-Normal-Text:    $ALAN-Normal-Text !default;
-// $ALAN-LineNumbers:    $ALAN-LineNumbers !default;
-
-
-// $ALAN-Numbers            // don't show numbers!
-// $ALAN-Escapes           // $p $n $i $t $a $l $v $$
-// $ALAN-Interpolations    // $<n> $+<n> $0<n> $-<n> $!<n> $o
-// $ALAN-String
-// $ALAN-StrDelimiter
-// $ALAN-Comments
-// $ALAN-Operators
-// $ALAN-Punctuation
-// $ALAN-Keywords          // Alan keywords
-// $ALAN-Default-Classes   // Predefined classes
-// $ALAN-Hero              // Predefined instances ('hero')
+// Context Vars:
+$ALAN-Hover:           #A09F93 !default;
+$ALAN-Border-Color:    $GH-Whitish !default;
 
 // -----------------
 // Highlight Markers
 // -----------------
 // Yellow Marker (for <mark> tag):
-$ALAN-MarkerYellow1: #ccff00 !default; // Gradient left
-$ALAN-MarkerYellow2: #f5ff87 !default; // Gradient right
+$ALAN-MarkerYellow1: #CCFF00 !default; // Gradient left
+$ALAN-MarkerYellow2: #F5FF87 !default; // Gradient right
 
 // Green Marker (for <span class="green"> tag):
-$ALAN-MarkerGreen1: #a3ff8a !default; // Gradient left
+$ALAN-MarkerGreen1: #A3FF8A !default; // Gradient left
 $ALAN-MarkerGreen2: rgba($ALAN-MarkerGreen1, .5) !default; // Gradient right
 
 // -----------------------------------------------------------------------------
@@ -104,13 +101,11 @@ $ref_role:  null;
         // Operators -> Operator
         // ---------
         color: $ALAN-Operators;
-        font-weight: bold;
       }
       &.p {
         // Punctuation -> Punctuation
         // -----------
         color: $ALAN-Punctuation;
-        font-weight: bold;
       }
       // -------------
       //    Strings
@@ -149,13 +144,11 @@ $ref_role:  null;
         // Single-line comments -> Comment::Single
         // --------------------
         color: $ALAN-Comments;
-        font-style: italic;
       }
       &.cm {
         // Block comments -> Comment::Multiline
         // --------------
         color: $ALAN-Comments;
-        font-style: italic;
       }
       // --------------------------
       //    Keywords & Built-ins
@@ -164,20 +157,17 @@ $ref_role:  null;
         // Alan Keywords -> Keyword::Reserved
         // -------------
         color: $ALAN-Keywords; // @TODO: RENAME VAR
-        font-weight: bold;
       }
       &.nb {
         // Predefined Classes -> Name::Builtin
         // ------------------
         color: $ALAN-Default-Classes; // @TODO: RENAME VAR
-        font-weight: bold;
       }
       &.nx {
         // Predefined Instances -> Name::Other
         // --------------------
         // i.e. the 'hero'
         color: $ALAN-Hero; // @TODO: RENAME VAR
-        font-style: italic;
       }
     }
     // =========================================================================
