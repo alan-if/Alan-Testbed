@@ -1488,13 +1488,23 @@ Example, using the <code>thankful_eyes</code> theme:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" lang="ruby"><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CustomRougeAdapter</span> <span class="o">&lt;</span> <span class="p">(</span><span class="no">Asciidoctor</span><span class="o">::</span><span class="no">SyntaxHighlighter</span><span class="p">.</span><span class="nf">for</span> <span class="s1">'rouge'</span><span class="p">)</span>
+<pre class="rouge highlight" lang="ruby"><code class="language-ruby" data-lang="ruby"><span class="c1"># Rouge Adapter for ALAN                v1.0.0 | 2021/07/30 | by Tristano Ajmone</span>
+<span class="c1"># ==============================================================================</span>
+<span class="c1"># Created with the kind support of Dan Allen (@mojavelinux) from the Asciidoctor</span>
+<span class="c1"># Project, who helped me out with with this when I was stuck. Thanks Dan!</span>
+<span class="c1">#</span>
+<span class="c1">#   https://github.com/asciidoctor/asciidoctor/issues/4080</span>
+<span class="c1"># ==============================================================================</span>
+
+<span class="k">class</span> <span class="nc">CustomRougeAdapter</span> <span class="o">&lt;</span> <span class="p">(</span><span class="no">Asciidoctor</span><span class="o">::</span><span class="no">SyntaxHighlighter</span><span class="p">.</span><span class="nf">for</span> <span class="s1">'rouge'</span><span class="p">)</span>
   <span class="n">register_for</span> <span class="s1">'rouge'</span>
 
   <span class="c1"># Defer loading Rouge until the `load_library` method is called:</span>
   <span class="k">def</span> <span class="nf">load_library</span>
     <span class="nb">require</span> <span class="s1">'rouge'</span>
-    <span class="nb">require</span> <span class="s1">'./alan3.rb'</span>
+    <span class="c1"># The "alan3.rb" lexer must be in same folder as this script!</span>
+    <span class="n">herepath</span><span class="o">=</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">))</span>
+    <span class="nb">require</span> <span class="s2">"</span><span class="si">#{</span><span class="n">herepath</span><span class="si">}</span><span class="s2">/alan3.rb"</span>
     <span class="nb">require</span> <span class="s1">'./themes/alan-tester.rb'</span> <span class="c1"># Custom theme for tests.</span>
     <span class="ss">:loaded</span>
   <span class="k">end</span>
