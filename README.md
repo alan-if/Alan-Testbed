@@ -24,6 +24,7 @@ Created by [Tristano Ajmone], June 6, 2021; released under [Apache License 2.0].
 
 # Project Contents
 
+- [`/Rake/`][/Rake/] — [Rake] (Ruby Make) tests and work.
 - [`/syntax-hl/`][/syntax-hl/] — syntax highlighters tests:
     + [`/Highlight/`][/Highlight/]
     + [`/Rouge/`][/Rouge/]
@@ -134,10 +135,13 @@ limitations under the License.
 
 <!-- 3rd party tools & services -->
 
+[Rake]: https://ruby.github.io/rake/ "Rake (Ruby Make) website"
 [Sublime Text 4]: https://www.sublimetext.com "Visit Sublime Text website"
 [Travis CI]: https://travis-ci.com/ "Visit Travis CI website"
 
 <!-- project files and folders -->
+
+[/Rake/]: ./Rake/ "Rake (Ruby Make) tests and work folder"
 
 [/syntax-hl/]: ./syntax-hl/ "Syntax highlighters tests and work folder"
 [/Highlight/]: ./syntax-hl/Highlight/ "Highlight syntax highlighter"
