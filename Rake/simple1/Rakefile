@@ -1,0 +1,31 @@
+# Define OS-specific name of Null device, for redirection
+case RUBY_PLATFORM
+when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+  def devnull = "NUL"
+else
+  def devnull = "/dev/null"
+end
+
+# Rake Tasks Begin Here ...
+
+require 'rake/clean'
+
+task :default => "elevator.a3t"
+
+desc "Create transcript from solution"
+file "elevator.a3t" => ["elevator.a3s", "elevator.a3c"] do |t|
+  sh "arun -r -l #{t.prerequisites[1]} < #{t.prerequisites[0]} >#{devnull}"
+end
+
+desc "Compile ALAN adventure"
+file "elevator.a3c" => "elevator.alan" do |t|
+  sh "alan #{t.prerequisites.join(' ')}"
+end
+
+# CLEAN task deletes unnecessary generated files.
+CLEAN.include('*.ifid')
+
+
+# CLOBBER task deletes generated target files.
+CLOBBER.include('*.a3c')
+CLOBBER.include('*.a3t')

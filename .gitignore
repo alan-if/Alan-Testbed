@@ -10,6 +10,8 @@
 *.log
 *.sav
 
+/Rake/**/*.ifid
+
 # Alan IDE Files
 .project
 

@@ -9,10 +9,15 @@ Experimenting with [Rake] (Ruby Make) in view of adopting it for all ALAN reposi
 
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
+- [Folder Contents](#folder-contents)
 - [About](#about)
 - [Reference Links](#reference-links)
 
 <!-- /MarkdownTOC -->
+
+# Folder Contents
+
+- [`/simple1/`](./simple1/) — basic Rakefile: compile adventure and generate transcript from solution.
 
 # About
 
@@ -29,6 +34,12 @@ For an in-depth review of Rake's qualities, see Martin Fowler's article _[Using 
 - [github.com/ruby/rake]
 - [Wikipedia » Rake]
 
+<!-- MarkdownTOC:excluded -->
+## Ruby API
+
+- [Ruby 3.0 API » FileUtils]
+- [Ruby Std-lib 3.0.2 » Rake]
+- [Ruby Std-lib 3.0.2 » Rake » FileUtils]
 
 <!-- MarkdownTOC:excluded -->
 ## Rake Articles
@@ -62,6 +73,12 @@ For an in-depth review of Rake's qualities, see Martin Fowler's article _[Using 
 [github.com/ruby/rake]: https://github.com/ruby/rake "Rake repository at GitHub"
 
 [Using the Rake Build Language]: https://martinfowler.com/articles/rake.html
+
+<!-- Ruby API -->
+
+[Ruby Std-lib 3.0.2 » Rake]:https://ruby-doc.org/stdlib-3.0.2/libdoc/rake/rdoc/
+[Ruby Std-lib 3.0.2 » Rake » FileUtils]: https://ruby-doc.org/stdlib-3.0.2/libdoc/rake/rdoc/FileUtils.html
+[Ruby 3.0 API » FileUtils]: https://rubyapi.org/3.0/o/fileutils
 
 <!-- Avdi Tutorials -->
 

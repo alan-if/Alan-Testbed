@@ -43,7 +43,11 @@
 
 ## Ruby
 #######
-*.rb   text
+*.gemspec   text
+*.rake      text
+*.rb        text
+Rakefile    text
+rakefile    text
 
 ## Misc
 #######
