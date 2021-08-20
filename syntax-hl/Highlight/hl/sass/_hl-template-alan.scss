@@ -1,4 +1,4 @@
-// "_hl-template-alan.scss"             v3.0.0 | 2021/07/30 | by Tristano Ajmone
+// "_hl-template-alan.scss"             v3.1.0 | 2021/08/20 | by Tristano Ajmone
 // *****************************************************************************
 // *                                                                           *
 // *             Highlight 4.1 Alan Theme Template for Asciidoctor             *
@@ -111,6 +111,10 @@ $ref_role:  null;
     }
     &.slc {
       // Single-line comments
+      color: $HL-Comment;
+    }
+    &.com {
+      // Block comments
       color: $HL-Comment;
     }
     &.lin {

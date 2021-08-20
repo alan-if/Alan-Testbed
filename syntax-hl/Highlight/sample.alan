@@ -5,8 +5,15 @@ Description "A minimalist kitchen, with the bare essential."
 End The.
 
 ////
-commet block
-/////
+Simple comment block, balanced delimiters.
+////
+
+Every chair is a object.
+End Every.
+
+////
+Simple comment block
+///////////
 
 Every door is a object.
 End Every.
@@ -21,5 +28,10 @@ The Kitchen is a location.
 Description "A minimalist kitchen, with the bare essential."
 End The.
 
+//// block comment /////////////////
+This is a block comment!
+//// This is not! the end of the comment block! ////
+This is still a block comment!
+////
 
 Start at Kitchen.
