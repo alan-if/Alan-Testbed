@@ -10,16 +10,16 @@ ECHO HamlDir: %HamlDir%
 
 asciidoctor ^
 	--verbose ^
+	-r %ADocDir%\highlight-treeprocessor_mod.rb ^
+	--template-dir %HamlDir% ^
+	-a source-highlighter=highlight ^
+	-a docinfo=shared-head ^
 	-a data-uri ^
 	-a experimental ^
 	-a icons=font ^
 	-a reproducible ^
 	-a sectanchors ^
 	-a toc=left ^
-	-r %ADocDir%\highlight-treeprocessor_mod.rb ^
-	--template-dir %HamlDir% ^
-	-a source-highlighter=highlight ^
-	-a docinfo=shared-head ^
 	sample.asciidoc
 
 EXIT /B

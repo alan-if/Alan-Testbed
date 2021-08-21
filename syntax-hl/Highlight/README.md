@@ -26,7 +26,7 @@ Test and update Highlight syntaxes and assets for the ALAN Docs Asciidoctor tool
         * [`alan.lang`][alan.lang] — WIP update to ALAN 3.0beta8.
 - [`/sass/`][/sass/] — Sass/SCSS sources for custom CSS themes and styles.
 - [`build.bat`][build.bat] — batch build script for our tests.
-- [`build.sh`][build.sh] — Bash build script for our tests (_not working_).
+- [`build.sh`][build.sh] — Bash build script for our tests.
 - [`sample.asciidoc`][sample.asciidoc] — test document.
 - [`sample.alan`][sample.alan] — sample ALAN code included in test document.
 - [`sample.html`][sample.html] — generated HTML doc.
