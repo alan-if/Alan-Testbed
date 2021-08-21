@@ -1,5 +1,5 @@
 --[[
-"alan.lang" v2.1.0-WIP (2021/08/21) | Alan 3.0beta8 | Highlight 4.1 | Lua 5.4
+"alan.lang"        v2.1.0 | 2021/08/21 | Alan 3.0beta8 | Highlight 4.1 | Lua 5.4
 ********************************************************************************
 *                                                                              *
 *                          ALAN IF Syntax Definition                           *
@@ -14,7 +14,7 @@ Created by Tristano Ajmone:
     https://github.com/tajmone
     https://gitlab.com/tajmone
 Released into the public domain according to the Unlicense terms:
-    http://unlicense.org
+    https://unlicense.org
 --------------------------------------------------------------------------------
 File extensions: "*.alan", "*.i"
 ------------------------------------------------------------------------------]]
