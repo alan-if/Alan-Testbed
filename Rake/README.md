@@ -17,7 +17,17 @@ Experimenting with [Rake] (Ruby Make) in view of adopting it for all ALAN reposi
 
 # Folder Contents
 
-- [`/simple1/`](./simple1/) — basic Rakefile: compile adventure and generate transcript from solution.
+Rake examples and tests:
+
+- [`/adv/`][/adv/] — Compiling adventures and running tests:
+    + [`/simple1/`][/simple1/] — Compile adventure and generate transcript from solution.
+    + [`/simple2/`][/simple2/] — Compile adventure with modules via Rake rules, and procedurally handle multiple transcripts.
+
+<!-- files & folders -->
+
+[/adv/]: ./adv "Rake examples: building adventures"
+[/simple1/]: ./adv/simple1
+[/simple2/]: ./adv/simple2
 
 # About
 
@@ -33,6 +43,7 @@ For an in-depth review of Rake's qualities, see Martin Fowler's article _[Using 
 # Reference Links
 
 - [Rake website][Rake]
+    + [Rakefile Format]
 - [github.com/ruby/rake]
 - [Wikipedia » Rake]
 
@@ -47,6 +58,7 @@ For an in-depth review of Rake's qualities, see Martin Fowler's article _[Using 
 ## Rake Articles
 
 - _[Using the Rake Build Language]_ — Martin Fowler.
+- [FIELD NOTES: Using Rake to Automate Tasks] — by Stuart Ellis.
 - _[The coolness that is Rake]_ — Joe White.
 - _[Building with Rake]_ — slideshow by [Jim Weirich] (2003).
 
@@ -85,15 +97,17 @@ For an in-depth review of Rake's qualities, see Martin Fowler's article _[Using 
 <!-- MarkdownTOC:excluded -->
 ## ALAN Repos
 
-- [Alan Docs » Discussions » `rake` label] [AlanDocs Disc rake]
+- [Alan Docs » Discussions » `rake` label][AlanDocs Disc rake]
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [Rake]: https://ruby.github.io/rake/ "Rake (Ruby Make) website"
-[Wikipedia » Rake]: https://en.wikipedia.org/wiki/Rake_(software) "Wikipedia page on Rake"
+[Rakefile Format]: https://ruby.github.io/rake/doc/rakefile_rdoc.html
 [github.com/ruby/rake]: https://github.com/ruby/rake "Rake repository at GitHub"
+
+[Wikipedia » Rake]: https://en.wikipedia.org/wiki/Rake_(software) "Wikipedia page on Rake"
 
 [onestepback.org]: https://onestepback.org
 
@@ -105,6 +119,7 @@ For an in-depth review of Rake's qualities, see Martin Fowler's article _[Using 
 
 <!-- Rake articles -->
 
+[FIELD NOTES: Using Rake to Automate Tasks]: https://www.stuartellis.name/articles/rake/
 [Using the Rake Build Language]: https://martinfowler.com/articles/rake.html
 [The coolness that is Rake]: https://blog.excastle.com/2006/09/05/the-coolness-that-is-rake/
 [Building with Rake]: https://web.archive.org/web/20140220214827/http://www.onestepback.org/articles/buildingwithrake/index.html
